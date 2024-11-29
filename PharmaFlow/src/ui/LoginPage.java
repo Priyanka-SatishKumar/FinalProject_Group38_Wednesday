@@ -4,12 +4,16 @@
  */
 package ui;
 
+import javax.swing.JPanel;
+
 /**
  *
  * @author KAILASH
  */
 public class LoginPage extends javax.swing.JFrame {
 
+    JPanel mainWorkArea;
+    
     /**
      * Creates new form LoginPage
      */
