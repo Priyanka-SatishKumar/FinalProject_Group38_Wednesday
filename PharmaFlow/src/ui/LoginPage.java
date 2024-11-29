@@ -5,6 +5,8 @@
 package ui;
 
 import javax.swing.JPanel;
+import model.Enterprise;
+import model.EnterpriseDirectory;
 
 /**
  *
@@ -13,12 +15,17 @@ import javax.swing.JPanel;
 public class LoginPage extends javax.swing.JFrame {
 
     JPanel mainWorkArea;
-    
+    EnterpriseDirectory enterpriseDirectory;
+    Enterprise selectedEnterprise=null;
     /**
      * Creates new form LoginPage
      */
-    public LoginPage() {
+    public LoginPage(JPanel mainWorkArea, EnterpriseDirectory enterpriseDirectory) {
         initComponents();
+        
+        this.mainWorkArea = mainWorkArea;
+        this.enterpriseDirectory = enterpriseDirectory;
+        
     }
 
     /**
@@ -152,11 +159,11 @@ public class LoginPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginPage().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new LoginPage().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
