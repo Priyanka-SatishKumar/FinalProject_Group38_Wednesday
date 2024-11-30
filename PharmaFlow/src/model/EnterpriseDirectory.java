@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class EnterpriseDirectory {
     private ArrayList<Enterprise> enterpriseList;
 
+    
     public ArrayList<Enterprise> getEnterpriseList() {
         return enterpriseList;
     }
@@ -21,5 +22,10 @@ public class EnterpriseDirectory {
         this.enterpriseList = enterpriseList;
     }
     
+    public Enterprise addEnterprise(){
+        Enterprise p = new Enterprise();
+        enterpriseList.add(p);
+        return p;
+    }
     
 }
