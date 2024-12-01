@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import model.Enterprise;
 import model.EnterpriseDirectory;
 import ui.manager.UI_Manager;
+import com.github.javafaker.Faker;
 
 /**
  *
@@ -80,9 +81,12 @@ public class LoginPage extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
+                Faker faker = new Faker();
+
                 try {
             System.out.println("Welcome to Pharma Inventory Management");
+            System.out.println("Using Faker module (Random Name): " + faker.name().fullName());
+            System.out.println("Using Faker module (Random City): " + faker.address().city());
             UI_Manager.init();
         } catch (Exception e) {
             System.out.println(e);
