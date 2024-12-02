@@ -7,6 +7,7 @@ package ui.manager;
 import java.awt.FlowLayout;
 import javax.swing.JPanel;
 import ui.login.LoginPageJPanel;
+import ui.manufacturer.ManufacturerAdminJPanel;
 
 /**
  *
@@ -28,5 +29,13 @@ public class UI_Manager {
         frame.setVisible(true);
         loginPageJPanel = new LoginPageJPanel();
         removeAndAddPanel(loginPageJPanel);
+    }
+    
+    public static void AddManuAdminPanel(String username, int manId) 
+        {
+        frame.setLayout(new FlowLayout());
+        frame.setVisible(true);
+        manuAdministratorPanel = new ManufacturerAdminJPanel(username, manId);
+        removeAndAddPanel(manuAdministratorPanel);
     }
 }
