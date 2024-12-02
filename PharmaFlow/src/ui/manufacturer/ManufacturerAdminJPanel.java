@@ -38,7 +38,26 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         jButton15 = new javax.swing.JButton();
         bottomTabbedPane = new javax.swing.JTabbedPane();
         manageOrdersJPanel = new javax.swing.JPanel();
+        jPanel34 = new javax.swing.JPanel();
+        txtSearchEmployeeKeyword = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        manufacOrderItemsTable = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        manufacOrderTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelCustomer = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabelOrderId = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabelStatus = new javax.swing.JLabel();
+        btnApproveOrdReq = new javax.swing.JButton();
+        btnDeclineOrdReq = new javax.swing.JButton();
+        btnApproveOrdReq1 = new javax.swing.JButton();
         manageOrderDistributionJPanel = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         manageInventoryJPanel = new javax.swing.JPanel();
 
         setPreferredSize(new java.awt.Dimension(1005, 630));
@@ -102,49 +121,165 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 160));
 
         bottomTabbedPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        bottomTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
         bottomTabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout manageOrdersJPanelLayout = new javax.swing.GroupLayout(manageOrdersJPanel);
-        manageOrdersJPanel.setLayout(manageOrdersJPanelLayout);
-        manageOrdersJPanelLayout.setHorizontalGroup(
-            manageOrdersJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 878, Short.MAX_VALUE)
+        manageOrdersJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search By Employee Details", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cascadia Mono", 1, 12))); // NOI18N
+
+        txtSearchEmployeeKeyword.setText("Enter Employee Details");
+        txtSearchEmployeeKeyword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchEmployeeKeywordActionPerformed(evt);
+            }
+        });
+        txtSearchEmployeeKeyword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtSearchEmployeeKeywordKeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
+        jPanel34.setLayout(jPanel34Layout);
+        jPanel34Layout.setHorizontalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addGap(179, 179, 179)
+                .addComponent(txtSearchEmployeeKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(688, Short.MAX_VALUE))
         );
-        manageOrdersJPanelLayout.setVerticalGroup(
-            manageOrdersJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+        jPanel34Layout.setVerticalGroup(
+            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel34Layout.createSequentialGroup()
+                .addComponent(txtSearchEmployeeKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 9, Short.MAX_VALUE))
         );
 
-        bottomTabbedPane.addTab("Check Corders", manageOrdersJPanel);
+        manageOrdersJPanel.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
 
-        javax.swing.GroupLayout manageOrderDistributionJPanelLayout = new javax.swing.GroupLayout(manageOrderDistributionJPanel);
-        manageOrderDistributionJPanel.setLayout(manageOrderDistributionJPanelLayout);
-        manageOrderDistributionJPanelLayout.setHorizontalGroup(
-            manageOrderDistributionJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 878, Short.MAX_VALUE)
-        );
-        manageOrderDistributionJPanelLayout.setVerticalGroup(
-            manageOrderDistributionJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
-        );
+        jButton1.setText("View Orders");
+        manageOrdersJPanel.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 180, -1));
 
-        bottomTabbedPane.addTab("tab2", manageOrderDistributionJPanel);
+        manufacOrderItemsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Order ID", "Order Date", "Total Order Quantity", "Pharmacy Name", "Distributor Name", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(manufacOrderItemsTable);
+
+        manageOrdersJPanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 900, 110));
+
+        manufacOrderTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Order ID", "Drug ID", "Drug Name", "Quantity", "Unit Price"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(manufacOrderTable);
+
+        manageOrdersJPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 900, 120));
+
+        jLabel1.setText("CUSTOMER");
+        manageOrdersJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
+
+        jLabelCustomer.setText("XXX");
+        manageOrdersJPanel.add(jLabelCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
+
+        jLabel7.setText("ORDER ID");
+        manageOrdersJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
+
+        jLabelOrderId.setText("XXX");
+        manageOrdersJPanel.add(jLabelOrderId, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
+
+        jLabel5.setText("STATUS");
+        manageOrdersJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
+
+        jLabelStatus.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabelStatus.setForeground(new java.awt.Color(255, 51, 0));
+        jLabelStatus.setText("XXX");
+        manageOrdersJPanel.add(jLabelStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, -1, -1));
+
+        btnApproveOrdReq.setText("Approve Order Request");
+        manageOrdersJPanel.add(btnApproveOrdReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, -1, 30));
+
+        btnDeclineOrdReq.setText("Decline Order Request");
+        manageOrdersJPanel.add(btnDeclineOrdReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, 30));
+
+        btnApproveOrdReq1.setText("Assign Distributor to Order");
+        manageOrdersJPanel.add(btnApproveOrdReq1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 450, -1, 30));
+
+        bottomTabbedPane.addTab("Check Orders", manageOrdersJPanel);
+
+        manageOrderDistributionJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton2.setText("View Processed Orders");
+        manageOrderDistributionJPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 170, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable1);
+
+        manageOrderDistributionJPanel.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 250, 90));
+
+        bottomTabbedPane.addTab("Manage Order Distribution", manageOrderDistributionJPanel);
 
         javax.swing.GroupLayout manageInventoryJPanelLayout = new javax.swing.GroupLayout(manageInventoryJPanel);
         manageInventoryJPanel.setLayout(manageInventoryJPanelLayout);
         manageInventoryJPanelLayout.setHorizontalGroup(
             manageInventoryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 878, Short.MAX_VALUE)
+            .addGap(0, 978, Short.MAX_VALUE)
         );
         manageInventoryJPanelLayout.setVerticalGroup(
             manageInventoryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGap(0, 497, Short.MAX_VALUE)
         );
 
-        bottomTabbedPane.addTab("tab3", manageInventoryJPanel);
+        bottomTabbedPane.addTab("Manage Inventory", manageInventoryJPanel);
 
-        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 980, 450));
+        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 980, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -154,7 +289,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -167,17 +302,46 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
+    private void txtSearchEmployeeKeywordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchEmployeeKeywordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchEmployeeKeywordActionPerformed
+
+    private vtxtSearchEmployeeKeywordwordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKeywordKeyReleased
+        String keyword = txtSearchEmployeeKeyword.getText();
+        searchEmployeeDetails( keyword);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldKeywordKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane bottomTabbedPane;
+    private javax.swing.JButton btnApproveOrdReq;
+    private javax.swing.JButton btnApproveOrdReq1;
+    private javax.swing.JButton btnDeclineOrdReq;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabelCustomer;
+    private javax.swing.JLabel jLabelOrderId;
+    private javax.swing.JLabel jLabelStatus;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel34;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lblWelcome;
     private javax.swing.JLabel lblpharmacyAdminName;
     private javax.swing.JPanel manageInventoryJPanel;
     private javax.swing.JPanel manageOrderDistributionJPanel;
     private javax.swing.JPanel manageOrdersJPanel;
+    private javax.swing.JTable manufacOrderItemsTable;
+    private javax.swing.JTable manufacOrderTable;
     private javax.swing.JPanel topPanel;
+    private javax.swing.JTextField txtSearchEmployeeKeyword;
     // End of variables declaration//GEN-END:variables
 }
