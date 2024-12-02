@@ -44,8 +44,15 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        TransportManagementPanel = new javax.swing.JPanel();
+        btnOrderrOverview = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblOrderrOverview = new javax.swing.JTable();
+        btnTransportationOverview = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblTransportation = new javax.swing.JTable();
+        btnAssignTransport = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -168,26 +175,85 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("Order Overview", ViewOrdersPanel);
 
-        jButton2.setText("Order Overview");
+        btnOrderrOverview.setText("Order Overview");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jButton2)
-                .addContainerGap(832, Short.MAX_VALUE))
+        tblOrderrOverview.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Order ID", "Manufacturer", "Order Date", "Status"
+            }
+        ));
+        jScrollPane2.setViewportView(tblOrderrOverview);
+
+        btnTransportationOverview.setText("Transportation Overview");
+
+        tblTransportation.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Transporter ID", "Transporter Name", "Vehicles in Use"
+            }
+        ));
+        jScrollPane3.setViewportView(tblTransportation);
+
+        btnAssignTransport.setText("Assign Transportation");
+
+        btnBack.setText("BACK");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TransportManagementPanelLayout = new javax.swing.GroupLayout(TransportManagementPanel);
+        TransportManagementPanel.setLayout(TransportManagementPanelLayout);
+        TransportManagementPanelLayout.setHorizontalGroup(
+            TransportManagementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TransportManagementPanelLayout.createSequentialGroup()
+                .addGroup(TransportManagementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TransportManagementPanelLayout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addGroup(TransportManagementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnTransportationOverview)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 861, Short.MAX_VALUE)
+                            .addComponent(btnOrderrOverview)
+                            .addComponent(jScrollPane3)))
+                    .addGroup(TransportManagementPanelLayout.createSequentialGroup()
+                        .addGap(447, 447, 447)
+                        .addComponent(btnAssignTransport))
+                    .addGroup(TransportManagementPanelLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnBack)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jButton2)
-                .addContainerGap(539, Short.MAX_VALUE))
+        TransportManagementPanelLayout.setVerticalGroup(
+            TransportManagementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TransportManagementPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnBack)
+                .addGap(18, 18, 18)
+                .addComponent(btnOrderrOverview)
+                .addGap(15, 15, 15)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(btnTransportationOverview)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnAssignTransport)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Transportation Management", jPanel3);
+        jTabbedPane1.addTab("Transportation Management", TransportManagementPanel);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -224,28 +290,39 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AdminLabel;
     private javax.swing.JPanel TopPanel;
+    private javax.swing.JPanel TransportManagementPanel;
     private javax.swing.JPanel ViewOrdersPanel;
+    private javax.swing.JButton btnAssignTransport;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnOrder;
+    private javax.swing.JButton btnOrderrOverview;
+    private javax.swing.JButton btnTransportationOverview;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblDistributorAdmin;
     private javax.swing.JLabel lblManufac;
     private javax.swing.JLabel lblOrderID;
     private javax.swing.JLabel lblStatus;
     private javax.swing.JTable tblOrderOverview;
+    private javax.swing.JTable tblOrderrOverview;
+    private javax.swing.JTable tblTransportation;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
