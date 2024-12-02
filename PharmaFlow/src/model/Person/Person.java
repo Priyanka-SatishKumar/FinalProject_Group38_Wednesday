@@ -6,6 +6,7 @@ package model.Person;
 
 import java.util.Date;
 import javax.tools.DocumentationTool.Location;
+import model.common.Contact;
 
 /**
  *
