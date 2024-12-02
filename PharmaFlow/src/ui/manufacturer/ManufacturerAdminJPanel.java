@@ -4,6 +4,8 @@
  */
 package ui.manufacturer;
 
+import ui.manager.UI_Manager;
+
 /**
  *
  * @author KAILASH
@@ -13,7 +15,9 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ManufacturerAdminJPanel
      */
-    public ManufacturerAdminJPanel() {
+    String username;
+    int manufacturerId;
+    public ManufacturerAdminJPanel(String username, int manufacturerId) {
         initComponents();
     }
 
@@ -26,19 +30,154 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        topPanel = new javax.swing.JPanel();
+        lblpharmacyAdminName = new javax.swing.JLabel();
+        lblWelcome = new javax.swing.JLabel();
+        jButton18 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
+        bottomTabbedPane = new javax.swing.JTabbedPane();
+        manageOrdersJPanel = new javax.swing.JPanel();
+        manageOrderDistributionJPanel = new javax.swing.JPanel();
+        manageInventoryJPanel = new javax.swing.JPanel();
+
+        setPreferredSize(new java.awt.Dimension(1005, 630));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblpharmacyAdminName.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+
+        lblWelcome.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+        lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblWelcome.setText("WELCOME");
+
+        jButton18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton18.setText("LOGIN PAGE");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        jButton15.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton15.setText("Close");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
+        topPanel.setLayout(topPanelLayout);
+        topPanelLayout.setHorizontalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(109, 109, 109)
+                .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addGap(16, 16, 16))
+        );
+        topPanelLayout.setVerticalGroup(
+            topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topPanelLayout.createSequentialGroup()
+                .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(topPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 160));
+
+        bottomTabbedPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bottomTabbedPane.setTabPlacement(javax.swing.JTabbedPane.LEFT);
+        bottomTabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        javax.swing.GroupLayout manageOrdersJPanelLayout = new javax.swing.GroupLayout(manageOrdersJPanel);
+        manageOrdersJPanel.setLayout(manageOrdersJPanelLayout);
+        manageOrdersJPanelLayout.setHorizontalGroup(
+            manageOrdersJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 878, Short.MAX_VALUE)
+        );
+        manageOrdersJPanelLayout.setVerticalGroup(
+            manageOrdersJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 448, Short.MAX_VALUE)
+        );
+
+        bottomTabbedPane.addTab("Check Corders", manageOrdersJPanel);
+
+        javax.swing.GroupLayout manageOrderDistributionJPanelLayout = new javax.swing.GroupLayout(manageOrderDistributionJPanel);
+        manageOrderDistributionJPanel.setLayout(manageOrderDistributionJPanelLayout);
+        manageOrderDistributionJPanelLayout.setHorizontalGroup(
+            manageOrderDistributionJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 878, Short.MAX_VALUE)
+        );
+        manageOrderDistributionJPanelLayout.setVerticalGroup(
+            manageOrderDistributionJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 448, Short.MAX_VALUE)
+        );
+
+        bottomTabbedPane.addTab("tab2", manageOrderDistributionJPanel);
+
+        javax.swing.GroupLayout manageInventoryJPanelLayout = new javax.swing.GroupLayout(manageInventoryJPanel);
+        manageInventoryJPanel.setLayout(manageInventoryJPanelLayout);
+        manageInventoryJPanelLayout.setHorizontalGroup(
+            manageInventoryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 878, Short.MAX_VALUE)
+        );
+        manageInventoryJPanelLayout.setVerticalGroup(
+            manageInventoryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 448, Short.MAX_VALUE)
+        );
+
+        bottomTabbedPane.addTab("tab3", manageInventoryJPanel);
+
+        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 980, 450));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        UI_Manager.init();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        System.exit(0);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane bottomTabbedPane;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblWelcome;
+    private javax.swing.JLabel lblpharmacyAdminName;
+    private javax.swing.JPanel manageInventoryJPanel;
+    private javax.swing.JPanel manageOrderDistributionJPanel;
+    private javax.swing.JPanel manageOrdersJPanel;
+    private javax.swing.JPanel topPanel;
     // End of variables declaration//GEN-END:variables
 }
