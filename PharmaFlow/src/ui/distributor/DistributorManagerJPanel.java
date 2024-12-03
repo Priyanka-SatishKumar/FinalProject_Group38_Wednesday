@@ -4,17 +4,29 @@
  */
 package ui.distributor;
 
+import database.Distributor_Manager;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import ui.manager.UI_DesignFunctions;
+
 /**
  *
  * @author deepthiramesh
  */
 public class DistributorManagerJPanel extends javax.swing.JPanel {
-
+    int distributorId;
+    String username;
+    int transporterId;
+    
+    int selectedOrderId ;
     /**
      * Creates new form DistributorManagerJPanel
      */
-    public DistributorManagerJPanel() {
+    public DistributorManagerJPanel(String username, int distributorId) {
         initComponents();
+        this.distributorId = distributorId;
+        this.username = username;
     }
 
     /**
@@ -43,7 +55,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         lblStatus = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnAssignTransportNow = new javax.swing.JButton();
         TransportManagementPanel = new javax.swing.JPanel();
         btnOrderrOverview = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -62,14 +74,14 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         tblTrackShipment = new javax.swing.JTable();
         btnBackk = new javax.swing.JButton();
         ManageStocksPane = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtManageSearch = new javax.swing.JTextField();
         btnMedicationOverview = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblProductID = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblProductName = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -80,7 +92,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         btnUpdateInventory = new javax.swing.JButton();
         btnDeleteInventory = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblMedicationOverview = new javax.swing.JTable();
         btnViewStock = new javax.swing.JButton();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblViewStock = new javax.swing.JTable();
@@ -120,6 +132,11 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         txtSearch.setText("Search: ");
 
         btnOrder.setText("Order Overview");
+        btnOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderActionPerformed(evt);
+            }
+        });
 
         tblOrderOverview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -147,7 +164,12 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         jLabel3.setForeground(new java.awt.Color(204, 0, 51));
         jLabel3.setText("XXX");
 
-        jButton1.setText("Assign Transport Services Now");
+        btnAssignTransportNow.setText("Assign Transport Services Now");
+        btnAssignTransportNow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignTransportNowActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ViewOrdersPanelLayout = new javax.swing.GroupLayout(ViewOrdersPanel);
         ViewOrdersPanel.setLayout(ViewOrdersPanelLayout);
@@ -164,7 +186,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                     .addGroup(ViewOrdersPanelLayout.createSequentialGroup()
                         .addGap(382, 382, 382)
                         .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
+                            .addComponent(btnAssignTransportNow)
                             .addGroup(ViewOrdersPanelLayout.createSequentialGroup()
                                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblManufac)
@@ -199,13 +221,18 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                     .addComponent(lblStatus)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(btnAssignTransportNow)
                 .addContainerGap(164, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Order Overview", ViewOrdersPanel);
 
         btnOrderrOverview.setText("Order Overview");
+        btnOrderrOverview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderrOverviewActionPerformed(evt);
+            }
+        });
 
         tblOrderrOverview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -218,9 +245,25 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 "Order ID", "Manufacturer", "Order Date", "Status"
             }
         ));
+        tblOrderrOverview.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblOrderrOverviewMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblOrderrOverview);
 
         btnTransportationOverview.setText("Transportation Overview");
+        btnTransportationOverview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTransportationOverviewActionPerformed(evt);
+            }
+        });
+
+        jScrollPane3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jScrollPane3MouseClicked(evt);
+            }
+        });
 
         tblTransportation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -233,9 +276,19 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 "Transporter ID", "Transporter Name", "Vehicles in Use"
             }
         ));
+        tblTransportation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblTransportationMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tblTransportation);
 
         btnAssignTransport.setText("Assign Transportation");
+        btnAssignTransport.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignTransportActionPerformed(evt);
+            }
+        });
 
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -305,6 +358,11 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 "Transport ID", "Order ID", "Status"
             }
         ));
+        tblTrackShipment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblTrackShipmentMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(tblTrackShipment);
 
         btnBackk.setText("BACK");
@@ -342,19 +400,34 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
 
         jTabbedPane2.addTab("Stock Overview", StockOverviewPane);
 
-        jTextField1.setText("SEARCH:");
+        txtManageSearch.setText("SEARCH:");
+        txtManageSearch.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtManageSearchMouseClicked(evt);
+            }
+        });
+        txtManageSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtManageSearchKeyReleased(evt);
+            }
+        });
 
         btnMedicationOverview.setText("Medication Overview");
+        btnMedicationOverview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMedicationOverviewActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Add Inventory");
 
         jLabel5.setText("Product ID");
 
-        jLabel6.setText("XXX");
+        lblProductID.setText("XXX");
 
         jLabel7.setText("Product Name");
 
-        jLabel8.setText("xxxx");
+        lblProductName.setText("xxxx");
 
         jLabel9.setText("Unites Available");
 
@@ -362,15 +435,42 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
 
         jLabel11.setText("Selling Price");
 
+        txtQty.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtQtyKeyTyped(evt);
+            }
+        });
+
+        txtCostPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCostPriceKeyTyped(evt);
+            }
+        });
+
         txtSellingPrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSellingPriceActionPerformed(evt);
             }
         });
+        txtSellingPrice.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSellingPriceKeyTyped(evt);
+            }
+        });
 
         btnAddInventory.setText("Add Inventory");
+        btnAddInventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddInventoryActionPerformed(evt);
+            }
+        });
 
         btnUpdateInventory.setText("Update Inventory");
+        btnUpdateInventory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateInventoryActionPerformed(evt);
+            }
+        });
 
         btnDeleteInventory.setText("Delete Inventory");
 
@@ -393,14 +493,14 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                                 .addGap(37, 37, 37)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel8)
-                                            .addComponent(jLabel6)))
                                     .addComponent(txtQty)
                                     .addComponent(txtCostPrice)
-                                    .addComponent(txtSellingPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)))))
+                                    .addComponent(txtSellingPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(lblProductName, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                                            .addComponent(lblProductID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(btnAddInventory)
@@ -418,11 +518,11 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addComponent(lblProductID))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
+                    .addComponent(lblProductName))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -443,7 +543,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblMedicationOverview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -454,9 +554,14 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 "Product ID", "Product Name"
             }
         ));
-        jScrollPane5.setViewportView(jTable1);
+        jScrollPane5.setViewportView(tblMedicationOverview);
 
         btnViewStock.setText("VIEW STOCK");
+        btnViewStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewStockActionPerformed(evt);
+            }
+        });
 
         tblViewStock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -469,6 +574,11 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 "Product ID", "Product Name", "Unites Available", "Purchase Price", "Selling Price"
             }
         ));
+        tblViewStock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblViewStockMouseClicked(evt);
+            }
+        });
         jScrollPane6.setViewportView(tblViewStock);
 
         javax.swing.GroupLayout ManageStocksPaneLayout = new javax.swing.GroupLayout(ManageStocksPane);
@@ -491,7 +601,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(ManageStocksPaneLayout.createSequentialGroup()
                         .addGroup(ManageStocksPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtManageSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -499,7 +609,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
             ManageStocksPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ManageStocksPaneLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtManageSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(ManageStocksPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(ManageStocksPaneLayout.createSequentialGroup()
@@ -558,6 +668,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnTrackShipmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackShipmentActionPerformed
@@ -567,6 +678,288 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private void txtSellingPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSellingPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSellingPriceActionPerformed
+
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblOrderOverview);
+        DefaultTableModel manuOrderTable= (DefaultTableModel)tblOrderOverview.getModel();
+        manuOrderTable.setRowCount(0);
+        try
+        {
+            //p.order_id, p.order_status, p.distributor_id, c1.company_name AS distributor_name, p.transporter_id, c2.company_name AS transporter_name, p.order_date
+            ResultSet rs = Distributor_Manager.getShipments(distributorId);
+
+            while(rs.next())
+            {
+                int orderId = rs.getInt("order_id");
+                String orderDate = rs.getString("order_date");
+                String distributorName = rs.getString("distributor_name");
+                int transporterId = rs.getInt("transporter_id");
+                String transporterName = rs.getString("transporter_name");
+                String OrderStatus = rs.getString("order_status");
+
+                Object[] rowData = new Object[5];
+
+                rowData[0] = orderId;
+                rowData[1] = orderDate;
+                rowData[2] = distributorName;
+                rowData[3] = OrderStatus;
+                rowData[4] = transporterName;
+                manuOrderTable.addRow(rowData);
+
+            }
+        }
+
+        catch(Exception e){
+            System.out.print(e);
+        }
+
+    }//GEN-LAST:event_btnOrderActionPerformed
+
+    private void btnAssignTransportNowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignTransportNowActionPerformed
+        // TODO add your handling code here:
+        jTabbedPane1.setSelectedIndex(1);
+    }//GEN-LAST:event_btnAssignTransportNowActionPerformed
+
+    private void btnOrderrOverviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderrOverviewActionPerformed
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblOrderrOverview);
+        DefaultTableModel manuOrderTable1= (DefaultTableModel)tblOrderrOverview.getModel();
+        manuOrderTable1.setRowCount(0);
+
+        try
+        {
+            ResultSet rs = Distributor_Manager.getShipments(distributorId);
+
+            while(rs.next())
+            {
+                int orderId = rs.getInt("order_id");
+                String orderDate = rs.getString("order_date");
+                String manuName = rs.getString("distributor_name");
+                int transporterId = rs.getInt("transporter_id");
+                String OrderStatus = rs.getString("order_status");
+
+                //float totalPrice = quantity*unitPrice;
+
+                Object[] rowData = new Object[4];
+
+                rowData[0] = orderId;
+                rowData[1] = manuName;
+                rowData[2] = orderDate;
+                rowData[3] = OrderStatus;
+
+                manuOrderTable1.addRow(rowData);
+
+            }
+        }
+
+        catch(Exception e){
+            System.out.print(e);
+        }
+    }//GEN-LAST:event_btnOrderrOverviewActionPerformed
+
+    private void tblOrderrOverviewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrderrOverviewMouseClicked
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblOrderrOverview);
+        int selectedIndx = tblOrderrOverview.getSelectedRow();
+        DefaultTableModel ManufactOrderTable= (DefaultTableModel)tblOrderrOverview.getModel();
+        
+
+        selectedOrderId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+    }//GEN-LAST:event_tblOrderrOverviewMouseClicked
+
+    private void btnTransportationOverviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportationOverviewActionPerformed
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblTransportation);
+        DefaultTableModel disOrderTable1= (DefaultTableModel)tblTransportation.getModel();
+        disOrderTable1.setRowCount(0);
+
+        try
+        {
+            //QUERY TO FETCH DISTRIBUTOR DETAILS
+            ResultSet rs = Distributor_Manager.getTransportationVehicles();
+
+            while(rs.next())
+            {
+                int tranId = rs.getInt("transporter_id");
+                String transName = rs.getString("transporter_name");
+                int vcount = rs.getInt("vehicle_count");
+
+                Object[] rowData = new Object[3];
+
+                rowData[0] = tranId;
+                rowData[1] = transName;
+                rowData[2] = vcount;
+
+                disOrderTable1.addRow(rowData);
+
+            }
+        }
+
+        catch(Exception e){
+            System.out.print(e);
+        }
+
+    }//GEN-LAST:event_btnTransportationOverviewActionPerformed
+
+    private void jScrollPane3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScrollPane3MouseClicked
+
+    private void tblTransportationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTransportationMouseClicked
+        // TODO add your handling code here:
+        try
+        {UI_DesignFunctions.AlignTableContents(tblTransportation);
+        int selectedIndx = tblTransportation.getSelectedRow();
+        DefaultTableModel DisOrderTable= (DefaultTableModel)tblTransportation.getModel();
+
+        if(selectedIndx<0){
+            JOptionPane.showMessageDialog(this,"Please assign a Distributor");
+        }
+        transporterId = Integer.parseInt(DisOrderTable.getValueAt(selectedIndx,0).toString());
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_tblTransportationMouseClicked
+
+    private void btnAssignTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignTransportActionPerformed
+        // TODO add your handling code here:
+        try
+        {
+            System.out.println(selectedOrderId+transporterId);
+            Distributor_Manager.assignTransporter(selectedOrderId, transporterId);
+            JOptionPane.showMessageDialog(this,"Distributor Assigned for the ORDER ID "+selectedOrderId+"Successfully");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_btnAssignTransportActionPerformed
+
+    private void tblTrackShipmentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTrackShipmentMouseClicked
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblTrackShipment);
+        int selectedIndx = tblTrackShipment.getSelectedRow();
+        DefaultTableModel ManufactOrderTable= (DefaultTableModel)tblTrackShipment.getModel();
+
+        if(selectedIndx<0){
+            JOptionPane.showMessageDialog(this,"Please Select a Drug to add");
+        }
+        int drugId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        String drugName = ManufactOrderTable.getValueAt(selectedIndx,1).toString();
+        //String quantity = ManufactOrderTable.getValueAt(selectedIndx,2).toString();
+
+        lblProductID.setText(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        lblProductName.setText(drugName);
+    }//GEN-LAST:event_tblTrackShipmentMouseClicked
+
+    private void txtManageSearchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtManageSearchMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtManageSearchMouseClicked
+
+    private void txtManageSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtManageSearchKeyReleased
+        // TODO add your handling code here:
+        String keyword = txtManageSearch.getText();
+        UI_DesignFunctions.searchEmployeeDetails(keyword, tblMedicationOverview);
+        UI_DesignFunctions.searchEmployeeDetails(keyword, tblViewStock);
+    }//GEN-LAST:event_txtManageSearchKeyReleased
+
+    private void btnMedicationOverviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicationOverviewActionPerformed
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblMedicationOverview);
+        DefaultTableModel manuDrugTable= (DefaultTableModel)tblMedicationOverview.getModel();
+        manuDrugTable.setRowCount(0);
+    }//GEN-LAST:event_btnMedicationOverviewActionPerformed
+
+    private void txtQtyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtQtyKeyTyped
+        // TODO add your handling code here:
+        char c = evt. getKeyChar ();
+        if (!Character.isDigit (c)){
+            JOptionPane.showMessageDialog(null, "Please enter Valid Quantity!", "Error", JOptionPane.ERROR_MESSAGE);
+            evt. consume ();
+        }
+    }//GEN-LAST:event_txtQtyKeyTyped
+
+    private void txtCostPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCostPriceKeyTyped
+        // TODO add your handling code here:
+        if (Character.isLetter(evt.getKeyChar())) {
+            JOptionPane.showMessageDialog(null, "Please enter Valid Cost-Price", "Error", JOptionPane.ERROR_MESSAGE);
+            evt.consume();
+        } else {
+            // If the character is not a letter, try to parse it as a double
+            try {
+                Double.parseDouble(txtCostPrice.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please Enter Valid Cost-Price", "Error", JOptionPane.ERROR_MESSAGE);
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_txtCostPriceKeyTyped
+
+    private void txtSellingPriceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSellingPriceKeyTyped
+        // TODO add your handling code here:
+        if (Character.isLetter(evt.getKeyChar())) {
+            JOptionPane.showMessageDialog(null, "Please enter valid Selling Price", "Error", JOptionPane.ERROR_MESSAGE);
+            evt.consume();
+        } else {
+            // If the character is not a letter, try to parse it as a double
+            try {
+                Double.parseDouble(txtSellingPrice.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter Valid Selling Price", "Error", JOptionPane.ERROR_MESSAGE);
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_txtSellingPriceKeyTyped
+
+    private void btnAddInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddInventoryActionPerformed
+        // TODO add your handling code here:
+        if (txtQty.getText().isEmpty() || txtCostPrice.getText().isEmpty() || txtSellingPrice.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Enter all the Details", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }else{
+
+        }
+    }//GEN-LAST:event_btnAddInventoryActionPerformed
+
+    private void btnUpdateInventoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateInventoryActionPerformed
+        // TODO add your handling code here:
+        int drugId = Integer.valueOf(lblProductID.getText());
+        String drugName = lblProductName.getText();
+        int quantity = Integer.parseInt(txtQty.getText());
+        float cp = Float.valueOf(txtCostPrice.getText());
+        float sp = Float.valueOf(txtSellingPrice.getText());
+    }//GEN-LAST:event_btnUpdateInventoryActionPerformed
+
+    private void tblViewStockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblViewStockMouseClicked
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblViewStock);
+        int selectedIndx = tblViewStock.getSelectedRow();
+        DefaultTableModel ManufactOrderTable= (DefaultTableModel)tblViewStock.getModel();
+
+        if(selectedIndx<0){
+            JOptionPane.showMessageDialog(this,"Please Select a Drug to add");
+        }
+        int drugId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        String drugName = ManufactOrderTable.getValueAt(selectedIndx,1).toString();
+
+        //String quantity = ManufactOrderTable.getValueAt(selectedIndx,2).toString();
+
+        lblProductID.setText(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        lblProductName.setText(drugName);
+        txtQty.setText(ManufactOrderTable.getValueAt(selectedIndx,2).toString());
+        txtCostPrice.setText(ManufactOrderTable.getValueAt(selectedIndx,3).toString());
+        txtSellingPrice.setText(ManufactOrderTable.getValueAt(selectedIndx,4).toString());
+    }//GEN-LAST:event_tblViewStockMouseClicked
+
+    private void btnViewStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStockActionPerformed
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblViewStock);
+        DefaultTableModel manuDrugTable= (DefaultTableModel)tblViewStock.getModel();
+        manuDrugTable.setRowCount(0);
+    }//GEN-LAST:event_btnViewStockActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -579,6 +972,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JPanel ViewOrdersPanel;
     private javax.swing.JButton btnAddInventory;
     private javax.swing.JButton btnAssignTransport;
+    private javax.swing.JButton btnAssignTransportNow;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnBackk;
     private javax.swing.JButton btnDeleteInventory;
@@ -590,7 +984,6 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnTransportationOverview;
     private javax.swing.JButton btnUpdateInventory;
     private javax.swing.JButton btnViewStock;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -598,9 +991,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
@@ -612,18 +1003,20 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblDistributorAdmin;
     private javax.swing.JLabel lblManufac;
     private javax.swing.JLabel lblOrderID;
+    private javax.swing.JLabel lblProductID;
+    private javax.swing.JLabel lblProductName;
     private javax.swing.JLabel lblStatus;
+    private javax.swing.JTable tblMedicationOverview;
     private javax.swing.JTable tblOrderOverview;
     private javax.swing.JTable tblOrderrOverview;
     private javax.swing.JTable tblTrackShipment;
     private javax.swing.JTable tblTransportation;
     private javax.swing.JTable tblViewStock;
     private javax.swing.JTextField txtCostPrice;
+    private javax.swing.JTextField txtManageSearch;
     private javax.swing.JTextField txtQty;
     private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtSearchh;
