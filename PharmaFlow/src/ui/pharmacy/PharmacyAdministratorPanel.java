@@ -32,6 +32,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        btnLogin = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         manageStores = new javax.swing.JPanel();
         jTabbedPaneManageStores = new javax.swing.JTabbedPane();
@@ -185,6 +186,13 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         jLabel6.setText("1001");
 
+        btnLogin.setText("LOGIN");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
         TopPanelLayout.setHorizontalGroup(
@@ -195,7 +203,9 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                         .addGap(287, 287, 287)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(37, 37, 37)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(311, 311, 311)
+                        .addComponent(btnLogin))
                     .addGroup(TopPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,7 +216,9 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         TopPanelLayout.setVerticalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
-                .addGap(82, 82, 82)
+                .addGap(50, 50, 50)
+                .addComponent(btnLogin)
+                .addGap(9, 9, 9)
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1033,7 +1045,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         );
         storeManagersLayout.setVerticalGroup(
             storeManagersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+            .addComponent(jTabbedPane4)
         );
 
         jTabbedPane1.addTab("MANAGE STORE MANAGERS", storeManagers);
@@ -1670,7 +1682,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         );
         manageInventoryLayout.setVerticalGroup(
             manageInventoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 688, Short.MAX_VALUE)
+            .addComponent(jTabbedPane5, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane1.addTab("MANAGE INVENTORY", manageInventory);
@@ -1690,7 +1702,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -1902,6 +1914,10 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnViewOrderPurchaseHistoryActionPerformed
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel DrugsJPanel;
@@ -1925,6 +1941,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnBack5;
     private javax.swing.JButton btnDeleteStore;
     private javax.swing.JButton btnGenerateInvoice;
+    private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnPlaceOrderRequest;
     private javax.swing.JButton btnProceed;
     private javax.swing.JButton btnUpdateStore;
