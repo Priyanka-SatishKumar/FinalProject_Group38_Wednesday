@@ -19,6 +19,7 @@ import javax.swing.table.TableRowSorter;
  */
 public class UI_DesignFunctions {
     
+    // function to align table elements to center and render left
     public static void AlignTableContents(JTable table) {
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
@@ -32,32 +33,35 @@ public class UI_DesignFunctions {
     
     }
     
-//    public static void SetButtonBg(Color globalColor, JButton button){
-//        button.setBackground(globalColor);
-//        button.setOpaque(true);
-//        button.setBorderPainted(false);
-//    }
+    public static void SetButtonBg(Color globalColor, JButton button){
+        button.setBackground(globalColor);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
+    }
     
-//        public static void SetButtonBgGreen(JButton button){
-//        Color globalColor = new Color(129, 211, 129);
-//        button.setBackground(globalColor);
-//        button.setOpaque(true);
-//        button.setBorderPainted(false);
-//    }
-        
-        
-        
-        public static void searchEmployeeDetails(String keyword,JTable table){
+    // Adding Button Colour to say its approved
+    public static void SetButtonBgGreen(JButton button)
+    {
+        Color greencolour = new Color(114,255,123);
+        button.setBackground(greencolour);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
+    }
+    
+    public static void searchEmployeeDetails(String keyword,JTable table)
+    {
         DefaultTableModel tableSearch = (DefaultTableModel)table.getModel();
         TableRowSorter<DefaultTableModel> sortertableSearch = new TableRowSorter<>(tableSearch);
         table.setRowSorter(sortertableSearch);
         sortertableSearch.setRowFilter(RowFilter.regexFilter("(?i)"+keyword));
-
-}
-//    public static void SetButtonBgRed(JButton button){
-//        Color globalColor = new Color(227, 66, 52);
-//        button.setBackground(globalColor);
-//        button.setOpaque(true);
-//        button.setBorderPainted(false);
-//    }
+    }
+    
+    // Adding Button Colour red to say its rejected
+    public static void SetButtonBgRed(JButton button)
+    {
+        Color redColour = new Color(255,100,0);
+        button.setBackground(redColour);
+        button.setOpaque(true);
+        button.setBorderPainted(false);
+    }
 }
