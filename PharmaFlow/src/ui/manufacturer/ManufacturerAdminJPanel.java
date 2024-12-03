@@ -424,6 +424,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         manageOrderDistributionJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 240, -1));
 
         jButton2.setText("Assign");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         manageOrderDistributionJPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 100, 30));
 
         jButton4.setText("Back");
@@ -984,10 +989,10 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
     private void jTextFieldQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldQuantityKeyTyped
         // TODO add your handling code here:
-        char c = evt. getKeyChar ();
-        if (!Character.isDigit (c)){
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c)){
             JOptionPane.showMessageDialog(null, "Please enter Valid Quantity!", "Error", JOptionPane.ERROR_MESSAGE);
-            evt. consume ();
+            evt.consume();
         }
     }//GEN-LAST:event_jTextFieldQuantityKeyTyped
 
@@ -1375,6 +1380,24 @@ manuDrugTable.setRowCount(0);
             System.out.println(e);
         }
     }//GEN-LAST:event_btnPrintActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int orderId = Integer.parseInt(lblOrderID.getText());
+        int disId = Integer.parseInt(lblDistriID.getText());
+
+
+        try
+        {
+            ManufacturerManager.assignDistributor(orderId, disId);
+            JOptionPane.showMessageDialog(this,"Distributor Assigned for the ORDER ID"+orderId+"Successfully");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
