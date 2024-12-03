@@ -4,6 +4,7 @@
  */
 package ui.manufacturer;
 
+import database.Manufacture_Manager;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import ui.manager.UI_DesignFunctions;
@@ -1058,11 +1059,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
     private void btnViewDrugListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDrugListActionPerformed
         // TODO add your handling code here:
         UI_DesignFunctions.AlignTableContents(tblmanufacturerDrug);
-DefaultTableModel manuDrugTable= (DefaultTableModel)tblmanufacturerDrug.getModel();
-manuDrugTable.setRowCount(0);
+        DefaultTableModel manuDrugTable= (DefaultTableModel)tblmanufacturerDrug.getModel();
+        manuDrugTable.setRowCount(0);
    try
     {
-        ResultSet rs = ManufacturerManager.fetchAllDrugs();
+        ResultSet rs = Manufacture_Manager.fetchAllDrugs();
         while(rs.next())
         {
             int drugId = rs.getInt("order_id");
@@ -1086,7 +1087,7 @@ manuDrugTable.setRowCount(0);
         DefaultTableModel manuOrderTable= (DefaultTableModel)tblManufacOrderItems.getModel();
         manuOrderTable.setRowCount(0);
 
-        ResultSet rs = ManufacturerManager.fetchAllOrders(manufacturerId);
+        ResultSet rs = Manufacture_Manager.fetchAllOrders(manufacturerId);
 
         while(rs.next())
         {
@@ -1120,12 +1121,12 @@ manuDrugTable.setRowCount(0);
         
         Color globalColor = new Color(227, 66, 52);
         lblStatus.setForeground(globalColor);
-        UiDesignFunctions.AlignTableContents(manufacturerOrderItemsTable);
+        UI_DesignFunctions.AlignTableContents(tblManufacOrderItems);
 
-        int selectedIndx = ManuOrderTable.getSelectedRow();
-        DefaultTableModel ManufactOrderTable= (DefaultTableModel)ManuOrderTable.getModel();
+        int selectedIndx = tblManufacOrders.getSelectedRow();
+        DefaultTableModel ManufactOrderTable= (DefaultTableModel)tblManufacOrders.getModel();
 
-        DefaultTableModel ManufactOrderItmTable  = (DefaultTableModel)manufacturerOrderItemsTable.getModel();
+        DefaultTableModel ManufactOrderItmTable  = (DefaultTableModel)tblManufacOrderItems.getModel();
         ManufactOrderItmTable.setRowCount(0);
 
         if(selectedIndx<0){
@@ -1142,7 +1143,7 @@ manuDrugTable.setRowCount(0);
         try
         {
                 System.out.println("STARTING QUERY.....");
-                ResultSet rs = ManufacturerManager.fetchAllOrderItems(orderId);
+                ResultSet rs = Manufacture_Manager.fetchAllOrderItems(orderId);
 
                 while(rs.next()){
                 int drugId = rs.getInt("item_id");
@@ -1179,7 +1180,7 @@ manuDrugTable.setRowCount(0);
             lblStatus.setText("Approved");
             String status = lblStatus.getText();
             try{
-                ManufacturerManager.updateOrder(orderId,status);System.out.println("\nOrder Approved");
+                Manufacture_Manager.updateOrder(orderId,status);System.out.println("\nOrder Approved");
                 lblStatus.setText("");
                 lblStatus.setForeground(globalColor);
 
@@ -1273,7 +1274,7 @@ manuDrugTable.setRowCount(0);
 
    try
     {
-        ResultSet rs = ManufacturerManager.fetchAllOrders(manufacturerId);
+        ResultSet rs = Manufacture_Manager.fetchAllOrders(manufacturerId);
 
         while(rs.next())
         {
@@ -1303,7 +1304,7 @@ manuDrugTable.setRowCount(0);
         disOrderTable1.setRowCount(0);
         try
          {
-             ResultSet rs = ManufacturerManager.viewAllDistributors();
+             ResultSet rs = Manufacture_Manager.viewAllDistributors();
 
              while(rs.next())
              {
@@ -1389,7 +1390,7 @@ manuDrugTable.setRowCount(0);
 
         try
         {
-            ManufacturerManager.assignDistributor(orderId, disId);
+            Manufacture_Manager.assignDistributor(orderId, disId);
             JOptionPane.showMessageDialog(this,"Distributor Assigned for the ORDER ID"+orderId+"Successfully");
         }
         catch(Exception e)
