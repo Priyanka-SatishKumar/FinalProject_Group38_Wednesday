@@ -85,6 +85,37 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         jTextArea1 = new javax.swing.JTextArea();
         manageInventoryJPanel = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel33 = new javax.swing.JPanel();
+        jTextField32 = new javax.swing.JTextField();
+        btnViewStock = new javax.swing.JButton();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        manufacturerDrugTable1 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel35 = new javax.swing.JPanel();
+        jTextFieldKeyMan = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        manufacturerDrugTable = new javax.swing.JTable();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        manufacturerDrugTable2 = new javax.swing.JTable();
+        jLabel12 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextFieldQuantity = new javax.swing.JTextField();
+        jTextFieldCp = new javax.swing.JTextField();
+        jTextFieldSp = new javax.swing.JTextField();
+        jLabelManDrugId = new javax.swing.JLabel();
+        jLabelManDrugName = new javax.swing.JLabel();
+        jButton8 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1005, 630));
 
@@ -428,6 +459,289 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         bottomTabbedPane.addTab("Manage Order Distribution", manageOrderDistributionJPanel);
 
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+
+        jTextField32.setText("SEARCH BY KEYWORD");
+        jTextField32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField32ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
+        jPanel33.setLayout(jPanel33Layout);
+        jPanel33Layout.setHorizontalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addGap(376, 376, 376)
+                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(319, Short.MAX_VALUE))
+        );
+        jPanel33Layout.setVerticalGroup(
+            jPanel33Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel33Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+        );
+
+        jPanel3.add(jPanel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 18, -1, 78));
+
+        btnViewStock.setText("VIEW STOCK");
+        btnViewStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewStockActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnViewStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        manufacturerDrugTable1.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        manufacturerDrugTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "DRUG ID", "DRUG NAME", "QUANTITY", "SELLING PRICE"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        manufacturerDrugTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manufacturerDrugTable1MouseClicked(evt);
+            }
+        });
+        jScrollPane16.setViewportView(manufacturerDrugTable1);
+
+        jPanel3.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 940, 260));
+
+        jTabbedPane1.addTab("View Available Stock", jPanel3);
+
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH DRUGS"));
+
+        jTextFieldKeyMan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldKeyManKeyReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
+        jPanel35.setLayout(jPanel35Layout);
+        jPanel35Layout.setHorizontalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel35Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTextFieldKeyMan, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(190, 190, 190))
+        );
+        jPanel35Layout.setVerticalGroup(
+            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel35Layout.createSequentialGroup()
+                .addComponent(jTextFieldKeyMan, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
+        );
+
+        jPanel4.add(jPanel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 955, -1));
+
+        jButton6.setText("View List");
+        jPanel4.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
+
+        jLabel4.setText("Click here to View Drug List");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 20));
+
+        manufacturerDrugTable.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        manufacturerDrugTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1), "CROCIN"},
+                { new Integer(2), "PARACETAMOL"}
+            },
+            new String [] {
+                "DRUG ID", "DRUG NAME"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        manufacturerDrugTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manufacturerDrugTableMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                manufacturerDrugTableMouseEntered(evt);
+            }
+        });
+        jScrollPane13.setViewportView(manufacturerDrugTable);
+
+        jPanel4.add(jScrollPane13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, 130));
+
+        manufacturerDrugTable2.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        manufacturerDrugTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                { new Integer(1), "CROCIN",  new Integer(5),  new Float(23.0), "45"},
+                { new Integer(2), "PARA",  new Integer(7),  new Float(33.0), "44"}
+            },
+            new String [] {
+                "DRUG ID", "DRUG NAME", "QUANTITY", "COST PRICE", "SELLING PRICE"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        manufacturerDrugTable2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manufacturerDrugTable2MouseClicked(evt);
+            }
+        });
+        jScrollPane17.setViewportView(manufacturerDrugTable2);
+
+        jPanel4.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 140));
+
+        jLabel12.setText("Click here to View Stock List");
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 160, 20));
+
+        jButton7.setText("View List");
+        jPanel4.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, -1, -1));
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("ADD STOCK"));
+        jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel13.setText("DRUG ID");
+
+        jLabel14.setText("DRUG NAME");
+
+        jLabel15.setText("QUANTITY");
+
+        jLabel16.setText("COST PRICE");
+
+        jLabel17.setText("SELLING PRICE");
+
+        jTextFieldQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldQuantityKeyTyped(evt);
+            }
+        });
+
+        jTextFieldCp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldCpKeyTyped(evt);
+            }
+        });
+
+        jTextFieldSp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldSpKeyTyped(evt);
+            }
+        });
+
+        jLabelManDrugId.setText("XXX");
+
+        jLabelManDrugName.setText("XXX");
+
+        jButton8.setText("ADD STOCK");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("UPDATE STOCK");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("DELETE STOCK");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldSp, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelManDrugName, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelManDrugId, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelManDrugId, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelManDrugName, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldCp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldSp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+        );
+
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 90, -1, 360));
+
+        jTabbedPane1.addTab("Manage Available Stock", jPanel4);
+
         javax.swing.GroupLayout manageInventoryJPanelLayout = new javax.swing.GroupLayout(manageInventoryJPanel);
         manageInventoryJPanel.setLayout(manageInventoryJPanelLayout);
         manageInventoryJPanelLayout.setHorizontalGroup(
@@ -436,7 +750,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         );
         manageInventoryJPanelLayout.setVerticalGroup(
             manageInventoryJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
 
         bottomTabbedPane.addTab("Manage Inventory", manageInventoryJPanel);
@@ -484,6 +798,177 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jTextField32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField32ActionPerformed
+
+    private void btnViewStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStockActionPerformed
+        UiDesignFunctions.AlignTableContents(manufacturerDrugTable1);
+        DefaultTableModel manuDrugTable= (DefaultTableModel)manufacturerDrugTable1.getModel();
+        manuDrugTable.setRowCount(0);
+
+        //QUERY TO VIEW STOCKS OF MANUFACTURE WITH MANUFACTURING_ID
+        try
+        {
+            ResultSet rs = ManufacturerManager.fetchStock(manufacturerId);
+
+            while(rs.next())
+            {
+                int drugId = rs.getInt("drug_id");
+                String drugName = rs.getString("drug_name");
+                int quantity = rs.getInt("quantity");
+                Float unitPrice = rs.getFloat("selling_price");
+
+                Object[] rowData = new Object[4];
+
+                rowData[0] = drugId;
+                rowData[1] = drugName;
+                rowData[2] = quantity;
+                rowData[3] = unitPrice;
+
+                manuDrugTable.addRow(rowData);
+
+            }
+        }
+
+        catch(Exception e){
+            System.out.print(e);
+        }
+
+        //
+        //        // TODO add your handling code here:
+    }//GEN-LAST:event_btnViewStockActionPerformed
+
+    private void manufacturerDrugTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manufacturerDrugTable1MouseClicked
+
+    }//GEN-LAST:event_manufacturerDrugTable1MouseClicked
+
+    private void jTextFieldKeyManKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldKeyManKeyReleased
+        String keyword = jTextFieldKeyMan.getText();
+        UiDesignFunctions.searchEmployeeDetails(keyword, manufacturerDrugTable);
+        UiDesignFunctions.searchEmployeeDetails(keyword, manufacturerDrugTable2);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldKeyManKeyReleased
+
+    private void manufacturerDrugTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manufacturerDrugTableMouseClicked
+        UiDesignFunctions.AlignTableContents(manufacturerDrugTable);
+        int selectedIndx = manufacturerDrugTable.getSelectedRow();
+        DefaultTableModel ManufactOrderTable= (DefaultTableModel)manufacturerDrugTable.getModel();
+
+        if(selectedIndx<0){
+            JOptionPane.showMessageDialog(this,"Please Select a Drug to add");
+        }
+        int drugId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        String drugName = ManufactOrderTable.getValueAt(selectedIndx,1).toString();
+        //String quantity = ManufactOrderTable.getValueAt(selectedIndx,2).toString();
+
+        jLabelManDrugId.setText(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        jLabelManDrugName.setText(drugName);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manufacturerDrugTableMouseClicked
+
+    private void manufacturerDrugTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manufacturerDrugTableMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manufacturerDrugTableMouseEntered
+
+    private void manufacturerDrugTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manufacturerDrugTable2MouseClicked
+        UiDesignFunctions.AlignTableContents(manufacturerDrugTable2);
+        int selectedIndx = manufacturerDrugTable2.getSelectedRow();
+        DefaultTableModel ManufactOrderTable= (DefaultTableModel)manufacturerDrugTable2.getModel();
+
+        if(selectedIndx<0){
+            JOptionPane.showMessageDialog(this,"Please Select a Drug to add");
+        }
+        int drugId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        String drugName = ManufactOrderTable.getValueAt(selectedIndx,1).toString();
+
+        //String quantity = ManufactOrderTable.getValueAt(selectedIndx,2).toString();
+
+        jLabelManDrugId.setText(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        jLabelManDrugName.setText(drugName);
+        jTextFieldQuantity.setText(ManufactOrderTable.getValueAt(selectedIndx,2).toString());
+        jTextFieldCp.setText(ManufactOrderTable.getValueAt(selectedIndx,3).toString());
+        jTextFieldSp.setText(ManufactOrderTable.getValueAt(selectedIndx,4).toString());
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_manufacturerDrugTable2MouseClicked
+
+    private void jTextFieldQuantityKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldQuantityKeyTyped
+        // TODO add your handling code here:
+        char c = evt. getKeyChar ();
+        if (!Character.isDigit (c)){
+            JOptionPane.showMessageDialog(null, "Please enter Valid Quantity!", "Error", JOptionPane.ERROR_MESSAGE);
+            evt. consume ();
+        }
+    }//GEN-LAST:event_jTextFieldQuantityKeyTyped
+
+    private void jTextFieldCpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldCpKeyTyped
+        // TODO add your handling code here:
+        if (Character.isLetter(evt.getKeyChar())) {
+            JOptionPane.showMessageDialog(null, "Please enter Valid Cost-Price", "Error", JOptionPane.ERROR_MESSAGE);
+            evt.consume();
+        } else {
+            // If the character is not a letter, try to parse it as a double
+            try {
+                Double.parseDouble(jTextFieldCp.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please Enter Valid Cost-Price", "Error", JOptionPane.ERROR_MESSAGE);
+                evt.consume();
+            }
+        }
+
+    }//GEN-LAST:event_jTextFieldCpKeyTyped
+
+    private void jTextFieldSpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldSpKeyTyped
+        // TODO add your handling code here:
+        if (Character.isLetter(evt.getKeyChar())) {
+            JOptionPane.showMessageDialog(null, "Please enter valid Selling Price", "Error", JOptionPane.ERROR_MESSAGE);
+            evt.consume();
+        } else {
+            // If the character is not a letter, try to parse it as a double
+            try {
+                Double.parseDouble(jTextFieldSp.getText() + evt.getKeyChar());
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(null, "Please enter Valid Selling Price", "Error", JOptionPane.ERROR_MESSAGE);
+                evt.consume();
+            }
+        }
+
+    }//GEN-LAST:event_jTextFieldSpKeyTyped
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        //VALIDATIONS PENDING
+        //int drugId = Integer.valueOf(jLabelManDrugId.getText());
+        //String drugName = jLabelManDrugName.getText();
+        //int quantity = Integer.parseInt(jTextFieldQuantity.getText());
+        //float cp = Float.valueOf(jTextFieldCp.getText());
+        //float sp = Float.valueOf(jTextFieldSp.getText());
+        // TODO add your handling code here:
+        if (jTextFieldQuantity.getText().isEmpty() || jTextFieldCp.getText().isEmpty() || jTextFieldSp.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Enter all the Details", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }else{
+
+        }
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        //VALIDATIONS PENDING
+        int drugId = Integer.valueOf(jLabelManDrugId.getText());
+        String drugName = jLabelManDrugName.getText();
+        int quantity = Integer.parseInt(jTextFieldQuantity.getText());
+        float cp = Float.valueOf(jTextFieldCp.getText());
+        float sp = Float.valueOf(jTextFieldSp.getText());
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane bottomTabbedPane;
@@ -492,30 +977,53 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnDeclineOrdReq;
     private javax.swing.JButton btnViewDistributors;
     private javax.swing.JButton btnViewProcessedOrders;
+    private javax.swing.JButton btnViewStock;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelCustomer;
+    private javax.swing.JLabel jLabelManDrugId;
+    private javax.swing.JLabel jLabelManDrugName;
     private javax.swing.JLabel jLabelOrderId;
     private javax.swing.JLabel jLabelStatus;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel33;
     private javax.swing.JPanel jPanel34;
+    private javax.swing.JPanel jPanel35;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -525,6 +1033,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField32;
+    private javax.swing.JTextField jTextFieldCp;
+    private javax.swing.JTextField jTextFieldKeyMan;
+    private javax.swing.JTextField jTextFieldQuantity;
+    private javax.swing.JTextField jTextFieldSp;
     private javax.swing.JLabel lblAssignedOnDate;
     private javax.swing.JLabel lblDistriID;
     private javax.swing.JLabel lblDistriName;
@@ -539,6 +1052,9 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JTable manufacOrderItemsTable;
     private javax.swing.JTable manufacOrderTable;
     private javax.swing.JTable manufacOrderTableDup;
+    private javax.swing.JTable manufacturerDrugTable;
+    private javax.swing.JTable manufacturerDrugTable1;
+    private javax.swing.JTable manufacturerDrugTable2;
     private javax.swing.JPanel topPanel;
     private javax.swing.JTextField txtSearchEmployeeKeyword;
     // End of variables declaration//GEN-END:variables
