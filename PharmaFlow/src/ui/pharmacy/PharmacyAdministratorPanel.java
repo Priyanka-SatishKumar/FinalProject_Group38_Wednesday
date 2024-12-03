@@ -4,6 +4,16 @@
  */
 package ui.pharmacy;
 
+import java.awt.Color;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import model.common.Location;
+import ui.manager.UI_DesignFunctions;
+import ui.manager.UI_Manager;
+
 /**
  *
  * @author priyankasatish
@@ -242,6 +252,11 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 "STORE ID", "STORE NAME", "ADDRESS", "ZIPCODE", "CITY"
             }
         ));
+        jTablePharmacyStore.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTablePharmacyStoreKeyReleased(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTablePharmacyStore);
 
         btnBack.setText("BACK");
@@ -1064,6 +1079,11 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 "DRUG ID", "DRUG NAME", "QUANTITY", "UNIT PRICE"
             }
         ));
+        jTableViewPharmStock.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTableViewPharmStockKeyReleased(evt);
+            }
+        });
         jScrollPane12.setViewportView(jTableViewPharmStock);
 
         SearchJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
@@ -1724,42 +1744,271 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void btnViewStoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStoresActionPerformed
         // TODO add your handling code here:
+UiDesignFunctions.AlignTableContents(jTablePharmStore);
+DefaultTableModel pharmOrderTable1= (DefaultTableModel)jTablePharmStore.getModel();
+pharmOrderTable1.setRowCount(0);
+
+//query to add store details
+   try
+    {
+    ResultSet rs = PharmacyManager.fetchAllStores(pharmacyId);
+    
+    while(rs.next())
+    {
+         int storeId = rs.getInt("store_id");
+        String storeName = rs.getString("store_name");
+        String address = rs.getString("store_address");
+        String zipcode = rs.getString("store_zip");
+        String city = rs.getString("store_city");
+        
+        Object[] rowData = new Object[5];
+
+        rowData[0] = storeId;
+        rowData[1] = storeName;
+        rowData[2] = address;
+        rowData[3] = zipcode;
+        rowData[4] = city;
+   
+        pharmOrderTable1.addRow(rowData);
+ 
+
+        
+    }
+    } 
+    
+    catch(Exception e){
+        System.out.print(e);
+    }
     }//GEN-LAST:event_btnViewStoresActionPerformed
 
     private void jComboBoxCityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxCityActionPerformed
         // TODO add your handling code here:
+
+        try
+        {
+            if(jComboBoxCity.getSelectedItem().equals("Boston")){
+                //jTextFieldState.setText("Massachusetts");
+                jComboBoxZip.removeAllItems();
+                jComboBoxZip.addItem("Select your zipcode");
+                jComboBoxZip.addItem("02215");
+                jComboBoxZip.addItem("08892");
+                jComboBoxZip.addItem("25536");
+                //          jComboBoxCity.addItem("Salem");
+                //          jComboBoxCity.addItem("Plymouth");
+                //          jComboBoxCity.addItem("Cambridge");
+                //          jComboBoxCity.addItem("Worcestor");
+            }
+            else if(jComboBoxCity.getSelectedItem().equals("Seattle")){
+                //jTextFieldState.setText("Washington");
+                jComboBoxZip.removeAllItems();
+                jComboBoxZip.addItem("Select your zipcode");
+                jComboBoxZip.addItem("90012");
+                jComboBoxZip.addItem("23345");
+                jComboBoxZip.addItem("35602");
+            }
+             else if(jComboBoxCity.getSelectedItem().equals("New York")){
+                //jTextFieldState.setText("Washington");
+                jComboBoxZip.removeAllItems();
+                jComboBoxZip.addItem("Select your zipcode");
+                jComboBoxZip.addItem("11234");
+                jComboBoxZip.addItem("14537");
+                jComboBoxZip.addItem("25533");
+            }           
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }   
     }//GEN-LAST:event_jComboBoxCityActionPerformed
 
     private void jTextField6KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField6KeyPressed
-        // TODO add your handling code here:       
+        // TODO add your handling code here:     
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            jTextField6.setEditable(true);
+        }else{
+              jTextField6.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Valid NAME", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        } 
     }//GEN-LAST:event_jTextField6KeyPressed
 
     private void btnAddStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStoreActionPerformed
         // TODO add your handling code here:
+        String storeName = jTextField6.getText();
+        String address = jTextField5.getText();
+        String zipcode = jComboBoxCity.getSelectedItem().toString();
+        String city = jComboBoxZip.getSelectedItem().toString();
+        
+        Location location = new Location(address,zipcode,city);
+        PharmacyStore store = new PharmacyStore(storeName,pharmacyId,location);
+        
+  
+        try
+        {
+            
+            PharmacyManager.addStore(store);
+            System.out.println("Store Added Successfuy");
+            JOptionPane.showMessageDialog(this, "Store Added SUccessfully");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_btnAddStoreActionPerformed
 
     private void jpharmTable2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpharmTable2MouseClicked
         // TODO add your handling code here:
+DefaultTableModel pharmTable= (DefaultTableModel)jpharmTable2.getModel();
+int selectedIdx = jpharmTable2.getSelectedRow();
+
+int storeId = Integer.parseInt(pharmTable.getValueAt(selectedIdx, 0).toString());
+String storeName = pharmTable.getValueAt(selectedIdx, 1).toString();
+String storeAddress = pharmTable.getValueAt(selectedIdx, 2).toString();
+String storeCity = pharmTable.getValueAt(selectedIdx, 3).toString();
+String zipcode = pharmTable.getValueAt(selectedIdx, 4).toString();
+
+jLabel15.setText(String.valueOf(storeId));
+jTextField6.setText(storeName);
+jLabel13.setText(storeAddress);
+jComboBoxCity.setSelectedItem(storeCity.toString());
+jComboBoxZip.setSelectedItem(zipcode.toString());
     }//GEN-LAST:event_jpharmTable2MouseClicked
 
     private void btnUpdateStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStoreActionPerformed
         // TODO add your handling code here:
+DefaultTableModel pharmTable= (DefaultTableModel)jpharmTable2.getModel();
+int selectedIdx = jpharmTable2.getSelectedRow();
+
+
+String storeName =jTextField6.getText();
+String storeAddress=jLabel13.getText();
+String storeCity =jComboBoxCity.getSelectedItem().toString();
+String zipcode =jComboBoxZip.getSelectedItem().toString();
+
+Location location = new Location(storeAddress,zipcode,storeCity);
+PharmacyStore store = new PharmacyStore(storeName,pharmacyId,location);
+int storeId = Integer.parseInt(jLabel15.getText());
+
+//UPDATE QUERY
+try
+{
+  //ResultSet rs =   PharmacyManager.UpdateStore(storeId);
+
+
+jTextField6.setText("");
+jLabel13.setText("");
+jComboBoxCity.setSelectedItem("Boston");
+jComboBoxZip.setSelectedItem("02215");
+JOptionPane.showMessageDialog(this,"Updated Successfully");
+  
+}
+catch(Exception e)
+{
+    System.out.println(e);
+}
     }//GEN-LAST:event_btnUpdateStoreActionPerformed
 
     private void btnDeleteStoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteStoreActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel pharmTable= (DefaultTableModel)jpharmTable2.getModel();
+        int response = JOptionPane.showConfirmDialog(null, "Confirm delete? ", "Delete", JOptionPane.YES_NO_OPTION);
+        int selectedIdx = jpharmTable2.getSelectedRow();
+        if(selectedIdx<0){
+            JOptionPane.showMessageDialog(this, "Please Select a row to delete");
+        }
+        if(response == 0){
+                    try
+        {
+            int storeId = Integer.parseInt(jpharmTable2.getValueAt(selectedIdx, 0).toString());
+            
+            //QUERY TO DELETE
+            PharmacyManager.deleteStore(storeId);
+            pharmTable.removeRow(selectedIdx);
+            System.out.println("Store Deleted Successfuy");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+            
+
+            JOptionPane.showMessageDialog(this, "Store Deleted Successfully");}
     }//GEN-LAST:event_btnDeleteStoreActionPerformed
 
     private void btnViewStores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStores2ActionPerformed
         // TODO add your handling code here:
+UiDesignFunctions.AlignTableContents(jpharmTable2);
+DefaultTableModel pharmOrderTable= (DefaultTableModel)jpharmTable2.getModel();
+pharmOrderTable.setRowCount(0);
+
+//query to add store details
+   try
+    {
+    ResultSet rs = PharmacyManager.fetchAllStores(pharmacyId);
+    
+    while(rs.next())
+    {
+      int storeId = rs.getInt("store_id");
+        String storeName = rs.getString("store_name");
+        String address = rs.getString("store_address");
+        String zipcode = rs.getString("store_zip");
+        String city = rs.getString("store_city");
+        
+        Object[] rowData = new Object[5];
+
+        rowData[0] = storeId;
+        rowData[1] = storeName;
+        rowData[2] = address;
+        rowData[3] = zipcode;
+        rowData[4] = city;
+
+   
+        pharmOrderTable.addRow(rowData);
+ 
+
+        
+    }
+    } 
+    
+    catch(Exception e){
+        System.out.print(e);
+    }
     }//GEN-LAST:event_btnViewStores2ActionPerformed
 
     private void jTextField24KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField24KeyReleased
         // TODO add your handling code here:
+String keyword = jTextFieldKey.getText();
+UiDesignFunctions.searchEmployeeDetails(keyword, jTableViewPharmStock);
     }//GEN-LAST:event_jTextField24KeyReleased
 
     private void btnViewStoreManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStoreManagerActionPerformed
         // TODO add your handling code here:
+UiDesignFunctions.AlignTableContents(jTableStoreTable);
+DefaultTableModel storeTable= (DefaultTableModel)jTableStoreTable.getModel();
+storeTable.setRowCount(0);
+   try
+    {
+    ResultSet rs = PharmacyManager.fetchAllStoreManagers(7) ;
+    
+    while(rs.next())
+    {
+        String name = rs.getString("person_name");
+        String gender = rs.getString("person_gender");
+        int contact = rs.getInt("person_contact");
+        String email = rs.getString("person_email");
+
+        Object[] rowData = new Object[6];
+
+        rowData[0] = name;
+        rowData[1] = gender;
+        rowData[2] = contact;
+        rowData[3] = email;       
+        storeTable.addRow(rowData);   
+    }
+    } 
+    
+    catch(Exception e){
+        System.out.print(e);
+    }
     }//GEN-LAST:event_btnViewStoreManagerActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -1768,6 +2017,13 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void txtNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNameKeyPressed
         // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            txtName.setEditable(true);
+        }else{
+            txtName.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Valid NAME", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_txtNameKeyPressed
 
     private void txtZipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtZipActionPerformed
@@ -1780,6 +2036,14 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void txtCityKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCityKeyPressed
         // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            jTextField6.setEditable(true);
+        }else
+        {
+            jTextField6.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter only alphabetic characters.", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_txtCityKeyPressed
 
     private void txtPhoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhoneKeyReleased
@@ -1788,10 +2052,53 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void txtEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEmailKeyReleased
         // TODO add your handling code here:
+        String email = txtEmail.getText();
+        Validation.checkValidEmail(email,txtEmail);
     }//GEN-LAST:event_txtEmailKeyReleased
 
     private void btnAddStoreManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStoreManagerActionPerformed
         // TODO add your handling code here:
+    String name = txtName.getText();
+    //DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
+    int year = Integer.parseInt(jComboBoxYear.getSelectedItem().toString());
+    int month = Integer.parseInt(jComboBoxMonth.getSelectedItem().toString());
+    int day = Integer.parseInt(jComboBoxDay.getSelectedItem().toString());
+
+    Date dob = new Date(month,day,year);
+    String contactNumber = txtPhone.getText();
+    String email = txtEmail.getText();
+    String addr = txtAddress.getText();
+    String zip = txtZip.getText();
+    String city = txtCity.getText();
+    String gender = jComboBoxGender.getSelectedItem().toString();
+    String username = jTextFieldUsername.getText();
+    String password = jTextFieldPassword.getText();
+    Person person = new Person(username,name,password);
+    person.setPersonType(UserRole.PHARMACY_STORE_MANAGER);
+    person.setPersonGender(gender);
+    person.setPersonDob(dob);
+    Contact contact = person.getPersonContact();
+    contact.setEmail(email);
+    contact.setPhone(contactNumber);
+    Location loc = new Location(addr,zip,city);
+    contact.setLocation(loc);
+    person.setLocation(loc);
+    
+
+    try
+{   
+    PersonManager.createUser(person, pharmacyId);
+    
+    
+    JOptionPane.showMessageDialog(this,"Store Manager Added Successfully");
+    jButton3.setVisible(true);
+
+}
+catch(Exception e)
+    {
+        System.out.println(e);
+        JOptionPane.showMessageDialog(this,"ENTER VALID COMPANY DETAILS");
+    }
     }//GEN-LAST:event_btnAddStoreManagerActionPerformed
 
     private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
@@ -1800,6 +2107,13 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void jTextField17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField17KeyPressed
         // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            jTextField17.setEditable(true);
+        }else{
+              jTextField17.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Valid NAME", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        }  
     }//GEN-LAST:event_jTextField17KeyPressed
 
     private void jTextField34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField34ActionPerformed
@@ -1808,6 +2122,14 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void jTextField34KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField34KeyReleased
         // TODO add your handling code here:
+        String mobileNo=jTextField34.getText () ;
+        if(mobileNo.matches ("^[0-9]*$")&& mobileNo.length()==10)
+        {
+           jTextField34.setBackground(java.awt.Color.green);
+        }
+
+        else
+            jTextField34.setBackground(java.awt.Color.red);
     }//GEN-LAST:event_jTextField34KeyReleased
 
     private void jTextField36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField36ActionPerformed
@@ -1824,6 +2146,46 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void btnViewStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStockActionPerformed
         // TODO add your handling code here:
+UI_DesignFunctions.AlignTableContents(jTableViewPharmStock);
+DefaultTableModel pharmInvTable= (DefaultTableModel)jTableViewPharmStock.getModel();
+pharmInvTable.setRowCount(0);
+//SELECT m.manufacturer_id, c.company_name AS manufacturer_name, d.drug_id, d.drug_name, m.quantity, m.selling_price
+//                FROM manufacturer_inventory m
+
+//QUERY
+   try
+    {
+    ResultSet rs = PharmacyManager.fetchPharmacyInventory(pharmacyId);
+
+    while(rs.next())
+    {
+        int drugid = rs.getInt("drug_id");
+        String drugName = rs.getString("drug_name");
+        int quantity = rs.getInt("quantity");
+        float sellingPrice = rs.getFloat("selling_price");
+        
+        //int manufacturerId = rs.getInt("manufacturer_id");
+        
+  
+        Object[] rowData = new Object[4];
+
+        rowData[0] = drugid;
+        rowData[1] = drugName;
+        rowData[2] = quantity;
+        rowData[3] = sellingPrice;
+   
+            
+        pharmInvTable.addRow(rowData);
+ 
+
+        
+    }
+    } 
+    
+    catch(Exception e){
+        System.out.print(e);
+    }
+
     }//GEN-LAST:event_btnViewStockActionPerformed
 
     private void jTable12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable12MouseClicked
@@ -1836,6 +2198,11 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void jTextField21KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField21KeyTyped
         // TODO add your handling code here:
+        char c = evt. getKeyChar ();
+        if (!Character.isDigit (c)){
+            JOptionPane.showMessageDialog(null, "Please enter Valid QUANTITY!", "Error", JOptionPane.ERROR_MESSAGE);
+           evt. consume ();
+        }
     }//GEN-LAST:event_jTextField21KeyTyped
 
     private void jTextField23KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField23KeyPressed
@@ -1844,22 +2211,60 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void jTextField23KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField23KeyTyped
         // TODO add your handling code here:
+        char c = evt. getKeyChar ();
+        if (!Character.isDigit (c)){
+            JOptionPane.showMessageDialog(null, "Please enter Valid ID!", "Error", JOptionPane.ERROR_MESSAGE);
+           evt. consume ();
+        }
     }//GEN-LAST:event_jTextField23KeyTyped
 
     private void jTextField43KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField43KeyTyped
         // TODO add your handling code here:
+        if (Character.isLetter(evt.getKeyChar())) {
+             JOptionPane.showMessageDialog(null, "Please enter valid Price", "Error", JOptionPane.ERROR_MESSAGE);
+             evt.consume();
+          } else {
+    // If the character is not a letter, try to parse it as a double
+    try {
+      Double.parseDouble(jTextField43.getText() + evt.getKeyChar());
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Please enter Valid Price", "Error", JOptionPane.ERROR_MESSAGE);
+        evt.consume();
+    }
+         }
     }//GEN-LAST:event_jTextField43KeyTyped
 
     private void jTextField46KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField46KeyPressed
         // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            jTextField46.setEditable(true);
+        }else{
+              jTextField46.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Valid NAME", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        } 
     }//GEN-LAST:event_jTextField46KeyPressed
 
     private void jTextField47KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField47KeyPressed
         // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            jTextField47.setEditable(true);
+        }else{
+              jTextField47.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Valid NAME", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        }      
     }//GEN-LAST:event_jTextField47KeyPressed
 
     private void jTextField48KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField48KeyPressed
         // TODO add your handling code here:
+        char c =evt.getKeyChar();
+        if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
+            jTextField48.setEditable(true);
+        }else{
+              jTextField48.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Valid TYPE", "Invalid Input", JOptionPane.WARNING_MESSAGE);
+        } 
     }//GEN-LAST:event_jTextField48KeyPressed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
@@ -1868,18 +2273,78 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void btnBack4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack4ActionPerformed
         // TODO add your handling code here:
+jTabbedPane5.setSelectedIndex(0);
     }//GEN-LAST:event_btnBack4ActionPerformed
 
     private void manufacturerDrugTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manufacturerDrugTableMouseClicked
         // TODO add your handling code here:
+DefaultTableModel manufactureTable= (DefaultTableModel)manufacturerDrugTable.getModel();
+DefaultTableModel purchaseTable= (DefaultTableModel)purchaseOrderTable.getModel();
+         int selectedIdx = manufacturerDrugTable.getSelectedRow();
+        if(selectedIdx<0){
+            JOptionPane.showMessageDialog(this,"Please Select a Patient to Proceed");
+        }
+
+//        int drugid = Integer.parseInt(manufacturerDrugTable.getValueAt(selectedIdx, 0).toString());
+        String drugName = manufacturerDrugTable.getValueAt(selectedIdx, 1).toString();
+//        int manufacturerId = Integer.parseInt(manufacturerDrugTable.getValueAt(selectedIdx, 2).toString());
+//        String manufacturerName = manufacturerDrugTable.getValueAt(selectedIdx, 3).toString();
+        int quantity = Integer.parseInt(manufacturerDrugTable.getValueAt(selectedIdx, 4).toString());
+        System.out.println("quantity" + quantity );
+//        float sellingPrice = Float.parseFloat(manufacturerDrugTable.getValueAt(selectedIdx, 5).toString());
+        
+         jCombQuantity.removeAllItems();
+         
+                for(int i = 1; i<=quantity; i++){
+           
+            jCombQuantity.addItem(String.valueOf(i));
+            jLabelDrugName.setText(drugName);
+        }        
     }//GEN-LAST:event_manufacturerDrugTableMouseClicked
 
     private void btnBack5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBack5ActionPerformed
         // TODO add your handling code here:
+jTabbedPane5.setSelectedIndex(1);
+
     }//GEN-LAST:event_btnBack5ActionPerformed
 
     private void btnAddDrugPurchaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDrugPurchaseActionPerformed
         // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(manufacturerDrugTable);
+        UI_DesignFunctions.AlignTableContents(purchaseOrderTable);
+        DefaultTableModel manufactureTable= (DefaultTableModel)manufacturerDrugTable.getModel();
+        DefaultTableModel purchaseTable= (DefaultTableModel)purchaseOrderTable.getModel();
+                int selectedIdx = manufacturerDrugTable.getSelectedRow();
+               if(selectedIdx<0){
+                   JOptionPane.showMessageDialog(this,"Please Select an Item");
+               }
+               System.out.println("\n=======================================================");
+               System.out.println("\nADDING ORDER ITEMS TO ORDER TABLE");
+               System.out.println("\n=======================================================");
+               int drugid = Integer.parseInt(manufacturerDrugTable.getValueAt(selectedIdx, 0).toString());
+               String drugName = manufacturerDrugTable.getValueAt(selectedIdx, 1).toString();
+               int manufacturerId = Integer.parseInt(manufacturerDrugTable.getValueAt(selectedIdx, 2).toString());
+               String manufacturerName = manufacturerDrugTable.getValueAt(selectedIdx, 3).toString();
+               int quantity = Integer.parseInt(manufacturerDrugTable.getValueAt(selectedIdx, 4).toString());
+               float sellingPrice = Float.parseFloat(manufacturerDrugTable.getValueAt(selectedIdx, 5).toString());
+
+
+               int orderQuantity = Integer.parseInt(jCombQuantity.getSelectedItem().toString()); 
+               float totalPrice = orderQuantity*sellingPrice;
+               jLabelTotalOrder.setText(Float.toString(totalPrice));
+               System.out.println("TOTAL PRICE"+totalPrice );
+
+              Object[] rowData = new Object[7];
+
+               rowData[0] = drugid;
+               rowData[1] = drugName;
+               rowData[2] = manufacturerId;
+               rowData[3] = manufacturerName;
+               rowData[4] = orderQuantity;
+               rowData[5] = sellingPrice;
+               rowData[6] = totalPrice;
+
+               purchaseTable.addRow(rowData);
     }//GEN-LAST:event_btnAddDrugPurchaseActionPerformed
 
     private void jTextField33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField33ActionPerformed
@@ -1888,22 +2353,164 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void jTextField33KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField33KeyReleased
         // TODO add your handling code here:
+String keyword = jTextField33.getText();
+UI_DesignFunctions.searchEmployeeDetails(keyword, manufacturerDrugTable);
     }//GEN-LAST:event_jTextField33KeyReleased
 
     private void btnViewStock2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStock2ActionPerformed
         // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(manufacturerDrugTable);
+        DefaultTableModel manufactureTable= (DefaultTableModel)manufacturerDrugTable.getModel();
+        manufactureTable.setRowCount(0);
+        //SELECT m.manufacturer_id, c.company_name AS manufacturer_name, d.drug_id, d.drug_name, m.quantity, m.selling_price
+        //                FROM manufacturer_inventory m
+           try
+            {
+            ResultSet rs = PharmacyManager.displayManufacturerInventory();
+
+            while(rs.next())
+            {
+                int manufacturerId = rs.getInt("manufacturer_id");
+                String manufacturerName = rs.getString("manufacturer_name");
+                int drugid = rs.getInt("drug_id");
+                String drugName = rs.getString("drug_name");
+                int quantity = rs.getInt("quantity");
+                float sellingPrice = rs.getFloat("selling_price");
+
+
+                Object[] rowData = new Object[6];
+
+                rowData[0] = drugid;
+                rowData[1] = drugName;
+                rowData[2] = manufacturerId;
+                rowData[3] = manufacturerName;
+                rowData[4] = quantity;
+                rowData[5] = sellingPrice;
+
+                manufactureTable.addRow(rowData);
+
+
+
+            }
+            } 
+
+            catch(Exception e){
+                System.out.print(e);
+            }
     }//GEN-LAST:event_btnViewStock2ActionPerformed
 
     private void btnPlaceOrderRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderRequestActionPerformed
         // TODO add your handling code here:
+        DefaultTableModel purchaseTable= (DefaultTableModel)purchaseOrderTable.getModel();
+        try {
+            for (int count = 0; count < purchaseTable.getRowCount(); count++)
+            {
+                try
+                {
+                    System.out.println("\n=======================================================");
+                    System.out.println("\nON BUTTON CLICK CREATE ORDER ");
+                    System.out.println("\n=======================================================");
+
+                    int drugid = Integer.parseInt(purchaseOrderTable.getValueAt(count, 0).toString());
+                    String drugName = purchaseOrderTable.getValueAt(count, 1).toString();
+                     int manufacturerId = Integer.parseInt(purchaseOrderTable.getValueAt(count, 2).toString());
+                    String manufacturerName = purchaseOrderTable.getValueAt(count, 3).toString();
+                    int quantity = Integer.parseInt(purchaseOrderTable.getValueAt(count, 4).toString());
+                    float sellingPrice = Float.parseFloat(purchaseOrderTable.getValueAt(count, 5).toString());
+                    LocalDate now = LocalDate.now(); 
+                    Date orderdate = new Date(now.getMonthValue(),now.getDayOfMonth(),now.getYear());
+
+                    PharmacyPurchaseOrder pharmacyPurchaseOrder = new PharmacyPurchaseOrder(pharmacyId,manufacturerId,orderdate);
+                    Drug drug = new Drug(drugid,drugName);
+                    PharmacyPurchaseOrderItem  pharmacyOrderItem = new PharmacyPurchaseOrderItem(drug, quantity, sellingPrice);
+
+                    List<PharmacyPurchaseOrderItem> orderItems = pharmacyPurchaseOrder.getOrderItems();
+                    orderItems.add(pharmacyOrderItem);
+
+                    //QUERY
+
+                    int response = JOptionPane.showConfirmDialog(null, "Confirm your Order Request?", "Confirm your Order Request?", JOptionPane.YES_NO_OPTION);
+                    if(response == 0)
+                    {
+                        System.out.println("\norder Creation Started");
+                        PharmacyManager.createOrder(pharmacyPurchaseOrder);
+                        System.out.println("\nORDER CREATED SUCCESFULLY");
+                        jLabelOrderstatus.setVisible(true);
+                        jLabelOrderStatusValue.setVisible(true);
+                    }
+                }
+                catch(Exception e)
+                {
+                  System.out.println("\nexception in loading purchaseTable");
+                  System.out.println(e);
+
+                }
+            }   
+        }
+        catch(Exception e)
+        {
+            System.out.println("\nexception inside CREATE ORDER");
+            System.out.println(e);
+        }
+
     }//GEN-LAST:event_btnPlaceOrderRequestActionPerformed
 
     private void btnProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProceedActionPerformed
         // TODO add your handling code here:
+jTabbedPane5.setSelectedIndex(3);
     }//GEN-LAST:event_btnProceedActionPerformed
 
     private void pharmacyOrderTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pharmacyOrderTableMouseClicked
         // TODO add your handling code here:
+Color globalColor = new Color(227, 66, 52);
+
+UI_DesignFunctions.AlignTableContents(pharmacyOrderItemsTable);
+
+int selectedIndx = pharmacyOrderTable.getSelectedRow();
+DefaultTableModel PharmOrderTable= (DefaultTableModel)pharmacyOrderTable.getModel();
+DefaultTableModel PharmOrderItemTable  = (DefaultTableModel)pharmacyOrderItemsTable.getModel();
+PharmOrderItemTable.setRowCount(0);
+
+if(selectedIndx<0){
+JOptionPane.showMessageDialog(this,"Please Select an Order to Review");
+}
+int orderId = Integer.parseInt(PharmOrderTable.getValueAt(selectedIndx,0).toString());
+////String pharmacyName = PharmOrderTable.getValueAt(selectedIndx,3).toString();
+//String orderStatus = PharmOrderTable.getValueAt(selectedIndx,6).toString();
+int quantity = Integer.parseInt(PharmOrderTable.getValueAt(selectedIndx,4).toString());
+//Float price = Float.parseFloat(PharmOrderTable.getValueAt(selectedIndx,5).toString());
+
+//Float netPrice = quantity*price;
+
+
+//QUERY PART
+try
+{
+        System.out.println("STARTING QUERY.....");
+        ResultSet rs = PharmacyManager.fetchAllOrderItems(orderId);
+        
+        while(rs.next()){
+        //int drugId = rs.getInt("item_id");
+        String drugName = rs.getString("drug_name");
+        //int quantity = rs.getInt("quantity");
+        String costPrice = rs.getString("cost_price");
+
+        Object[] rowData = new Object[3];
+
+
+        rowData[0] = drugName;
+        rowData[1] = quantity;
+        rowData[2] = costPrice;
+
+        PharmOrderItemTable.addRow(rowData);
+        }
+
+}  
+catch(Exception e)
+{
+    System.out.println("INSIDE CATCH OF FETCH ALL ORDER ITEMS QUERY");
+    System.out.println(e);
+}
     }//GEN-LAST:event_pharmacyOrderTableMouseClicked
 
     private void pharmacyOrderTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pharmacyOrderTableKeyReleased
@@ -1912,11 +2519,75 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
     private void btnViewOrderPurchaseHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderPurchaseHistoryActionPerformed
         // TODO add your handling code here:
+UiDesignFunctions.AlignTableContents(pharmacyOrderTable);
+
+
+DefaultTableModel purchaseOrderItemTable= (DefaultTableModel)pharmacyOrderTable.getModel();
+
+
+purchaseOrderItemTable.setRowCount(0);
+
+//SELECT m.manufacturer_id, c.company_name AS manufacturer_name, d.drug_id, d.drug_name, m.quantity, m.selling_price
+//                FROM manufacturer_inventory m
+   try
+    {
+    ResultSet rs = PharmacyManager.fetchAllOrders(pharmacyId);
+    
+    while(rs.next())
+    {
+        int orderId = rs.getInt("order_id");
+        String orderDate = rs.getString("order_date");
+        int manufacturerId = rs.getInt("manufacturer_id");
+        String manufacturerName = rs.getString("manufacturer_name");
+        int totalQuant = rs.getInt("total_items");
+        String orderStatus = rs.getString("order_status");
+        String totalPrice =rs.getString("total_price");
+
+ 
+        
+        
+        Object[] rowData = new Object[7];
+
+        rowData[0] = orderId;
+        rowData[1] = orderDate;
+        rowData[2] = manufacturerId;
+        rowData[3] = manufacturerName;
+        rowData[4] = totalQuant;
+        rowData[5] = totalPrice;
+        rowData[6] = orderStatus;
+  
+        
+        
+
+            
+        purchaseOrderItemTable.addRow(rowData);
+ 
+
+        
+    }
+    } 
+    
+    catch(Exception e){
+        System.out.print(e);
+    }
     }//GEN-LAST:event_btnViewOrderPurchaseHistoryActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        UI_Manager.init();
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void jTablePharmacyStoreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTablePharmacyStoreKeyReleased
+        // TODO add your handling code here:
+String keyword = jTextFieldKeywordPharm1.getText();
+UI_DesignFunctions.searchEmployeeDetails(keyword, jTablePharmStore);
+    }//GEN-LAST:event_jTablePharmacyStoreKeyReleased
+
+    private void jTableViewPharmStockKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTableViewPharmStockKeyReleased
+        // TODO add your handling code here:
+String keyword = jTextFieldKey.getText();
+UI_DesignFunctions.searchEmployeeDetails(keyword, jTableViewPharmStock);
+    }//GEN-LAST:event_jTableViewPharmStockKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
