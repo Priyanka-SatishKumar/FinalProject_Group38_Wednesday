@@ -16,6 +16,7 @@ import ui.manufacturer.ManufacturerAdminJPanel;
 public class UI_Manager {
     private final static MainJFrame frame = new MainJFrame();
     private static LoginPageJPanel loginPageJPanel;
+     private static  ManufacturerAdminJPanel map;
     
     private static void removeAndAddPanel(JPanel panel) {
         frame.getContentPane().removeAll();
@@ -35,7 +36,7 @@ public class UI_Manager {
         {
         frame.setLayout(new FlowLayout());
         frame.setVisible(true);
-        manuAdministratorPanel = new ManufacturerAdminJPanel(username, manId);
-        removeAndAddPanel(manuAdministratorPanel);
+        map = new ManufacturerAdminJPanel(username, manId);
+        removeAndAddPanel(map);
     }
 }
