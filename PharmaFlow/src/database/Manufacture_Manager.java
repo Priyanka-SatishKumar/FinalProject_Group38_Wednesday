@@ -8,6 +8,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.pharmacy.PharmacyPurchaseOrder;
+import model.pharmacy.PharmacyPurchaseOrderItem;
 
 /**
  *
@@ -25,7 +27,7 @@ public class Manufacture_Manager {
             PreparedStatement preparedStmt = con.prepareStatement(queryToUpdateOrder);
             preparedStmt.execute();
             
-            PharmacyPurchaseOrder order = CommonFunctions.getOrderFromOrderId(orderId);
+            PharmacyPurchaseOrder order = Common_Functions.getOrderFromOrderId(orderId);
             Manufacture_Manager.updateStock(order);
             return !isUpdated;
         } catch (SQLException e) {
@@ -51,7 +53,7 @@ public class Manufacture_Manager {
                 SELECT company_id, company_name
                 FROM company
                 WHERE company_type=\"%s\"""";
-            queryToFetchDistributors = String.format(queryToFetchDistributors, CompanyTypes.DISTRIBUTOR);
+            queryToFetchDistributors = String.format(queryToFetchDistributors, "DISTRIBUTOR");
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(queryToFetchDistributors);
             return rs;
