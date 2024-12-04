@@ -5,6 +5,7 @@
 package ui.manufacturer;
 
 import database.Manufacture_Manager;
+import database.PharmacyManager;
 import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import ui.manager.UI_DesignFunctions;
@@ -914,7 +915,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         //QUERY TO VIEW STOCKS OF MANUFACTURE WITH MANUFACTURING_ID
         try
         {
-            ResultSet rs = ManufacturerManager.fetchStock(manufacturerId);
+            ResultSet rs = Manufacture_Manager.fetchStock(manufacturerId);
 
             while(rs.next())
             {
@@ -1066,8 +1067,8 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         ResultSet rs = Manufacture_Manager.fetchAllDrugs();
         while(rs.next())
         {
-            int drugId = rs.getInt("order_id");
-            String drugName = rs.getString("pharmacy_name");
+            int drugId = rs.getInt("drug_id");
+            String drugName = rs.getString("drug_name");
             Object[] rowData = new Object[2];
             rowData[0] = drugId;
             rowData[1] = drugName;
