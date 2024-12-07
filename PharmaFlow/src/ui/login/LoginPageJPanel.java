@@ -159,6 +159,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         //String loginRole = jComboBoxLoginRole.getSelectedItem().toString(); 
         String userType = (String) cmbEnterprises.getSelectedItem();
 
+        System.out.println(userType);
         try {
             ResultSet rs = Person_Manager.verifyUser(username, password,userType);
             if (rs.next()) {
