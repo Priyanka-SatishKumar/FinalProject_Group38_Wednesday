@@ -4,8 +4,7 @@
  */
 package database;
 
-import data.model.pharmacy.*;
-import static db.PharmacyManager.con;
+import model.pharmacy.*;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,17 +18,12 @@ import java.sql.Statement;
 public abstract class PharmacyManager {
     private final static String FILENAME = "PharmacyManager";
     public static java.sql.Connection con = Connection.getConnection();
-    /**
-     * @param order - Order data of Pharmacy
-     * @return true if operation succeeds
-     * @throws java.lang.Exception
-     */
+
     public static boolean createOrder(PharmacyPurchaseOrder order) throws Exception {
         boolean isCreated = true;
         int orderId = -1;
         try {
             try {
-                //Query to insert Order
                 order.setOrderStatus("placed");
                 String queryToInsertOrder = "INSERT INTO pharmacy_order(order_date, manufacturer_id, pharmacy_id, order_status)"
                                 + "values (?, ?, ?, ?)";
@@ -44,7 +38,6 @@ public abstract class PharmacyManager {
             }
             
             try {
-                //Query to get Order ID
                 String queryToGetOrderId = String.format("SELECT order_id FROM pharmacy_order WHERE order_id=LAST_INSERT_ID()");
                 Statement stmt = con.createStatement();
                 ResultSet rs = stmt.executeQuery(queryToGetOrderId);
@@ -79,11 +72,6 @@ public abstract class PharmacyManager {
         }
     }
     
-    /**
-     * @param pharmacyCompanyId - ID of Pharmacy
-     * @return ResultSet if operation succeeds
-     * @throws java.lang.Exception
-     */
     public static ResultSet fetchAllOrders(int pharmacyCompanyId) throws Exception {
         try {
             //Build Query
@@ -104,11 +92,6 @@ public abstract class PharmacyManager {
         } 
     }
     
-        /**
-     * @param orderId - Order ID
-     * @return ResultSet if operation succeeds
-     * @throws java.lang.Exception
-     */
     public static ResultSet fetchAllOrderItems(int orderId) throws Exception {
         try {
             //Build Query
@@ -127,11 +110,7 @@ public abstract class PharmacyManager {
             throw new Exception(FILENAME + "->" + "fetchAllOrderItems" + "->" + e);
         } 
     }
-    
-    /**
-     * @return ResultSet if operation succeeds
-     * @throws java.lang.Exception
-     */
+
     public static ResultSet displayManufacturerInventory() throws Exception {
         try {
             String query = """
@@ -163,12 +142,7 @@ public abstract class PharmacyManager {
             throw new Exception(FILENAME + "->" + "fetchPharmacyInventory" + "->" + e);
         } 
     }
-   
-    /**
-     * @param order - Order object
-     * @return true if operation succeeds
-     * @throws java.lang.Exception
-     */
+
     public static boolean updateStockAndQuantity(PharmacyPurchaseOrder order) throws Exception {
         boolean isUpdated = false;
         try {
@@ -208,11 +182,6 @@ public abstract class PharmacyManager {
         }
     }
     
-    /**
-     * @param pharmacy_id - Pharmacy ID
-     * @return ResultSet if operation succeeds
-     * @throws java.lang.Exception
-     */
     public static ResultSet fetchAllStores(int pharmacy_id) throws Exception {
         try {
             String queryToFetchStores = """
@@ -228,12 +197,7 @@ public abstract class PharmacyManager {
         }
     }
 
-    
-    /**
-     * @param store_id - Store ID
-     * @return INT - Number of Stores deleted
-     * @throws java.lang.Exception
-     */
+
     public static int deleteStore(int store_id) throws Exception {
         try {
             String queryToDeleteStore = "DELETE FROM pharmacy_store WHERE store_id=1";
@@ -244,12 +208,7 @@ public abstract class PharmacyManager {
             throw new Exception(FILENAME + "->" + "deleteStore" + "->" + e);
         }
     }
-    
-    /**
-     * @param store - Store class
-     * @return INT - Number of Stores deleted
-     * @throws java.lang.Exception
-     */
+
     public static boolean addStore(PharmacyStore store) throws Exception {
         try {
             String queryToAddStore = "INSERT INTO pharmacy_store(pharmacy_id, store_name, store_address, store_zip, store_city)"
@@ -267,11 +226,6 @@ public abstract class PharmacyManager {
         }
     }
     
-    /**
-     * @param store - Store class
-     * @return INT - Number of Stores deleted
-     * @throws java.lang.Exception
-     */
     public static ResultSet fetchAllStoreManagers(int pharmacyId) throws Exception {
         try {
             String queryToFetchStoreManagers = """

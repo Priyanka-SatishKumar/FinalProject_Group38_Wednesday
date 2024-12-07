@@ -4,9 +4,10 @@
  */
 package ui.transporter;
 
+import database.TransportManager;
 import javax.swing.table.DefaultTableModel;
 import ui.manager.UI_DesignFunctions;
-
+import java.sql.*;
 /**
  *
  * @author priyankasatish
