@@ -49,6 +49,7 @@ public class Person_Manager {
             queryToVerifyUser = String.format(queryToVerifyUser, username, role);
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(queryToVerifyUser);
+            System.out.println("in verif user at Person_Manager Class");
             return rs;
         } catch (SQLException e) {
             throw e;
