@@ -4,7 +4,11 @@
  */
 package ui.login;
 
+import database.Person_Manager;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 import model.Enterprise;
+import ui.manager.UI_Manager;
 
 /**
  *
@@ -150,7 +154,35 @@ public class LoginPageJPanel extends javax.swing.JPanel {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        
+        String username = txtUsername.getText();
+        char[] password = txtPswd.getPassword();
+        //String loginRole = jComboBoxLoginRole.getSelectedItem().toString(); 
+        String userType = (String) cmbEnterprises.getSelectedItem();
+
+        try {
+            ResultSet rs = Person_Manager.verifyUser(username, password,userType);
+            if (rs.next()) {
+                String verifiedUsername = rs.getString("username");
+                int verifiedCompanyId = rs.getInt("company_id");
+                String loginRole = rs.getString("person_role");
+
+                switch(loginRole) {
+                    case "MANUFACTURE_ADMIN":
+                        UI_Manager.AddManuAdminPanel(verifiedUsername, verifiedCompanyId); 
+                      break;
+                    case "PHARMACY_ADMIN":
+                        UI_Manager.AddpharmacyAdminPanel(verifiedUsername, verifiedCompanyId);    
+                      break;
+                    case "DISTRIBUTOR_ADMIN":
+                        UI_Manager.AddDistributorManagerPanel(verifiedUsername, verifiedCompanyId);    
+                      break;
+                    default:
+                      // code block
+                }
+            } 
+                } catch(Exception e) {
+                 JOptionPane.showMessageDialog(this, e);
+                }
 
     }//GEN-LAST:event_btnLoginActionPerformed
 
@@ -194,6 +226,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         cmbEnterprises.addItem("Manufacturer Enterprise");
         cmbEnterprises.addItem("Transportation Enterprise");
         cmbEnterprises.addItem("Distributor Enterprise");
+        cmbEnterprises.addItem("MANUFACTURE_ADMIN");
      
     }
     
