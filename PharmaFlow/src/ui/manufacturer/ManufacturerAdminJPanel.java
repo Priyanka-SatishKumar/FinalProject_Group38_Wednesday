@@ -168,11 +168,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(25, 25, 25)
                 .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
+                .addGap(87, 87, 87)
                 .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85)
+                .addGap(105, 105, 105)
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
@@ -181,21 +181,17 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(topPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(topPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(82, Short.MAX_VALUE))
+                    .addGroup(topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblWelcome))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1000, 160));
+        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1000, 50));
 
         bottomTabbedPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         bottomTabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -203,6 +199,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         manageOrdersJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search By Employee Details", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cascadia Mono", 1, 12))); // NOI18N
+        jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtSearchEmployeeKeywordd.setText("Enter Employee Details");
         txtSearchEmployeeKeywordd.addActionListener(new java.awt.event.ActionListener() {
@@ -215,24 +212,9 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 txtSearchEmployeeKeyworddKeyReleased(evt);
             }
         });
+        jPanel34.add(txtSearchEmployeeKeywordd, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 17, 453, 39));
 
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel34Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(txtSearchEmployeeKeywordd, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(688, Short.MAX_VALUE))
-        );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel34Layout.createSequentialGroup()
-                .addComponent(txtSearchEmployeeKeywordd, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
-        );
-
-        manageOrdersJPanel.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, -1, -1));
+        manageOrdersJPanel.add(jPanel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 6, 960, 70));
 
         btnViewOrders.setText("View Orders");
         btnViewOrders.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +222,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 btnViewOrdersActionPerformed(evt);
             }
         });
-        manageOrdersJPanel.add(btnViewOrders, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 180, -1));
+        manageOrdersJPanel.add(btnViewOrders, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 180, -1));
 
         tblManufacOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -869,7 +851,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         bottomTabbedPane.addTab("Manage Inventory", manageInventoryJPanel);
 
-        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 980, 530));
+        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 980, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -879,7 +861,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1354,7 +1336,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         
         printArea.setText(" ************************************************************\n");
 
-        printArea.setText(printArea.getText()+"\n *********** DISTRIBUTOR ASSIGNMENT RECEIPT *********** \n");
+        printArea.setText(printArea.getText()+"\n ******* DISTRIBUTOR ASSIGNMENT RECEIPT *********** \n");
         printArea.setText(printArea.getText()+"\n *************************************************************** \n\n\n");
         printArea.setText(printArea.getText()+"\n *************************************************************** \n\n");
         printArea.setText(printArea.getText()+" Order Number : " + "      "+lblOrderID.getText()+"\n\n");

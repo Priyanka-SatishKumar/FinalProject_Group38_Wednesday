@@ -4,6 +4,9 @@
  */
 package ui.manager;
 
+import java.awt.FlowLayout;
+import ui.login.LoginPageJPanel;
+
 /**
  *
  * @author KAILASH
@@ -17,6 +20,30 @@ public class MainJFrame extends javax.swing.JFrame {
         initComponents();
     }
 
+    
+    public void showPharmacyAdminPanel() {
+//        getContentPane.removeAll();
+//        add(new PharmacyAdministratorPanel());
+        setLayout(new FlowLayout());
+        repaint();
+        revalidate();
+    }
+    
+        public void showProductManagerPanel() {
+//        getContentPane.removeAll();
+//        add(new ManufacturerAdministratorPanel());
+        setLayout(new FlowLayout());
+        repaint();
+        revalidate();
+    }
+        
+        public void showLoginPanel() {
+//        getContentPane.removeAll();
+        add(new LoginPageJPanel());
+        setLayout(new FlowLayout());
+        repaint();
+        revalidate();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
