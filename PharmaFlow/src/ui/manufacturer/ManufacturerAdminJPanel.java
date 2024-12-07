@@ -311,6 +311,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         manageOrdersJPanel.add(btnApproveOrdReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, -1, 30));
 
         btnDeclineOrdReq.setText("Decline Order Request");
+        btnDeclineOrdReq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeclineOrdReqActionPerformed(evt);
+            }
+        });
         manageOrdersJPanel.add(btnDeclineOrdReq, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, 30));
 
         btnAssignDistributorToOrder.setText("Assign Distributor to Order");
@@ -686,6 +691,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 160, 20));
 
         btnViewStockList.setText("View List");
+        btnViewStockList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewStockListActionPerformed(evt);
+            }
+        });
         jPanel4.add(btnViewStockList, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, -1, -1));
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("ADD STOCK"));
@@ -894,7 +904,6 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         DefaultTableModel manuDrugTable= (DefaultTableModel)manufacturerDrugTable1.getModel();
         manuDrugTable.setRowCount(0);
 
-        //QUERY TO VIEW STOCKS OF MANUFACTURE WITH MANUFACTURING_ID
         try
         {
             ResultSet rs = Manufacture_Manager.fetchStock(manufacturerId);
@@ -1005,7 +1014,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         } else {
             // If the character is not a letter, try to parse it as a double
             try {
-                Double.parseDouble(jTextFieldSp.getText() + evt.getKeyChar());
+                Double.valueOf(jTextFieldSp.getText() + evt.getKeyChar());
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(null, "Please enter Valid Selling Price", "Error", JOptionPane.ERROR_MESSAGE);
                 evt.consume();
@@ -1016,27 +1025,100 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
     private void btnAddStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddStockActionPerformed
 
+        String drugId = jLabelManDrugId.getText();
+        String drugName = jLabelManDrugName.getText();
+        String quantity = jTextFieldQuantity.getText();
+        String cp = jTextFieldCp.getText();
+        String sp = jTextFieldSp.getText();
+        
         if (jTextFieldQuantity.getText().isEmpty() || jTextFieldCp.getText().isEmpty() || jTextFieldSp.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Enter all the Details", "Error", JOptionPane.ERROR_MESSAGE);
 
         }else{
+//        
+            try
+            {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy_mgmt?zeroDateTimeBehavior=CONVERT_TO_NULL","root","password");
 
+
+
+                String sql = "INSERT INTO pharmacy_inventory(pharmacy_id, drug_id, quantity, cost_price, selling_price)" +
+                         "VALUES (?, ?, ?, ?, ?)";
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                
+                pstmt.setString(1, drugId);        
+                pstmt.setString(2, drugId);
+                pstmt.setString(3, quantity);
+                pstmt.setString(4, cp);
+                pstmt.setString(5, sp);
+                int rowsInserted = pstmt.executeUpdate();
+            }
+            catch(Exception e)
+            {
+                System.out.print(e.getMessage());
+            } 
         }
 
     }//GEN-LAST:event_btnAddStockActionPerformed
 
     private void btnUpdateStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateStockActionPerformed
-        //VALIDATIONS PENDING
-        int drugId = Integer.valueOf(jLabelManDrugId.getText());
+
+        String drugId = jLabelManDrugId.getText();
         String drugName = jLabelManDrugName.getText();
-        int quantity = Integer.parseInt(jTextFieldQuantity.getText());
-        float cp = Float.valueOf(jTextFieldCp.getText());
-        float sp = Float.valueOf(jTextFieldSp.getText());
+        String quantity = jTextFieldQuantity.getText();
+        String cp = jTextFieldCp.getText();
+        String sp = jTextFieldSp.getText();
+        
+        
+        try
+            {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy_mgmt?zeroDateTimeBehavior=CONVERT_TO_NULL","root","password");
+
+
+
+                String sql = "UPDATE pharmacy_inventory set quantity=%s and cost_price=%s and selling_price=%s where drug_id=%s";
+                
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                
+                pstmt.setString(1, quantity);        
+                pstmt.setString(2, cp);
+                pstmt.setString(3, sp);
+                pstmt.setString(4, drugId);
+//                pstmt.setString(5, );
+                int rowsInserted = pstmt.executeUpdate();
+            }
+            catch(Exception e)
+            {
+                System.out.print(e.getMessage());
+            } 
         // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateStockActionPerformed
 
     private void btnDeleteStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteStockActionPerformed
         // TODO add your handling code here:
+        String drug_Id = jLabelManDrugId.getText();
+        
+        try{
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy_mgmt?zeroDateTimeBehavior=CONVERT_TO_NULL","root","password");
+
+
+
+                String sql = "DELETE from pharmacy_inventory where drug_id=%s";
+                
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                
+                pstmt.setString(1, drug_Id);        
+
+//                pstmt.setString(5, );
+                int rowsInserted = pstmt.executeUpdate();
+            }
+            catch(Exception e)
+            {
+                System.out.print(e.getMessage());
+            } 
     }//GEN-LAST:event_btnDeleteStockActionPerformed
 
     private void btnViewDrugListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewDrugListActionPerformed
@@ -1066,8 +1148,8 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     try{
     
-        UI_DesignFunctions.AlignTableContents(tblManufacOrderItems);
-        DefaultTableModel manuOrderTable= (DefaultTableModel)tblManufacOrderItems.getModel();
+        UI_DesignFunctions.AlignTableContents(tblManufacOrders);
+        DefaultTableModel manuOrderTable= (DefaultTableModel)tblManufacOrders.getModel();
         manuOrderTable.setRowCount(0);
 
         ResultSet rs = Manufacture_Manager.fetchAllOrders(manufacturerId);
@@ -1116,8 +1198,8 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(this,"Please Select an Order to Review");
         }
         int orderId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
-        String pharmacyName = ManufactOrderTable.getValueAt(selectedIndx,2).toString();
-        String orderStatus = ManufactOrderTable.getValueAt(selectedIndx,4).toString();
+        String pharmacyName = ManufactOrderTable.getValueAt(selectedIndx,3).toString();
+        String orderStatus = ManufactOrderTable.getValueAt(selectedIndx,5).toString();
 
         lblOrderId.setText(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
         lblCustomer.setText(pharmacyName);
@@ -1125,7 +1207,6 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         try
         {
-                System.out.println("STARTING QUERY.....");
                 ResultSet rs = Manufacture_Manager.fetchAllOrderItems(orderId);
 
                 while(rs.next()){
@@ -1163,14 +1244,14 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
             lblStatus.setText("Approved");
             String status = lblStatus.getText();
             try{
-                Manufacture_Manager.updateOrder(orderId,status);System.out.println("\nOrder Approved");
+                Manufacture_Manager.updateOrder(orderId,status);System.out.println("\nin manuadminJpanel");
                 lblStatus.setText("");
                 lblStatus.setForeground(globalColor);
 
                 DefaultTableModel tblManufacOrder= (DefaultTableModel) tblManufacOrders.getModel();
                 int selectedIndx = tblManufacOrders.getSelectedRow();
                 
-                tblManufacOrder.setValueAt("Approve", selectedIndx, 4);
+                tblManufacOrder.setValueAt("Approve", selectedIndx, 5);
                 tblManufacOrder.removeRow(selectedIndx);
                 
                 DefaultTableModel tblManufactOrderItm  = (DefaultTableModel) tblManufacOrderItems.getModel();
@@ -1204,16 +1285,16 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
     private void btnAssignDistributorToOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDistributorToOrderActionPerformed
         // TODO add your handling code here:
-        jTabbedPane1.setSelectedIndex(1);
+        bottomTabbedPane.setSelectedIndex(1);
     }//GEN-LAST:event_btnAssignDistributorToOrderActionPerformed
 
     private void manufacOrderTableDupMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manufacOrderTableDupMouseClicked
         // TODO add your handling code here:
         try{
-            UI_DesignFunctions.AlignTableContents(tblManufacOrderItems);
+            UI_DesignFunctions.AlignTableContents(jTable2);
             int takenIndex = manufacOrderTableDup.getSelectedRow();
             DefaultTableModel MOT= (DefaultTableModel)manufacOrderTableDup.getModel();
-            DefaultTableModel MOIT  = (DefaultTableModel)tblManufacOrderItems.getModel();
+            DefaultTableModel MOIT  = (DefaultTableModel)jTable2.getModel();
 
             MOIT.setRowCount(0);
 
@@ -1382,6 +1463,74 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnDeclineOrdReqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeclineOrdReqActionPerformed
+        // TODO add your handling code here:
+        int response = JOptionPane.showConfirmDialog(null, "Decline the order request?", "Decline the order request?", JOptionPane.YES_NO_OPTION);
+        if(response == 0)
+        {
+            // setting button colour to red to show order is approved
+            Color globalColor = new Color(255,0,0);
+            int orderId = Integer.parseInt(lblOrderId.getText());
+            lblStatus.setText("Declined");
+            String status = lblStatus.getText();
+            try{
+                Manufacture_Manager.updateOrder(orderId,status);System.out.println("\n in manuadminJpanel");
+                lblStatus.setText("");
+                lblStatus.setForeground(globalColor);
+
+                DefaultTableModel tblManufacOrder= (DefaultTableModel) tblManufacOrders.getModel();
+                int selectedIndx = tblManufacOrders.getSelectedRow();
+                
+                tblManufacOrder.setValueAt("Declined", selectedIndx, 5);
+                tblManufacOrder.removeRow(selectedIndx);
+                
+                DefaultTableModel tblManufactOrderItm  = (DefaultTableModel) tblManufacOrderItems.getModel();
+                tblManufactOrderItm.setRowCount(0);
+                btnAssignDistributorToOrder.setVisible(false);
+            } 
+            catch(Exception e)
+            {
+                System.out.println(e);
+            }
+        }
+    }//GEN-LAST:event_btnDeclineOrdReqActionPerformed
+
+    private void btnViewStockListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStockListActionPerformed
+        // TODO add your handling code here:
+        UI_DesignFunctions.AlignTableContents(tblmanufacturerDrugTbl2);
+        DefaultTableModel manuDrugTable= (DefaultTableModel)tblmanufacturerDrugTbl2.getModel();
+        manuDrugTable.setRowCount(0);
+
+        try
+         {
+         ResultSet rs = Manufacture_Manager.fetchAllPharmacyDrugs();
+
+         while(rs.next())
+         {
+             int drugId = rs.getInt("order_id");
+             String drugName = rs.getString("pharmacy_name");
+             int quantity = rs.getInt("quantity");
+             Float cost_price = Float.parseFloat(rs.getString("cost_price"));
+             Float selling_price = Float.parseFloat(rs.getString("selling_price"));
+
+
+             Object[] rowData = new Object[4];
+
+             rowData[0] = drugId;
+             rowData[1] = drugName;
+             rowData[2] = quantity;
+             rowData[3] = cost_price;
+             rowData[4] = selling_price;
+
+             manuDrugTable.addRow(rowData);
+         }
+         } 
+
+         catch(Exception e){
+             System.out.print(e);
+         }
+    }//GEN-LAST:event_btnViewStockListActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
