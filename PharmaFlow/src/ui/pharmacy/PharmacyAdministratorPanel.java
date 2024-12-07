@@ -4,6 +4,7 @@
  */
 package ui.pharmacy;
 
+import database.Person_Manager;
 import database.PharmacyManager;
 import java.awt.Color;
 import java.sql.ResultSet;
@@ -2101,7 +2102,7 @@ storeTable.setRowCount(0);
 
     try
 {   
-    PersonManager.createUser(person, pharmacyId);
+    Person_Manager.createUser(person, pharmacyId);
     
     
     JOptionPane.showMessageDialog(this,"Store Manager Added Successfully");
