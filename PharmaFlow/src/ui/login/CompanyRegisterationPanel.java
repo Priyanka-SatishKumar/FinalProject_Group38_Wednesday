@@ -136,9 +136,11 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(137, 87, 55));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(243, 233, 220));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Register Company Details");
-        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 230, 89));
+        jLabel1.setText("REGISTER COMPANY DETAILS");
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 290, 89));
 
         btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-register-30.png"))); // NOI18N
         btnRegister.setBorderPainted(false);
@@ -158,7 +160,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel5.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 40, 30, 40));
+        jPanel5.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 30, 40, 50));
 
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -177,15 +179,19 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 btnFakeActionPerformed(evt);
             }
         });
-        jPanel5.add(btnFake, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
+        jPanel5.add(btnFake, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
 
-        jLabel20.setFont(new java.awt.Font("Cascadia Mono", 1, 14)); // NOI18N
+        jLabel20.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(243, 233, 220));
         jLabel20.setText("Register New User");
-        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, -1, -1));
+        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 50, -1, -1));
 
+        jLabel21.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(243, 233, 220));
         jLabel21.setText("Back to Login Page:");
-        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 40, -1, -1));
+        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 50, -1, -1));
 
+        jLabel22.setForeground(new java.awt.Color(243, 233, 220));
         jLabel22.setText("Click Here to Populate Fake Data:");
         jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
@@ -328,6 +334,8 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         );
 
         jPanel6.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+
+        jPanel7.setBackground(new java.awt.Color(137, 87, 55));
         jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(712, 297, -1, -1));
 
         jLabel6.setText("ADMINISTRATOR NAME");
@@ -571,13 +579,15 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
         jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(243, 233, 220));
         jLabel3.setText("COMPANY DETAILS");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
+        jLabel15.setForeground(new java.awt.Color(243, 233, 220));
         jLabel15.setText("COMPANY ADMINISTOR DETAILS");
         jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
 
-        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1370, 720));
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1430, 770));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
