@@ -94,7 +94,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("New Registration:");
         jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, -1, -1));
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 180, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 190, -1));
 
         lblpwd.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
         lblpwd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -112,7 +112,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         lblUsername.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
         lblUsername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsername.setText("Username");
-        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, -1, -1));
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 360, 80, -1));
 
         btnForgotPswd.setBackground(new java.awt.Color(179, 179, 179));
         btnForgotPswd.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
@@ -179,10 +179,9 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String username = txtUsername.getText();
         char[] password = txtPswd.getPassword();
-        //String loginRole = jComboBoxLoginRole.getSelectedItem().toString(); 
         String userType = (String) cmbEnterprises.getSelectedItem();
 
-        System.out.println(userType);
+//        System.out.println(userType);
         try {
             ResultSet rs = Person_Manager.verifyUser(username, password,userType);
             if (rs.next()) {
@@ -275,10 +274,12 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         btnLogin.setVisible(true);
         btnForgotPswd.setVisible(true);
         lblLogin1.setVisible(true);
+        jButton2.setVisible(true);
     }
     
     public void updateVisibilityOFF()
     {
+        jButton2.setVisible(false);
         lblDisplayEnterprise.setVisible(false);
         lblWelcome.setVisible(false);
         txtUsername.setVisible(false);

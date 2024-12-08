@@ -15,7 +15,8 @@ import javax.swing.JTextField;
 public class Validation {
     public static boolean isValidString(String s) {
         Boolean isValid = true;
-        if (s.isEmpty() || s.isBlank()) isValid = false;
+        if (s.isEmpty() || s.isBlank()) 
+            isValid = false;
         return isValid;
     }
     
@@ -40,16 +41,14 @@ public class Validation {
     
     public static void isValidContact(String contact, JTextField field)
     {
-                if(contact.matches("[0-9]*$") && contact.length() == 10){
+        if(contact.matches("[0-9]*$") && contact.length() == 10){
             field.setBackground(new Color(154, 228, 158));
         
     }
-                 else{
-            field.setBackground(new Color(246, 159, 132));         
+        else{
+            field.setBackground(new Color(245, 158, 133));  // setting colour ot red       
         }
-  
-         
-        }
+    }
 
     
     public static void checkValidEmail(String email, JTextField field)
@@ -65,17 +64,15 @@ public class Validation {
            
         }
     }
-       
-    
     
     public static boolean IsValidateUsername(String username){
-      //int i = 1;
       if(username.equals("")||username.length()<=3){
           return false;
       }
       
       return true;
-  }
+    }
+    
     public static boolean IsValidPassword(String password) {
 
         if (password.length() < 8) return false;
@@ -90,8 +87,6 @@ public class Validation {
             else if (is_Letter(ch)) charCount++;
             else return false;
         }
-
-
         return (charCount >= 2 && numCount >= 2);
     }
 
@@ -102,12 +97,9 @@ public class Validation {
 
 
     public static boolean is_Numeric(char ch) {
-
         return (ch >= '0' && ch <= '9');
     }
 
-    
-   
 }
 
 
