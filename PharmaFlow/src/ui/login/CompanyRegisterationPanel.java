@@ -4,6 +4,7 @@
  */
 package ui.login;
 
+import com.github.javafaker.Faker;
 import database.Company_Manager;
 import database.Person_Manager;
 import java.time.LocalDate;
@@ -26,12 +27,13 @@ import ui.manager.UI_Manager;
 public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
     public void setDefaultVlaues() {
+        Faker f = new Faker();
         jTextField1.setText("PHARMEASY MANUFACT");
-        jTextFieldComContact.setText("1234567891");
-        jTextFieldComEmail.setText("s@gmail.com");
-        jTextField4.setText("s@gmail.com");
-        jTextField5.setText("02215");
-        jTextField6.setText("s@gmail.com");
+        jTextFieldComContact.setText(f.phoneNumber().phoneNumber());
+        jTextFieldComEmail.setText(f.name().lastName()+"@gmail.com");
+        jTextField4.setText(f.address().fullAddress());
+        jTextField5.setText(f.address().zipCode());
+        jTextField6.setText(f.address().cityName());
         jTextFieldName.setText("kudli");
         jTextFieldContact.setText("0123456789");
         jTextFieldEmail.setText("s@gmail.com");
@@ -581,7 +583,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
- //Company Details
+    //Company Details
 
     String companyName =  jTextField1.getText();
     if(Validation.isValidString(userType)==false)
@@ -589,7 +591,6 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         System.out.println("Enter Valid Comp Name");
     }
     String companyType = jComboBox1.getSelectedItem().toString();
-    System.out.println("****"+companyType+"*****");
     String number = jTextFieldComContact.getText();
     String comEmail =  jTextFieldComEmail.getText();
     String comaddress = jTextFieldComEmail.getText();
@@ -605,7 +606,6 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
     //Company Admin Details
     String name = jTextFieldName.getText();
-    //DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");  
     int year = Integer.parseInt(jComboBoxYear.getSelectedItem().toString());
     int month = Integer.parseInt(jComboBoxMonth.getSelectedItem().toString());
     int day = Integer.parseInt(jComboBoxDay.getSelectedItem().toString());
@@ -615,7 +615,6 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
     String email = jTextFieldEmail.getText();
     String addr = jTextFieldAddress.getText();
     String zip = jTextFieldZip.getText();
-    System.out.println("ZIP -->"+ zip.length());
     String city = jTextFieldCity.getText();
     String gender = jComboBoxGender.getSelectedItem().toString();
     String username = jTextFieldUsername.getText();
@@ -634,28 +633,27 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
     contact.setLocation(loc);
     person.setLocation(loc);
     System.out.println(zip);
-try
-{   Company_Manager.createCompany(company);
-    int n = Company_Manager.getCompanyId();
-    System.out.println("n--->"+n);
-    Person_Manager.createUser(person,n);
-    
-    
-    JOptionPane.showMessageDialog(this,"Company and Administrator Registered Successfully");
-    jButton3.setVisible(true);
+    try
+    {   Company_Manager.createCompany(company);
+        int n = Company_Manager.getCompanyId();
+        System.out.println("n--->"+n);
+        Person_Manager.createUser(person,n);
 
-}
-catch(Exception e)
-    {
-        System.out.println(e);
-        JOptionPane.showMessageDialog(this,"ENTER VALID COMPANY DETAILS");
+
+        JOptionPane.showMessageDialog(this,"Company and Administrator Registered Successfully");
+        jButton3.setVisible(true);
+
     }
+    catch(Exception e)
+        {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(this,"ENTER VALID COMPANY DETAILS");
+        }
         
-        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-System.exit(0);
+    System.exit(0);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
