@@ -223,7 +223,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                         UI_Manager.AddAccountingManager(loginRole);
                     break;
                     case "SALES_MANAGER":
-                        UI_Manager.AddAccountingManager(loginRole);
+                        UI_Manager.AddSalesManager(loginRole);
                     break;
                 }
             } 

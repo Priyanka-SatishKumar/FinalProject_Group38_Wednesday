@@ -124,7 +124,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
 
         lblDistributorAdmin1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblDistributorAdmin1.setForeground(new java.awt.Color(243, 233, 220));
-        lblDistributorAdmin1.setText("DISTRIBUTOR ADMIN");
+        lblDistributorAdmin1.setText("DISTRIBUTOR MANAGER");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
@@ -134,8 +134,8 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(9, 9, 9)
-                .addComponent(lblDistributorAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDistributorAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(61, 61, 61)
                 .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -447,7 +447,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addComponent(btnTrackShipment)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Stock Overview", StockOverviewPane);
@@ -675,7 +675,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addComponent(btnViewStock)
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Manage Stocks", ManageStocksPane);
