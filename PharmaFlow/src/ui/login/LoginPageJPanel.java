@@ -200,9 +200,6 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 int verifiedCompanyId = rs.getInt("company_id");
                 String loginRole = rs.getString("person_role");
 
-//                System.out.println(""+verifiedUsername);
-//                System.out.println(""+verifiedCompanyId);
-//                System.out.println(""+verifiedUsername);
                 switch(loginRole) {
                     case "MANUFACTURE_ADMIN":
                         UI_Manager.AddManuAdminPanel(verifiedUsername, verifiedCompanyId); 
@@ -211,6 +208,9 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                         UI_Manager.AddpharmacyAdminPanel(verifiedUsername, verifiedCompanyId);    
                       break;
                     case "DISTRIBUTOR_ADMIN":
+                        UI_Manager.AddDistributorAdminPanel(verifiedUsername, verifiedCompanyId);    
+                      break;
+                    case "DISTRIBUTOR_MANAGER":
                         UI_Manager.AddDistributorManagerPanel(verifiedUsername, verifiedCompanyId);    
                       break;
                     case "TRANSPORT_ADMIN":
@@ -282,6 +282,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
 //        cmbEnterprises.addItem("Distributor Enterprise");
         cmbEnterprises.addItem("MANUFACTURE_ADMIN");
         cmbEnterprises.addItem("DISTRIBUTOR_ADMIN");
+        cmbEnterprises.addItem("DISTRIBUTOR_MANAGER");
         cmbEnterprises.addItem("PHARMACY_ADMIN");
         cmbEnterprises.addItem("PHARMACY_STORE_MANAGER");
         cmbEnterprises.addItem("TRANSPORT_ADMIN");
