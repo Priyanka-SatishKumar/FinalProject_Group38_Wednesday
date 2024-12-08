@@ -11,8 +11,10 @@ import ui.login.CompanyRegisterationPanel;
 import ui.login.LoginPageJPanel;
 import ui.manufacturer.ManufacturerAdminJPanel;
 import ui.pharmacy.PharmacyAdministratorPanel;
+import ui.pharmacy.PharmacyStoreManagerPanel;
 import ui.transporter.TransportAdminPanel;
-
+import ui.account.AccountingmanagerJPanel;
+import ui.sales.SalesManagerJPanel;
 /**
  *
  * @author KAILASH
@@ -20,11 +22,14 @@ import ui.transporter.TransportAdminPanel;
 public class UI_Manager {
     private final static MainJFrame frame = new MainJFrame();
     private static LoginPageJPanel loginPageJPanel;
-    private static  ManufacturerAdminJPanel map;
+    private static ManufacturerAdminJPanel map;
+    private static AccountingmanagerJPanel am;
     private static PharmacyAdministratorPanel pam;
     private static DistributorManagerJPanel dmp;
     private static CompanyRegisterationPanel crp;
     private static TransportAdminPanel tap;
+    private static PharmacyStoreManagerPanel psm;
+    private static SalesManagerJPanel sm;
     
     private static void removeAndAddPanel(JPanel panel) {
         frame.getContentPane().removeAll();
@@ -62,6 +67,13 @@ public class UI_Manager {
         removeAndAddPanel(pam);
     }
     
+    public static void AddPharmacyStoreManager(String username){
+        frame.setLayout(new FlowLayout());
+        frame.setVisible(true);
+        psm = new PharmacyStoreManagerPanel(username);
+        removeAndAddPanel(psm);  
+      }
+    
     public static void AddDistributorManagerPanel(String username, int distributorId){
       frame.setLayout(new FlowLayout());
       frame.setVisible(true);
@@ -69,10 +81,26 @@ public class UI_Manager {
       removeAndAddPanel(dmp);  
     }
     
+    public static void AddAccountingManager(String username){
+        frame.setLayout(new FlowLayout());
+        frame.setVisible(true);
+        am = new AccountingmanagerJPanel(username);
+        removeAndAddPanel(am);  
+      }
+    
+    public static void AddSalesManager(String username){
+        frame.setLayout(new FlowLayout());
+        frame.setVisible(true);
+        sm = new SalesManagerJPanel(username);
+        removeAndAddPanel(sm);  
+      }
+    
+    
     public static void AddCompanyRegPanel(String companyType){
         frame.setLayout(new FlowLayout());
         frame.setVisible(true);
         crp = new CompanyRegisterationPanel(companyType);
         removeAndAddPanel(crp);  
       }
+    
 }
