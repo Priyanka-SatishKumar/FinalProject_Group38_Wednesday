@@ -4,9 +4,9 @@
  */
 package model.Person;
 
-import java.util.Date;
-import javax.tools.DocumentationTool.Location;
 import model.common.Contact;
+import model.common.Date;
+import model.common.Location;
 
 /**
  *

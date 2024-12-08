@@ -15,7 +15,7 @@ import ui.manager.UI_Manager;
  *
  * @author deepthiramesh
  */
-public class DistributorManagerJPanel extends javax.swing.JPanel {
+public class DistributorAdminJPanel extends javax.swing.JPanel {
     int distributorId;
     String username;
     int transporterId;
@@ -24,7 +24,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DistributorManagerJPanel
      */
-    public DistributorManagerJPanel(String username, int distributorId) {
+    public DistributorAdminJPanel(String username, int distributorId) {
         initComponents();
         this.distributorId = distributorId;
         this.username = username;
@@ -78,6 +78,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         tblTrackShipment = new javax.swing.JTable();
         btnBackk = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
         ManageStocksPane = new javax.swing.JPanel();
         txtManageSearch = new javax.swing.JTextField();
         btnMedicationOverview = new javax.swing.JButton();
@@ -655,7 +656,9 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(ManageStocksPaneLayout.createSequentialGroup()
                         .addGroup(ManageStocksPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtManageSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ManageStocksPaneLayout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addComponent(txtManageSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(86, 210, Short.MAX_VALUE))))
         );
@@ -678,7 +681,9 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Manage Stocks", ManageStocksPane);
+        jScrollPane7.setViewportView(ManageStocksPane);
+
+        jTabbedPane2.addTab("Manage Stocks", jScrollPane7);
 
         javax.swing.GroupLayout ShipmentOverviewPanelLayout = new javax.swing.GroupLayout(ShipmentOverviewPanel);
         ShipmentOverviewPanel.setLayout(ShipmentOverviewPanelLayout);
@@ -1068,6 +1073,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblDistributorAdmin;

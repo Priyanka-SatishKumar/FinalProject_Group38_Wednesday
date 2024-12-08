@@ -10,7 +10,7 @@ package constant_package;
  */
 public abstract class Database_Details {
     private static final String JDBC_URL = "jdbc:mysql://localhost/";
-    private static final String DATABASE = "AED_Final_Proj";
+    private static final String DATABASE = "pharmacy_mgmt?zeroDateTimeBehavior=CONVERT_TO_NULL";
     private static final String USER = "root";
     private static final String PASSWORD = "password"; 
 //    jdbc:mysql://localhost:3306/sys?zeroDateTimeBehavior=CONVERT_TO_NULL

@@ -84,9 +84,8 @@ public class LoginPage extends javax.swing.JFrame {
                 Faker faker = new Faker();
 
                 try {
-            System.out.println("Welcome to Pharma Inventory Management");
-            System.out.println("Using Faker module (Random Name): " + faker.name().fullName());
-            System.out.println("Using Faker module (Random City): " + faker.address().city());
+            System.out.println("Welcome to Pharmaflow: Pharmacy Inventory Management");
+            
             UI_Manager.init();
         } catch (Exception e) {
             System.out.println(e);

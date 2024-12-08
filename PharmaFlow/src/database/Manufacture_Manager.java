@@ -73,6 +73,17 @@ public class Manufacture_Manager {
             throw new Exception("Exception in"+FILENAME + "->" + "fetchAllDrugs" + "->" + e);
         }
     }
+    
+    public static ResultSet fetchAllPharmacyDrugs() throws Exception {
+        try{
+            String query="select * form pharmacy_inventory";
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            return rs;
+        }catch (SQLException e) {
+            throw new Exception("Exception in"+FILENAME + "->" + "fetchAllDrugs" + "->" + e);
+        }
+    }
 
     
     public static boolean updateStock(PharmacyPurchaseOrder order) throws Exception {
@@ -90,6 +101,8 @@ public class Manufacture_Manager {
             throw new Exception("Exception in"+FILENAME + "->" + "updateStock" + "->" + e);
         }
     }
+    
+//    public static boolean addstock()
     
     public static ResultSet fetchAllOrders(int manufacturerId) throws Exception {
         try {

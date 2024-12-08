@@ -7,6 +7,7 @@ package database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import model.pharmacy.PharmacyPurchaseOrder;
 
 /**
  *
@@ -25,7 +26,7 @@ public class TransportManager {
             Statement stmt = con.createStatement();
             stmt.executeUpdate(queryToUpdateStatus);
             
-            PharmacyPurchaseOrder order = CommonFunctions.getOrderFromOrderId(orderId);
+            PharmacyPurchaseOrder order = Common_Functions.getOrderFromOrderId(orderId);
             PharmacyManager.updateStockAndQuantity(order);
             return !isShipped;
         } catch (SQLException e) {

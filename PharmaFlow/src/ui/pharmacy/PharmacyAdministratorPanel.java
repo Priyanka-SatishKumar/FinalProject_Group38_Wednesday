@@ -4,15 +4,23 @@
  */
 package ui.pharmacy;
 
+import database.Person_Manager;
 import database.PharmacyManager;
 import java.awt.Color;
 import java.sql.ResultSet;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import model.Person.Person;
+import model.common.Contact;
+import model.common.Date;
+import model.common.Drug;
 import model.common.Location;
+import model.pharmacy.PharmacyPurchaseOrder;
+import model.pharmacy.PharmacyPurchaseOrderItem;
+import model.pharmacy.PharmacyStore;
+import model.validation.Validation;
 import ui.manager.UI_DesignFunctions;
 import ui.manager.UI_Manager;
 
@@ -2081,7 +2089,7 @@ storeTable.setRowCount(0);
     String username = jTextFieldUsername.getText();
     String password = jTextFieldPassword.getText();
     Person person = new Person(username,name,password);
-    person.setPersonType(UserRole.PHARMACY_STORE_MANAGER);
+    person.setPersonType("PHARMACY_STORE_MANAGER");
     person.setPersonGender(gender);
     person.setPersonDob(dob);
     Contact contact = person.getPersonContact();
@@ -2094,7 +2102,7 @@ storeTable.setRowCount(0);
 
     try
 {   
-    PersonManager.createUser(person, pharmacyId);
+    Person_Manager.createUser(person, pharmacyId);
     
     
     JOptionPane.showMessageDialog(this,"Store Manager Added Successfully");
