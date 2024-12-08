@@ -7,6 +7,7 @@ package ui.manager;
 import java.awt.FlowLayout;
 import javax.swing.JPanel;
 import ui.distributor.DistributorManagerJPanel;
+import ui.login.CompanyRegisterationPanel;
 import ui.login.LoginPageJPanel;
 import ui.manufacturer.ManufacturerAdminJPanel;
 import ui.pharmacy.PharmacyAdministratorPanel;
@@ -21,6 +22,7 @@ public class UI_Manager {
     private static  ManufacturerAdminJPanel map;
     private static PharmacyAdministratorPanel pam;
     private static DistributorManagerJPanel dmp;
+    private static CompanyRegisterationPanel crp;
     
     private static void removeAndAddPanel(JPanel panel) {
         frame.getContentPane().removeAll();
@@ -58,10 +60,10 @@ public class UI_Manager {
       removeAndAddPanel(dmp);  
     }
     
-//    public static void AddCompanyRegPanel(String companyType){
-//        frame.setLayout(new FlowLayout());
-//        frame.setVisible(true);
-//        companyRegPanel = new CompanyRegisterationPanel(companyType);
-//        removeAndAddPanel(companyRegPanel);  
-//      }
+    public static void AddCompanyRegPanel(String companyType){
+        frame.setLayout(new FlowLayout());
+        frame.setVisible(true);
+        crp = new CompanyRegisterationPanel(companyType);
+        removeAndAddPanel(crp);  
+      }
 }

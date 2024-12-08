@@ -1508,8 +1508,8 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
          while(rs.next())
          {
-             int drugId = rs.getInt("order_id");
-             String drugName = rs.getString("pharmacy_name");
+             int drugId = rs.getInt("pharmacy_id");
+             String drugName = rs.getString("drug_id");
              int quantity = rs.getInt("quantity");
              Float cost_price = Float.parseFloat(rs.getString("cost_price"));
              Float selling_price = Float.parseFloat(rs.getString("selling_price"));
@@ -1518,7 +1518,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
              Object[] rowData = new Object[4];
 
              rowData[0] = drugId;
-             rowData[1] = drugName;
+             rowData[1] = drugId;
              rowData[2] = quantity;
              rowData[3] = cost_price;
              rowData[4] = selling_price;
