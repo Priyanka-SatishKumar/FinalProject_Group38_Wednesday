@@ -59,17 +59,4 @@ public class Person_Manager {
             throw e;
         }
     }
-
-    public static boolean deleteUser() throws Exception {
-        boolean isValidUser = true;
-        try {
-            String query = "DELETE FROM person WHERE username=?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString (1, "Barney Rubble");
-            preparedStmt.execute();
-            return isValidUser;
-        } catch (SQLException e) {
-            throw e;
-        }
-    }
 }
