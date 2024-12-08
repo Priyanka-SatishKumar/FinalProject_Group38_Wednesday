@@ -40,11 +40,11 @@ public class UI_Manager {
         removeAndAddPanel(loginPageJPanel);
     }
     
-    public static void AddTransportAdminPanel() 
+    public static void AddTransportAdminPanel(String user) 
         {
         frame.setLayout(new FlowLayout());
         frame.setVisible(true);
-        tap = new TransportAdminPanel();
+        tap = new TransportAdminPanel(user);
         removeAndAddPanel(tap);
     }
     public static void AddManuAdminPanel(String username, int manId) 
