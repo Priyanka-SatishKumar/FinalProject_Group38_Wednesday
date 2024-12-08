@@ -1244,7 +1244,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
             lblStatus.setText("Approved");
             String status = lblStatus.getText();
             try{
-                Manufacture_Manager.updateOrder(orderId,status);System.out.println("\nin manuadminJpanel");
+                Manufacture_Manager.updateOrder(orderId,status);
                 lblStatus.setText("");
                 lblStatus.setForeground(globalColor);
 

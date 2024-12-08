@@ -121,7 +121,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Helvetica Neue" size="24" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Manufacturer Admin"/>
+                <Property name="text" type="java.lang.String" value="Transporter Admin"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
@@ -155,7 +155,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Hiragino Maru Gothic ProN" size="13" style="2"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="MANUFACTURE COMPANY"/>
+                <Property name="text" type="java.lang.String" value="Transport"/>
               </Properties>
             </Component>
           </SubComponents>
@@ -207,7 +207,7 @@
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="512" max="-2" attributes="0"/>
-                                          <Component id="jButtonApproveShipment" min="-2" pref="226" max="-2" attributes="0"/>
+                                          <Component id="btnApproveShipment" min="-2" pref="226" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
@@ -247,7 +247,7 @@
                               <Component id="jLabelStatus" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButtonApproveShipment" min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="btnApproveShipment" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
                           <Component id="btnDistributer" min="-2" pref="33" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
@@ -366,12 +366,12 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JButton" name="jButtonApproveShipment">
+                <Component class="javax.swing.JButton" name="btnApproveShipment">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="COMPLETE SHIPMENT"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonApproveShipmentActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnApproveShipmentActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblStatus">

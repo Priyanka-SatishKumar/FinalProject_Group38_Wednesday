@@ -5,9 +5,13 @@
 package ui.transporter;
 
 import database.TransportManager;
+import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
 import ui.manager.UI_DesignFunctions;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author priyankasatish
@@ -18,8 +22,12 @@ public class TransportAdminPanel extends javax.swing.JPanel {
     /**
      * Creates new form TransportAdminPanel
      */
-    public TransportAdminPanel() {
+    String user;
+    public TransportAdminPanel(String user) {
         initComponents();
+        this.user=user;
+        PharmacyAdminId.setText(user);
+
     }
 
     /**
@@ -46,7 +54,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         btnViewShipments = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         ShipmentStatusTable = new javax.swing.JTable();
-        jButtonApproveShipment = new javax.swing.JButton();
+        btnApproveShipment = new javax.swing.JButton();
         lblStatus = new javax.swing.JLabel();
         jLabelStatus = new javax.swing.JLabel();
         lblOrderID = new javax.swing.JLabel();
@@ -54,7 +62,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         btnDistributer = new javax.swing.JButton();
 
         pharmacyAdminName.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        pharmacyAdminName.setText("Manufacturer Admin");
+        pharmacyAdminName.setText("Transporter Admin");
 
         jLabel2.setFont(new java.awt.Font("Al Bayan", 0, 24)); // NOI18N
         jLabel2.setText("Welcome");
@@ -66,7 +74,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         PharmacyAdminId.setText("1001");
 
         CompanyName.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 2, 13)); // NOI18N
-        CompanyName.setText("MANUFACTURE COMPANY");
+        CompanyName.setText("Transport");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -183,10 +191,10 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(ShipmentStatusTable);
 
-        jButtonApproveShipment.setText("COMPLETE SHIPMENT");
-        jButtonApproveShipment.addActionListener(new java.awt.event.ActionListener() {
+        btnApproveShipment.setText("COMPLETE SHIPMENT");
+        btnApproveShipment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonApproveShipmentActionPerformed(evt);
+                btnApproveShipmentActionPerformed(evt);
             }
         });
 
@@ -236,7 +244,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
                                         .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(manageshipmetsLayout.createSequentialGroup()
                                 .addGap(512, 512, 512)
-                                .addComponent(jButtonApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(manageshipmetsLayout.createSequentialGroup()
                                 .addGap(149, 149, 149)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 969, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -264,7 +272,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
                     .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButtonApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(229, 229, 229)
                 .addComponent(btnDistributer, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -279,7 +287,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1328, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -289,7 +297,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 728, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addContainerGap())
         );
 
@@ -352,6 +360,11 @@ public class TransportAdminPanel extends javax.swing.JPanel {
 
     private void ShipmentStatusTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShipmentStatusTableMouseClicked
 
+        int selectedIndx = ShipmentStatusTable.getSelectedRow();
+        DefaultTableModel tblshipment = (DefaultTableModel)ShipmentStatusTable.getModel();
+        
+        jLabelOrderId.setText(tblshipment.getValueAt(selectedIndx, 0).toString());
+        jLabelStatus.setText(tblshipment.getValueAt(selectedIndx, 6).toString());
     }//GEN-LAST:event_ShipmentStatusTableMouseClicked
 
     private void ShipmentStatusTableMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ShipmentStatusTableMouseEntered
@@ -362,9 +375,66 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ShipmentStatusTableKeyPressed
 
-    private void jButtonApproveShipmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApproveShipmentActionPerformed
+    private void btnApproveShipmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApproveShipmentActionPerformed
 
-    }//GEN-LAST:event_jButtonApproveShipmentActionPerformed
+//        int response = JOptionPane.showConfirmDialog(null, "Approve the order request?", "Approve the order request?", JOptionPane.YES_NO_OPTION);
+//        if(response == 0)
+//        {
+//            Color c = new Color(129, 211, 129);
+//
+//            
+//            int x = Integer.parseInt(jLabelOrderId.getText());
+//            TransportManager.confirmShipmentStatus(x);
+//            
+//            System.out.println("\nORDER APPROVAL COMPLETED in Transporter Admin Panel");
+//            jLabelStatus.setForeground(c);
+//            jLabelStatus.setText("APPROVED");
+//
+//            
+//            DefaultTableModel shipmenttbl= (DefaultTableModel)ShipmentStatusTable.getModel();
+//            int selectedIndex = ShipmentStatusTable.getSelectedRow();
+////            shipmenttbl.removeRow(selectedIndex);
+//            shipmenttbl.setValueAt("Approved", selectedIndex, 6);
+//            
+//
+//        }
+        try {
+        // Confirm approval
+        int response = JOptionPane.showConfirmDialog(null, "Approve the order request?", "Approve the order request?", JOptionPane.YES_NO_OPTION);
+        if (response == JOptionPane.YES_OPTION) {
+            // Validate and parse Order ID
+            String orderIdText = jLabelOrderId.getText();
+            if (orderIdText == null || orderIdText.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Order ID is missing. Cannot approve shipment.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            int orderId = Integer.parseInt(orderIdText);
+
+            // Call TransportManager method
+            TransportManager.confirmShipmentStatus(orderId);
+
+            // Update UI components
+            Color approvedColor = new Color(129, 211, 129);
+            System.out.println("\nORDER APPROVAL COMPLETED in Transporter Admin Panel");
+            jLabelStatus.setForeground(approvedColor);
+            jLabelStatus.setText("APPROVED");
+
+            // Update Shipment Status Table
+            DefaultTableModel shipmentTableModel = (DefaultTableModel) ShipmentStatusTable.getModel();
+            int selectedIndex = ShipmentStatusTable.getSelectedRow();
+            if (selectedIndex >= 0) {
+                shipmentTableModel.setValueAt("Approved", selectedIndex, 6);
+            } else {
+                JOptionPane.showMessageDialog(null, "No row selected in the table.", "Warning", JOptionPane.WARNING_MESSAGE);
+            }
+        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(null, "Invalid Order ID. Please check the value and try again.", "Error", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "An unexpected error occurred: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_btnApproveShipmentActionPerformed
 
     private void btnDistributerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistributerActionPerformed
         jTabbedPane1.setSelectedIndex(2);
@@ -375,9 +445,9 @@ public class TransportAdminPanel extends javax.swing.JPanel {
     private javax.swing.JLabel CompanyName;
     private javax.swing.JLabel PharmacyAdminId;
     private javax.swing.JTable ShipmentStatusTable;
+    private javax.swing.JButton btnApproveShipment;
     private javax.swing.JButton btnDistributer;
     private javax.swing.JButton btnViewShipments;
-    private javax.swing.JButton jButtonApproveShipment;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelOrderId;
