@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import ui.manager.UI_DesignFunctions;
+import ui.manager.UI_Manager;
 
 /**
  *
@@ -29,6 +30,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         this.username = username;
         System.out.println(username);
         System.out.println(distributorId);
+        lblDistributorAdmin.setText(username);
     }
 
     /**
@@ -45,6 +47,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         AdminLabel = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
         lblDistributorAdmin = new javax.swing.JLabel();
+        lblDistributorAdmin1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         ViewOrdersPanel = new javax.swing.JPanel();
         txtSearch = new javax.swing.JTextField();
@@ -55,8 +58,8 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         lblOrderID = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         lblStatus = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblSupplierName = new javax.swing.JLabel();
+        lblSts = new javax.swing.JLabel();
         btnAssignTransportNow = new javax.swing.JButton();
         TransportManagementPanel = new javax.swing.JPanel();
         btnOrderrOverview = new javax.swing.JButton();
@@ -110,10 +113,18 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         AdminLabel.setText("WELCOME");
 
         btnLogin.setText("LOGIN");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         lblDistributorAdmin.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblDistributorAdmin.setForeground(new java.awt.Color(243, 233, 220));
-        lblDistributorAdmin.setText("DISTRIBUTOR ADMIN");
+
+        lblDistributorAdmin1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblDistributorAdmin1.setForeground(new java.awt.Color(243, 233, 220));
+        lblDistributorAdmin1.setText("DISTRIBUTOR ADMIN");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
@@ -122,24 +133,28 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
             .addGroup(TopPanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(222, 222, 222)
-                .addComponent(btnLogin)
-                .addGap(29, 29, 29))
+                .addGap(9, 9, 9)
+                .addComponent(lblDistributorAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
         TopPanelLayout.setVerticalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(btnLogin)
-                .addContainerGap(52, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
+                        .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblDistributorAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
+                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
         );
 
         jTabbedPane1.setBackground(new java.awt.Color(137, 87, 55));
@@ -178,7 +193,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         lblManufac.setText("Manufacturer");
 
         lblOrderID.setForeground(new java.awt.Color(243, 233, 220));
-        lblOrderID.setText("Order ID");
+        lblOrderID.setText("Supplier Name");
 
         jLabel1.setForeground(new java.awt.Color(243, 233, 220));
         jLabel1.setText("XXX");
@@ -186,11 +201,11 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         lblStatus.setForeground(new java.awt.Color(243, 233, 220));
         lblStatus.setText("Status");
 
-        jLabel2.setForeground(new java.awt.Color(243, 233, 220));
-        jLabel2.setText("XXX");
+        lblSupplierName.setForeground(new java.awt.Color(243, 233, 220));
+        lblSupplierName.setText("XXX");
 
-        jLabel3.setForeground(new java.awt.Color(209, 209, 250));
-        jLabel3.setText("XXX");
+        lblSts.setForeground(new java.awt.Color(209, 209, 250));
+        lblSts.setText("XXX");
 
         btnAssignTransportNow.setText("Assign Transport Services Now");
         btnAssignTransportNow.addActionListener(new java.awt.event.ActionListener() {
@@ -207,10 +222,10 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ViewOrdersPanelLayout.createSequentialGroup()
                         .addGap(97, 97, 97)
-                        .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 767, Short.MAX_VALUE)
+                        .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnOrder)
-                            .addComponent(txtSearch)))
+                            .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 767, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 835, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(ViewOrdersPanelLayout.createSequentialGroup()
                         .addGap(382, 382, 382)
                         .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -223,9 +238,9 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                                 .addGap(37, 37, 37)
                                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(273, Short.MAX_VALUE))
+                                    .addComponent(lblSupplierName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblSts, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
         ViewOrdersPanelLayout.setVerticalGroup(
             ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,14 +258,14 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblOrderID)
-                    .addComponent(jLabel2))
+                    .addComponent(lblSupplierName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblStatus)
-                    .addComponent(jLabel3))
+                    .addComponent(lblSts))
                 .addGap(18, 18, 18)
                 .addComponent(btnAssignTransportNow)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Order Overview", ViewOrdersPanel);
@@ -346,7 +361,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                     .addGroup(TransportManagementPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(btnBack)))
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(278, Short.MAX_VALUE))
         );
         TransportManagementPanelLayout.setVerticalGroup(
             TransportManagementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -419,7 +434,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                     .addGroup(StockOverviewPaneLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBackk)))
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
         StockOverviewPaneLayout.setVerticalGroup(
             StockOverviewPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -642,7 +657,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                         .addGroup(ManageStocksPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtManageSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 778, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 958, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(86, 210, Short.MAX_VALUE))))
         );
         ManageStocksPaneLayout.setVerticalGroup(
             ManageStocksPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -689,20 +704,22 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TopPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1))
                 .addContainerGap())
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jTabbedPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPane1)
+                .addGap(50, 50, 50))
         );
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, -1, -1));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 1210, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -800,10 +817,10 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         UI_DesignFunctions.AlignTableContents(tblOrderrOverview);
         int selectedIndx = tblOrderrOverview.getSelectedRow();
-        DefaultTableModel ManufactOrderTable= (DefaultTableModel)tblOrderrOverview.getModel();
+        DefaultTableModel tblOrderOverview= (DefaultTableModel)tblOrderrOverview.getModel();
         
 
-        selectedOrderId = Integer.parseInt(ManufactOrderTable.getValueAt(selectedIndx,0).toString());
+        selectedOrderId = Integer.parseInt(tblOrderOverview.getValueAt(selectedIndx,0).toString());
     }//GEN-LAST:event_tblOrderrOverviewMouseClicked
 
     private void btnTransportationOverviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportationOverviewActionPerformed
@@ -1004,7 +1021,14 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         int selectedIndex = tblOrderOverview.getSelectedRow();
         DefaultTableModel tbl = (DefaultTableModel) tblOrderOverview.getModel();
         jLabel1.setText(tbl.getValueAt(selectedIndex,0).toString());
+        lblSupplierName.setText(tbl.getValueAt(selectedIndex,2).toString());
+        lblSts.setText(tbl.getValueAt(selectedIndex, 3).toString());
     }//GEN-LAST:event_tblOrderOverviewMouseClicked
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+        UI_Manager.init();
+    }//GEN-LAST:event_btnLoginActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1032,8 +1056,6 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
@@ -1049,11 +1071,14 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblDistributorAdmin;
+    private javax.swing.JLabel lblDistributorAdmin1;
     private javax.swing.JLabel lblManufac;
     private javax.swing.JLabel lblOrderID;
     private javax.swing.JLabel lblProductID;
     private javax.swing.JLabel lblProductName;
     private javax.swing.JLabel lblStatus;
+    private javax.swing.JLabel lblSts;
+    private javax.swing.JLabel lblSupplierName;
     private javax.swing.JTable tblMedicationOverview;
     private javax.swing.JTable tblOrderOverview;
     private javax.swing.JTable tblOrderrOverview;
