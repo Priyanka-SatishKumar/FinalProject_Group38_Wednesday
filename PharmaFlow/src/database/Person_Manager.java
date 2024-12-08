@@ -72,20 +72,4 @@ public class Person_Manager {
             throw e;
         }
     }
-    
-    public static boolean updateUser() throws Exception {
-        boolean isInserted = true;
-        try {
-            String query = "UPDATE user SET username=?, role)"
-                            + "values (?, ?, ?)";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString (1, "Barney Rubble");
-            preparedStmt.setString (2, "password");
-            preparedStmt.setString (3, "pharmacy_admin");
-            preparedStmt.execute();
-            return isInserted;
-        } catch (SQLException e) {
-            throw e;
-        }
-    }
 }
