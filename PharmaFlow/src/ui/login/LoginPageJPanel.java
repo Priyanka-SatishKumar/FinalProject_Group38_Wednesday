@@ -228,6 +228,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         cmbEnterprises.addItem("Transportation Enterprise");
         cmbEnterprises.addItem("Distributor Enterprise");
         cmbEnterprises.addItem("MANUFACTURE_ADMIN");
+        cmbEnterprises.addItem("DISTRIBUTOR_ADMIN");
      
     }
     
