@@ -97,7 +97,7 @@ public class PharmacyStoreManagerPanel extends javax.swing.JPanel {
                 .addContainerGap(299, Short.MAX_VALUE))
         );
 
-        ManageStock.addTab("VIEW MEDINICINES", jPanel3);
+        ManageStock.addTab("VIEW MEDINICINES STOCK", jPanel3);
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel2.setText("Welcome to Pharmacy Store Manager");
@@ -158,39 +158,6 @@ public class PharmacyStoreManagerPanel extends javax.swing.JPanel {
 
     private void btnViewStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewStockActionPerformed
         // TODO add your handling code here:
-//        try{
-//    
-//        UI_DesignFunctions.AlignTableContents(tblStock);
-//        DefaultTableModel manuOrderTable= (DefaultTableModel)tblStock.getModel();
-//        manuOrderTable.setRowCount(0);
-//
-//        ResultSet rs = Manufacture_Manager.fetchAllOrders(manufacturerId);
-//
-//        while(rs.next())
-//        {
-//            int orderId = rs.getInt("order_id");
-//            String orderDate = rs.getString("order_date");
-//            int pharmacyId = rs.getInt("pharmacy_id");
-//            String pharmacyName = rs.getString("pharmacy_name");
-//            int quantity = rs.getInt("total_items");
-//            String distrubutorName = rs.getString("distributor_name");
-//            String OrderStatus = rs.getString("order_status");
-//
-//            Object[] rowData = new Object[6];
-//
-//            rowData[0] = orderId;
-//            rowData[1] = orderDate;
-//            rowData[2] = quantity;
-//            rowData[3] = pharmacyName;
-//            rowData[4] = distrubutorName;
-//            rowData[5] = OrderStatus;      
-//            manuOrderTable.addRow(rowData);    
-//        }
-//    } 
-//    
-//        catch(Exception e){
-//            System.out.print(e);
-//        }
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/pharmacy_mgmt?zeroDateTimeBehavior=CONVERT_TO_NULL","root","password");
