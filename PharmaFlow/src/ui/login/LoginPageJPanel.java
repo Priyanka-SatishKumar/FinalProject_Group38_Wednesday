@@ -52,22 +52,25 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         lblLogin1 = new javax.swing.JLabel();
 
-        jPanel1.setBackground(new java.awt.Color(207, 207, 207));
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/working.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 50, -1, 149));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 30, 120, 150));
 
+        jLabel2.setBackground(new java.awt.Color(243, 233, 220));
         jLabel2.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(243, 233, 220));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Login Page");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 187, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 187, -1));
 
         jLabel3.setFont(new java.awt.Font("Cascadia Mono", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(243, 233, 220));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Select Your Enterprise");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 230, 220, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 220, -1));
 
         cmbEnterprises.setBackground(new java.awt.Color(243, 230, 230));
         cmbEnterprises.addActionListener(new java.awt.event.ActionListener() {
@@ -75,9 +78,10 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 cmbEnterprisesActionPerformed(evt);
             }
         });
-        jPanel1.add(cmbEnterprises, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 160, -1));
+        jPanel1.add(cmbEnterprises, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 160, -1));
 
         btnLogin.setBackground(new java.awt.Color(179, 179, 179));
+        btnLogin.setForeground(new java.awt.Color(210, 180, 140));
         btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-login-25.png"))); // NOI18N
         btnLogin.setBorder(null);
         btnLogin.setBorderPainted(false);
@@ -88,18 +92,20 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 500, 30, 30));
+        jPanel1.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 580, 30, 30));
 
         lblLogin.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(243, 233, 220));
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("New Registration:");
-        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 560, -1, -1));
-        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, 190, -1));
+        jPanel1.add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 650, -1, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 190, -1));
 
         lblpwd.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        lblpwd.setForeground(new java.awt.Color(243, 233, 220));
         lblpwd.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblpwd.setText("Password");
-        jPanel1.add(lblpwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 420, -1, -1));
+        jPanel1.add(lblpwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 480, -1, -1));
 
         txtPswd.setText("jPasswordField1");
         txtPswd.addActionListener(new java.awt.event.ActionListener() {
@@ -107,21 +113,23 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 txtPswdActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 440, 180, -1));
+        jPanel1.add(txtPswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 500, 190, -1));
 
         lblUsername.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(243, 233, 220));
         lblUsername.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsername.setText("Username");
-        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(402, 360, 80, -1));
+        jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 420, 80, -1));
 
         btnForgotPswd.setBackground(new java.awt.Color(179, 179, 179));
         btnForgotPswd.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        btnForgotPswd.setForeground(new java.awt.Color(243, 233, 220));
         btnForgotPswd.setText("Forgot Password?");
         btnForgotPswd.setBorder(null);
         btnForgotPswd.setBorderPainted(false);
         btnForgotPswd.setContentAreaFilled(false);
         btnForgotPswd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btnForgotPswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 70, 20));
+        jPanel1.add(btnForgotPswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 520, 70, 20));
 
         jButton1.setBackground(new java.awt.Color(243, 230, 230));
         jButton1.setText("Select Enterprise");
@@ -130,18 +138,21 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, -1, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 280, 130, -1));
 
         lblWelcome.setFont(new java.awt.Font("Cascadia Mono", 0, 14)); // NOI18N
+        lblWelcome.setForeground(new java.awt.Color(243, 233, 220));
         lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWelcome.setText("Welcome to");
-        jPanel1.add(lblWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 90, -1));
+        jPanel1.add(lblWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 380, 90, -1));
 
         lblDisplayEnterprise.setFont(new java.awt.Font("Cascadia Mono", 0, 14)); // NOI18N
+        lblDisplayEnterprise.setForeground(new java.awt.Color(243, 233, 220));
         lblDisplayEnterprise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDisplayEnterprise.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
-        jPanel1.add(lblDisplayEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 190, 20));
+        jPanel1.add(lblDisplayEnterprise, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 380, 190, 20));
 
+        jButton2.setForeground(new java.awt.Color(210, 180, 140));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/online-registration-3.png"))); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.setContentAreaFilled(false);
@@ -150,12 +161,13 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 550, -1, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 640, -1, -1));
 
         lblLogin1.setFont(new java.awt.Font("Cascadia Mono", 1, 12)); // NOI18N
+        lblLogin1.setForeground(new java.awt.Color(243, 233, 220));
         lblLogin1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin1.setText("Login:");
-        jPanel1.add(lblLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 510, -1, -1));
+        jPanel1.add(lblLogin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -163,15 +175,13 @@ public class LoginPageJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1148, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 748, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
