@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import model.Person.Person;
 
 /**
@@ -39,7 +40,7 @@ public class Person_Manager {
         }
     }
     
-        public static ResultSet verifyUser(String username, char[] password, String role) throws Exception {
+    public static ResultSet verifyUser(String username, char[] password, String role) throws Exception {
         boolean isValidUser = true;
         try {
             String queryToVerifyUser = """
@@ -53,36 +54,8 @@ public class Person_Manager {
             return rs;
         } catch (SQLException e) {
             throw e;
-        } catch (Exception e) {
-            throw e;
         }
-    }
-    
-    public static boolean deleteUser() throws Exception {
-        boolean isValidUser = true;
-        try {
-            String query = "DELETE FROM person WHERE username=?";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString (1, "Barney Rubble");
-            preparedStmt.execute();
-            return isValidUser;
-        } catch (SQLException e) {
-            throw e;
-        }
-    }
-    
-    public static boolean updateUser() throws Exception {
-        boolean isInserted = true;
-        try {
-            String query = "UPDATE user SET username=?, role)"
-                            + "values (?, ?, ?)";
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString (1, "Barney Rubble");
-            preparedStmt.setString (2, "password");
-            preparedStmt.setString (3, "pharmacy_admin");
-            preparedStmt.execute();
-            return isInserted;
-        } catch (SQLException e) {
+        catch (Exception e) {
             throw e;
         }
     }

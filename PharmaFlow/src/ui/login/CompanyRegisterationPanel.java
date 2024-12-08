@@ -22,7 +22,7 @@ import ui.manager.UI_Manager;
 
 /**
  *
- * @author shreyajaiswal
+ * @author deepthiramesh
  */
 public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
@@ -33,7 +33,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         txtcompAdd.setText(f.address().fullAddress());
         txtCompZip.setText(f.address().zipCode());
         txtcompCity.setText(f.address().cityName());
-        jTextFieldName.setText(f.name().name());
+        txtAdminName.setText(f.name().name());
         jTextFieldContact.setText(f.number().digits(10));
         jTextFieldEmail.setText("s@gmail.com");
         jTextFieldAddress.setText("s@gmail.com");
@@ -45,7 +45,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
     public CompanyRegisterationPanel(String userType) {
         initComponents();
-        jButton3.setVisible(false);
+        btnLogin.setVisible(false);
         
         this.userType = userType;
         }
@@ -60,17 +60,20 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnRegister = new javax.swing.JButton();
+        btnLogin = new javax.swing.JButton();
+        btnBack = new javax.swing.JButton();
         btnFake = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtComName = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -88,7 +91,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jTextFieldName = new javax.swing.JTextField();
+        txtAdminName = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
@@ -105,8 +108,8 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jPanel11 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextFieldUsername = new javax.swing.JTextField();
-        jTextFieldPassword = new javax.swing.JTextField();
+        txtUsername = new javax.swing.JTextField();
+        txtPassword = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jComboBoxGender = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
@@ -118,54 +121,71 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(102, 102, 102));
-        jButton2.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("x");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setBackground(new java.awt.Color(102, 102, 102));
+        btnClose.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        btnClose.setForeground(new java.awt.Color(255, 255, 255));
+        btnClose.setText("x");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 30));
+        jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("COMPANY DETAILS");
+        jLabel1.setText("Register Company Details");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 230, 89));
 
-        jButton1.setText("REGISTER");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-register-30.png"))); // NOI18N
+        btnRegister.setBorderPainted(false);
+        btnRegister.setContentAreaFilled(false);
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRegisterActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 60, -1, -1));
+        jPanel5.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 40, -1, -1));
 
-        jButton3.setText("LOGIN");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-user-login-24.png"))); // NOI18N
+        btnLogin.setBorderPainted(false);
+        btnLogin.setContentAreaFilled(false);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnLoginActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 60, -1, -1));
+        jPanel5.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 40, 30, 40));
 
-        jButton4.setText("BACK");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setText("BACK");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
-        jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+        jPanel5.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
-        btnFake.setText("Click Here to use Fake Details");
+        btnFake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-anonymous-48.png"))); // NOI18N
+        btnFake.setBorder(null);
+        btnFake.setBorderPainted(false);
+        btnFake.setContentAreaFilled(false);
         btnFake.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFakeActionPerformed(evt);
             }
         });
-        jPanel5.add(btnFake, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+        jPanel5.add(btnFake, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Cascadia Mono", 1, 14)); // NOI18N
+        jLabel20.setText("Register New User");
+        jPanel5.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 40, -1, -1));
+
+        jLabel21.setText("Back to Login Page:");
+        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 40, -1, -1));
+
+        jLabel22.setText("Click Here to Populate Fake Data:");
+        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 90));
 
@@ -282,7 +302,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                             .addComponent(jLabel4))
                         .addGap(91, 91, 91)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtComName, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -292,7 +312,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addContainerGap(25, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtComName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -309,14 +329,14 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
         jLabel6.setText("ADMINISTRATOR NAME");
 
-        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
+        txtAdminName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNameActionPerformed(evt);
+                txtAdminNameActionPerformed(evt);
             }
         });
-        jTextFieldName.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtAdminName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldNameKeyPressed(evt);
+                txtAdminNameKeyPressed(evt);
             }
         });
 
@@ -446,8 +466,8 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                     .addComponent(jLabel18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
-                    .addComponent(jTextFieldPassword))
+                    .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                    .addComponent(txtPassword))
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
@@ -456,26 +476,26 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jTextFieldUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel14.setText("GENDER");
 
-        jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Female", "Male" }));
+        jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female", "Other", " " }));
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         jLabel2.setText("YYYY-MM-DD");
 
-        jComboBoxYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022" }));
+        jComboBoxYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", " " }));
 
         jComboBoxDay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jComboBoxMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jComboBoxMonth.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -506,7 +526,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                             .addComponent(jComboBoxGender, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel8Layout.createSequentialGroup()
                                         .addComponent(jComboBoxYear, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -522,7 +542,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxMonth)
@@ -546,7 +566,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
 
-        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, -1, -1));
+        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
 
         jLabel3.setText("COMPANY DETAILS");
         jPanel6.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
@@ -568,99 +588,99 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
 
-    //Company Details ----------------------------------
-    String companyName =  jTextField1.getText();
-    if(Validation.isValidString(userType)==false)
-    {
-        JOptionPane.showMessageDialog(this,"Enter Valid Company Name");
-    }
-    String companyType = jComboBox1.getSelectedItem().toString();
-    String number = txtComContact.getText();
-    String comEmail =  txtComEmail.getText();
-    String comaddress = txtComEmail.getText();
-    String comZip = txtCompZip.getText();
-    String comCity = txtcompCity.getText();
-
-    Location location = new Location(comaddress,comZip,comCity);
-    Date d = DateLocate.DateLocate(LocalDate.now());
-
-    Company company = new Company(companyName,companyType);
-    company.setLocation(location);
-    company.setRegisteredDate(d);
-
-    // Admin Details ---------------------------------
-    String name = jTextFieldName.getText();
-    int year = Integer.parseInt(jComboBoxYear.getSelectedItem().toString());
-    int month = Integer.parseInt(jComboBoxMonth.getSelectedItem().toString());
-    int day = Integer.parseInt(jComboBoxDay.getSelectedItem().toString());
-
-    Date dob = new Date(month,day,year);
-    String contactNumber = jTextFieldContact.getText();
-    String email = jTextFieldEmail.getText();
-    String addr = jTextFieldAddress.getText();
-    String zip = jTextFieldZip.getText();
-    String city = jTextFieldCity.getText();
-    String gender = jComboBoxGender.getSelectedItem().toString();
-    String username = jTextFieldUsername.getText();
-    String password = jTextFieldPassword.getText();
-
-
-
-    Person person = new Person(username,name,password);
-    person.setPersonType(userType);
-    person.setPersonGender(gender);
-    person.setPersonDob(dob);
-    Contact contact = person.getPersonContact();
-    contact.setEmail(email);
-    contact.setPhone(contactNumber);
-    Location loc = new Location(addr,zip,city);
-    contact.setLocation(loc);
-    person.setLocation(loc);
-    System.out.println(zip);
-    try
-    {   Company_Manager.createCompany(company);
-        int n = Company_Manager.getCompanyId();
-        System.out.println("n--->"+n);
-        Person_Manager.createUser(person,n);
-
-
-        JOptionPane.showMessageDialog(this,"Company and Administrator Registered Successfully");
-        jButton3.setVisible(true);
-
-    }
-    catch(Exception e)
+        //Company Details ----------------------------------
+        String companyName =  txtComName.getText();
+        if(Validation.isValidString(userType)==false)
         {
-            System.out.println(e);
-            JOptionPane.showMessageDialog(this,"ENTER VALID COMPANY DETAILS");
+            JOptionPane.showMessageDialog(this,"Enter Valid Company Name");
         }
+        String companyType = jComboBox1.getSelectedItem().toString();
+        String number = txtComContact.getText();
+        String comEmail =  txtComEmail.getText();
+        String comaddress = txtComEmail.getText();
+        String comZip = txtCompZip.getText();
+        String comCity = txtcompCity.getText();
+
+        Location location = new Location(comaddress,comZip,comCity);
+        Date d = DateLocate.DateLocate(LocalDate.now());
+
+        Company company = new Company(companyName,companyType);
+        company.setLocation(location);
+        company.setRegisteredDate(d);
+
+        // Admin Details ---------------------------------
+        String name = txtAdminName.getText();
+        int year = Integer.parseInt(jComboBoxYear.getSelectedItem().toString());
+        int month = Integer.parseInt(jComboBoxMonth.getSelectedItem().toString());
+        int day = Integer.parseInt(jComboBoxDay.getSelectedItem().toString());
+
+        Date dob = new Date(month,day,year);
+        String contactNumber = jTextFieldContact.getText();
+        String email = jTextFieldEmail.getText();
+        String addr = jTextFieldAddress.getText();
+        String zip = jTextFieldZip.getText();
+        String city = jTextFieldCity.getText();
+        String gender = jComboBoxGender.getSelectedItem().toString();
+        String username = txtUsername.getText();
+        String password = txtPassword.getText();
+
+
+
+        Person person = new Person(username,name,password);
+        person.setPersonType(userType);
+        person.setPersonGender(gender);
+        person.setPersonDob(dob);
+        Contact contact = person.getPersonContact();
+        contact.setEmail(email);
+        contact.setPhone(contactNumber);
+        Location loc = new Location(addr,zip,city);
+        contact.setLocation(loc);
+        person.setLocation(loc);
+        System.out.println(zip);
+        try
+        {   Company_Manager.createCompany(company);
+            int n = Company_Manager.getCompanyId();
+            System.out.println("n--->"+n);
+            Person_Manager.createUser(person,n);
+
+
+            JOptionPane.showMessageDialog(this,"Company and Administrator Registered Successfully");
+            btnLogin.setVisible(true);
+
+        }
+        catch(Exception e)
+            {
+                System.out.println(e);
+                JOptionPane.showMessageDialog(this,"ENTER VALID COMPANY DETAILS");
+            }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    System.exit(0);
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnCloseActionPerformed
 
-    private void jTextFieldNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNameKeyPressed
+    private void txtAdminNameKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAdminNameKeyPressed
         // TODO add your handling code here:
         char c =evt.getKeyChar();
         if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
-            jTextFieldName.setEditable(true);
+            txtAdminName.setEditable(true);
         }else{
-            jTextFieldName.setEditable(false);
+            txtAdminName.setEditable(false);
             JOptionPane.showMessageDialog(null, "Please enter Valid NAME", "Invalid Input", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_jTextFieldNameKeyPressed
+    }//GEN-LAST:event_txtAdminNameKeyPressed
 
     private void jTextFieldZipKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldZipKeyPressed
 //        // TODO add your handling code here:
-//        char c = evt. getKeyChar ();
-//        if (!Character.isDigit (c)){
-//            JOptionPane.showMessageDialog(null, "Please enter Valid ZIPCODE!", "Error", JOptionPane.ERROR_MESSAGE);
-//            evt. consume ();
-//        }
+        char c = evt. getKeyChar ();
+        if (!Character.isDigit (c)){
+            JOptionPane.showMessageDialog(null, "Please enter Valid ZIPCODE!", "Error", JOptionPane.ERROR_MESSAGE);
+            evt. consume ();
+        }
 
     }//GEN-LAST:event_jTextFieldZipKeyPressed
 
@@ -677,47 +697,45 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jTextFieldCityKeyPressed
 
     private void jTextFieldContactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldContactKeyReleased
-
-
         // TODO add your handling code here:
-String mobileNo=txtComContact.getText () ;
+    String mobileNo=txtComContact.getText () ;
 
-Validation.isValidContact(mobileNo,txtComContact);
+    Validation.isValidContact(mobileNo,txtComContact);
     }//GEN-LAST:event_jTextFieldContactKeyReleased
 
-    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+    private void txtAdminNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdminNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNameActionPerformed
+    }//GEN-LAST:event_txtAdminNameActionPerformed
 
     private void txtComContactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComContactKeyReleased
-String mobileNo=txtComContact.getText () ;
-Validation.isValidContact(mobileNo,txtComContact);
+    String mobileNo=txtComContact.getText () ;
+    Validation.isValidContact(mobileNo,txtComContact);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtComContactKeyReleased
 
     private void jTextFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEmailKeyReleased
-String email = jTextFieldEmail.getText();
-Validation.checkValidEmail(email,jTextFieldEmail);
+    String email = jTextFieldEmail.getText();
+    Validation.checkValidEmail(email,jTextFieldEmail);
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEmailKeyReleased
 
     private void txtComEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComEmailKeyReleased
-String email = txtComEmail.getText();
-Validation.checkValidEmail(email,txtComEmail);
+    String email = txtComEmail.getText();
+    Validation.checkValidEmail(email,txtComEmail);
         // TODO add your handling code here:
     }//GEN-LAST:event_txtComEmailKeyReleased
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
 //UI_Manager.AddCompanyLoginPanel(userType);
         // TODO add your handling code here:
         UI_Manager.init();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
 //UI_Manager.AddCompanyManagerPanel(userType);
         // TODO add your handling code here:
         UI_Manager.init();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void jTextFieldZipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldZipActionPerformed
         // TODO add your handling code here:
@@ -730,11 +748,11 @@ Validation.checkValidEmail(email,txtComEmail);
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnClose;
     private javax.swing.JButton btnFake;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRegister;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBoxDay;
     private javax.swing.JComboBox<String> jComboBoxGender;
@@ -752,6 +770,9 @@ Validation.checkValidEmail(email,txtComEmail);
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -772,18 +793,18 @@ Validation.checkValidEmail(email,txtComEmail);
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextFieldAddress;
     private javax.swing.JTextField jTextFieldCity;
     private javax.swing.JTextField jTextFieldContact;
     private javax.swing.JTextField jTextFieldEmail;
-    private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldPassword;
-    private javax.swing.JTextField jTextFieldUsername;
     private javax.swing.JTextField jTextFieldZip;
+    private javax.swing.JTextField txtAdminName;
     private javax.swing.JTextField txtComContact;
     private javax.swing.JTextField txtComEmail;
+    private javax.swing.JTextField txtComName;
     private javax.swing.JTextField txtCompZip;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtcompAdd;
     private javax.swing.JTextField txtcompCity;
     // End of variables declaration//GEN-END:variables
