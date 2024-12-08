@@ -14,6 +14,7 @@ import ui.pharmacy.PharmacyAdministratorPanel;
 import ui.pharmacy.PharmacyStoreManagerPanel;
 import ui.transporter.TransportAdminPanel;
 import ui.account.AccountingmanagerJPanel;
+import ui.distributor.DistributorAdminJPanel;
 import ui.sales.SalesManagerJPanel;
 /**
  *
@@ -25,11 +26,12 @@ public class UI_Manager {
     private static ManufacturerAdminJPanel map;
     private static AccountingmanagerJPanel am;
     private static PharmacyAdministratorPanel pam;
-    private static DistributorManagerJPanel dmp;
     private static CompanyRegisterationPanel crp;
+    private static DistributorManagerJPanel dmp;
     private static TransportAdminPanel tap;
     private static PharmacyStoreManagerPanel psm;
     private static SalesManagerJPanel sm;
+    private static DistributorAdminJPanel dap;
     
     private static void removeAndAddPanel(JPanel panel) {
         frame.getContentPane().removeAll();
@@ -79,6 +81,13 @@ public class UI_Manager {
       frame.setVisible(true);
       dmp = new DistributorManagerJPanel(username, distributorId);
       removeAndAddPanel(dmp);  
+    }
+    
+    public static void AddDistributorAdminPanel(String username, int distributorId){
+      frame.setLayout(new FlowLayout());
+      frame.setVisible(true);
+      dap = new DistributorAdminJPanel(username, distributorId);
+      removeAndAddPanel(dap);  
     }
     
     public static void AddAccountingManager(String username){
