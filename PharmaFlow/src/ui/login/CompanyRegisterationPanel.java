@@ -22,7 +22,7 @@ import ui.manager.UI_Manager;
 
 /**
  *
- * @author shreyajaiswal
+ * @author deepthiramesh
  */
 public class CompanyRegisterationPanel extends javax.swing.JPanel {
 

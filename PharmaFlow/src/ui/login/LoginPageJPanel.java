@@ -189,6 +189,9 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                 int verifiedCompanyId = rs.getInt("company_id");
                 String loginRole = rs.getString("person_role");
 
+//                System.out.println(""+verifiedUsername);
+//                System.out.println(""+verifiedCompanyId);
+//                System.out.println(""+verifiedUsername);
                 switch(loginRole) {
                     case "MANUFACTURE_ADMIN":
                         UI_Manager.AddManuAdminPanel(verifiedUsername, verifiedCompanyId); 
@@ -200,7 +203,6 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                         UI_Manager.AddDistributorManagerPanel(verifiedUsername, verifiedCompanyId);    
                       break;
                     default:
-                      // code block
                 }
             } 
                 } catch(Exception e) {

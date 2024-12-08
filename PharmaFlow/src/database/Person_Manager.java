@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import model.Person.Person;
 
 /**
@@ -39,7 +40,7 @@ public class Person_Manager {
         }
     }
     
-        public static ResultSet verifyUser(String username, char[] password, String role) throws Exception {
+    public static ResultSet verifyUser(String username, char[] password, String role) throws Exception {
         boolean isValidUser = true;
         try {
             String queryToVerifyUser = """
@@ -53,11 +54,12 @@ public class Person_Manager {
             return rs;
         } catch (SQLException e) {
             throw e;
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             throw e;
         }
     }
-    
+
     public static boolean deleteUser() throws Exception {
         boolean isValidUser = true;
         try {
