@@ -101,10 +101,18 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
+
+        TopPanel.setBackground(new java.awt.Color(137, 87, 55));
+
+        AdminLabel.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        AdminLabel.setForeground(new java.awt.Color(243, 233, 220));
         AdminLabel.setText("WELCOME");
 
         btnLogin.setText("LOGIN");
 
+        lblDistributorAdmin.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        lblDistributorAdmin.setForeground(new java.awt.Color(243, 233, 220));
         lblDistributorAdmin.setText("DISTRIBUTOR ADMIN");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
@@ -112,24 +120,32 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         TopPanelLayout.setHorizontalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(222, 222, 222)
                 .addComponent(btnLogin)
                 .addGap(29, 29, 29))
         );
         TopPanelLayout.setVerticalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(40, 40, 40)
+                .addComponent(btnLogin)
+                .addContainerGap(52, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AdminLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLogin)
                     .addComponent(lblDistributorAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        jTabbedPane1.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPane1.setForeground(new java.awt.Color(243, 233, 220));
+
+        ViewOrdersPanel.setBackground(new java.awt.Color(137, 87, 55));
 
         txtSearch.setText("Search: ");
 
@@ -158,17 +174,22 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblOrderOverview);
 
+        lblManufac.setForeground(new java.awt.Color(243, 233, 220));
         lblManufac.setText("Manufacturer");
 
+        lblOrderID.setForeground(new java.awt.Color(243, 233, 220));
         lblOrderID.setText("Order ID");
 
+        jLabel1.setForeground(new java.awt.Color(243, 233, 220));
         jLabel1.setText("XXX");
 
+        lblStatus.setForeground(new java.awt.Color(243, 233, 220));
         lblStatus.setText("Status");
 
+        jLabel2.setForeground(new java.awt.Color(243, 233, 220));
         jLabel2.setText("XXX");
 
-        jLabel3.setForeground(new java.awt.Color(204, 0, 51));
+        jLabel3.setForeground(new java.awt.Color(209, 209, 250));
         jLabel3.setText("XXX");
 
         btnAssignTransportNow.setText("Assign Transport Services Now");
@@ -204,7 +225,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(210, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
         );
         ViewOrdersPanelLayout.setVerticalGroup(
             ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,6 +254,8 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Order Overview", ViewOrdersPanel);
+
+        TransportManagementPanel.setBackground(new java.awt.Color(137, 87, 55));
 
         btnOrderrOverview.setText("Order Overview");
         btnOrderrOverview.addActionListener(new java.awt.event.ActionListener() {
@@ -323,7 +346,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                     .addGroup(TransportManagementPanelLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(btnBack)))
-                .addContainerGap(154, Short.MAX_VALUE))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
         TransportManagementPanelLayout.setVerticalGroup(
             TransportManagementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,6 +367,13 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         );
 
         jTabbedPane1.addTab("Transportation Management", TransportManagementPanel);
+
+        ShipmentOverviewPanel.setBackground(new java.awt.Color(137, 87, 55));
+
+        jTabbedPane2.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPane2.setForeground(new java.awt.Color(243, 233, 220));
+
+        StockOverviewPane.setBackground(new java.awt.Color(137, 87, 55));
 
         txtSearchh.setText("SEARCH: ");
 
@@ -389,7 +419,7 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                     .addGroup(StockOverviewPaneLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnBackk)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(239, Short.MAX_VALUE))
         );
         StockOverviewPaneLayout.setVerticalGroup(
             StockOverviewPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,6 +436,8 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         );
 
         jTabbedPane2.addTab("Stock Overview", StockOverviewPane);
+
+        ManageStocksPane.setBackground(new java.awt.Color(137, 87, 55));
 
         txtManageSearch.setText("SEARCH:");
         txtManageSearch.addMouseListener(new java.awt.event.MouseAdapter() {
