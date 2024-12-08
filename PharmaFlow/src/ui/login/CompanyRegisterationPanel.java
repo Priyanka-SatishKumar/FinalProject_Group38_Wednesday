@@ -119,6 +119,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnClose.setBackground(new java.awt.Color(102, 102, 102));
@@ -132,6 +133,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         });
         jPanel1.add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
+        jPanel5.setBackground(new java.awt.Color(137, 87, 55));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -189,6 +191,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 90));
 
+        jPanel6.setBackground(new java.awt.Color(137, 87, 55));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setText("COMPANY NAME");
