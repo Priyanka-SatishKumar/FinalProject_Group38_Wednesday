@@ -202,6 +202,8 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                     case "DISTRIBUTOR_ADMIN":
                         UI_Manager.AddDistributorManagerPanel(verifiedUsername, verifiedCompanyId);    
                       break;
+                    case "TRANSPORT_ADMIN":
+                        UI_Manager.AddTransportAdminPanel();
                     default:
                 }
             } 

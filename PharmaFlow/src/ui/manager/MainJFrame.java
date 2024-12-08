@@ -22,23 +22,20 @@ public class MainJFrame extends javax.swing.JFrame {
 
     
     public void showPharmacyAdminPanel() {
-//        getContentPane.removeAll();
-//        add(new PharmacyAdministratorPanel());
+
         setLayout(new FlowLayout());
         repaint();
         revalidate();
     }
     
         public void showProductManagerPanel() {
-//        getContentPane.removeAll();
-//        add(new ManufacturerAdministratorPanel());
+
         setLayout(new FlowLayout());
         repaint();
         revalidate();
     }
         
         public void showLoginPanel() {
-//        getContentPane.removeAll();
         add(new LoginPageJPanel());
         setLayout(new FlowLayout());
         repaint();
