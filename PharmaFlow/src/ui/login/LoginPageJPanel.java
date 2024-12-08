@@ -219,6 +219,12 @@ public class LoginPageJPanel extends javax.swing.JPanel {
                     case "PHARMACY_STORE_MANAGER":
                         UI_Manager.AddPharmacyStoreManager(username);
                     break;
+                    case "ACCOUNTING_MANAGER":
+                        UI_Manager.AddAccountingManager(loginRole);
+                    break;
+                    case "SALES_MANAGER":
+                        UI_Manager.AddAccountingManager(loginRole);
+                    break;
                 }
             } 
                 } catch(Exception e) {
@@ -279,6 +285,8 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         cmbEnterprises.addItem("PHARMACY_ADMIN");
         cmbEnterprises.addItem("PHARMACY_STORE_MANAGER");
         cmbEnterprises.addItem("TRANSPORT_ADMIN");
+        cmbEnterprises.addItem("ACCOUNTING_MANAGER");
+        cmbEnterprises.addItem("SALES MANAGER");
      
     }
     
