@@ -44,6 +44,13 @@ public class AccountingmanagerJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
+
+        Accounts.setBackground(new java.awt.Color(137, 87, 55));
+        Accounts.setForeground(new java.awt.Color(243, 233, 220));
+
+        jPanel3.setBackground(new java.awt.Color(137, 87, 55));
+
         tblStock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -101,10 +108,14 @@ public class AccountingmanagerJPanel extends javax.swing.JPanel {
 
         Accounts.addTab("View Sales Report", jPanel3);
 
+        jPanel2.setBackground(new java.awt.Color(137, 87, 55));
+
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(243, 233, 220));
         jLabel2.setText("Welcome");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(243, 233, 220));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -117,7 +128,7 @@ public class AccountingmanagerJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pharmacyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
