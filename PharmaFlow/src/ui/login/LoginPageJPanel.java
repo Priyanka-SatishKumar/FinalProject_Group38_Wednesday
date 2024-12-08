@@ -254,12 +254,15 @@ public class LoginPageJPanel extends javax.swing.JPanel {
     public void populateEnterpriseCombo(){
         cmbEnterprises.removeAllItems();
         
-        cmbEnterprises.addItem("Pharmacy Enterprise");
-        cmbEnterprises.addItem("Manufacturer Enterprise");
-        cmbEnterprises.addItem("Transportation Enterprise");
-        cmbEnterprises.addItem("Distributor Enterprise");
+//        cmbEnterprises.addItem("Pharmacy Enterprise");
+//        cmbEnterprises.addItem("Manufacturer Enterprise");
+//        cmbEnterprises.addItem("Transportation Enterprise");
+//        cmbEnterprises.addItem("Distributor Enterprise");
         cmbEnterprises.addItem("MANUFACTURE_ADMIN");
         cmbEnterprises.addItem("DISTRIBUTOR_ADMIN");
+        cmbEnterprises.addItem("PHARMACY_ADMIN");
+        cmbEnterprises.addItem("PHARMACY_STORE_MANAGER");
+        cmbEnterprises.addItem("TRANSPORT_ADMIN");
      
     }
     
