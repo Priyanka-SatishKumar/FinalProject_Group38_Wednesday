@@ -43,3 +43,51 @@ INSERT INTO pharmacy_store(pharmacy_id, store_name, store_address, store_zip, st
 VALUES(5, "CVS 2", "115 Boyleston Street", "02125", "Boston");
 INSERT INTO pharmacy_store(pharmacy_id, store_name, store_address, store_zip, store_city)
 VALUES(5, "MedPlus 1", "1628 5th Avenue", "02310", "Seattle");
+
+
+-- Add more drugs to the master_drug_table
+INSERT INTO master_drug_table(drug_name) VALUES('Aspirin');
+INSERT INTO master_drug_table(drug_name) VALUES('Ibuprofen');
+INSERT INTO master_drug_table(drug_name) VALUES('Cetirizine');
+
+-- Add more companies to the company table
+INSERT INTO company(company_name, company_type, registered_date) VALUES("Pfizer Inc", "MANUFACTURER", "1989-05-19");
+INSERT INTO company(company_name, company_type, registered_date) VALUES("Roche", "MANUFACTURER", "1995-08-15");
+INSERT INTO company(company_name, company_type, registered_date) VALUES("AmerisourceBergen", "DISTRIBUTOR", "2005-03-10");
+INSERT INTO company(company_name, company_type, registered_date) VALUES("Walgreens", "PHARMACY", "1999-11-11");
+
+-- Add more users to the person table
+INSERT INTO person(username, person_name, password, person_role, company_id) VALUES("man3", "Ritika Sharma", "password", "MANUFACTURE_ADMIN", 8);
+INSERT INTO person(username, person_name, password, person_role, company_id) VALUES("dist3", "Ankit Patel", "password", "DISTRIBUTOR_ADMIN", 9);
+INSERT INTO person(username, person_name, password, person_role, company_id) VALUES("pharm3", "Anjali Nair", "password", "PHARMACY_ADMIN", 10);
+INSERT INTO person(username, person_name, password, person_role, company_id) VALUES("phstore2", "Tina Verma", "password", "PHARMACY_STORE_MANAGER", 10);
+
+-- Add manufacturer inventory data
+INSERT INTO manufacturer_inventory(manufacturer_id, drug_id, quantity, cost_price, selling_price) VALUES(3, 4, 300, 2, 3);
+INSERT INTO manufacturer_inventory(manufacturer_id, drug_id, quantity, cost_price, selling_price) VALUES(3, 5, 400, 5, 7);
+INSERT INTO manufacturer_inventory(manufacturer_id, drug_id, quantity, cost_price, selling_price) VALUES(4, 6, 250, 8, 10);
+INSERT INTO manufacturer_inventory(manufacturer_id, drug_id, quantity, cost_price, selling_price) VALUES(4, 7, 200, 12, 15);
+
+-- Add pharmacy orders
+INSERT INTO pharmacy_order(pharmacy_id, manufacturer_id, order_date, order_status) VALUES(10, 3, "2023-01-16", "COMPLETED");
+INSERT INTO pharmacy_order(pharmacy_id, manufacturer_id, order_date, order_status) VALUES(10, 4, "2023-02-16", "PENDING");
+
+-- Add pharmacy order items
+INSERT INTO pharmacy_order_item(order_id, item_id, quantity, cost_price) VALUES(3, 4, 10, 3);
+INSERT INTO pharmacy_order_item(order_id, item_id, quantity, cost_price) VALUES(3, 5, 15, 7);
+INSERT INTO pharmacy_order_item(order_id, item_id, quantity, cost_price) VALUES(4, 6, 20, 10);
+INSERT INTO pharmacy_order_item(order_id, item_id, quantity, cost_price) VALUES(4, 7, 12, 15);
+
+-- Add pharmacy inventory
+INSERT INTO pharmacy_inventory(pharmacy_id, drug_id, quantity, cost_price, selling_price) VALUES(10, 4, 10, 3, 5);
+INSERT INTO pharmacy_inventory(pharmacy_id, drug_id, quantity, cost_price, selling_price) VALUES(10, 5, 15, 7, 10);
+INSERT INTO pharmacy_inventory(pharmacy_id, drug_id, quantity, cost_price, selling_price) VALUES(10, 6, 20, 10, 12);
+INSERT INTO pharmacy_inventory(pharmacy_id, drug_id, quantity, cost_price, selling_price) VALUES(10, 7, 12, 15, 18);
+
+-- Add more pharmacy stores
+INSERT INTO pharmacy_store(pharmacy_id, store_name, store_address, store_zip, store_city)
+VALUES(10, "Walgreens 1", "525 Madison Avenue", "10022", "New York");
+INSERT INTO pharmacy_store(pharmacy_id, store_name, store_address, store_zip, store_city)
+VALUES(10, "Walgreens 2", "401 Market Street", "19106", "Philadelphia");
+INSERT INTO pharmacy_store(pharmacy_id, store_name, store_address, store_zip, store_city)
+VALUES(10, "Walgreens 3", "850 3rd Avenue", "10110", "New York");

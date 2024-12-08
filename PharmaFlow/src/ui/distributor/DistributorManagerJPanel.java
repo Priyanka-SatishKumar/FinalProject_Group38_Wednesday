@@ -27,6 +27,8 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         initComponents();
         this.distributorId = distributorId;
         this.username = username;
+        System.out.println(username);
+        System.out.println(distributorId);
     }
 
     /**
@@ -149,6 +151,11 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
                 "Order ID", "Order Date", "Supplier", "Order Status", "Shipping Partner"
             }
         ));
+        tblOrderOverview.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblOrderOverviewMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblOrderOverview);
 
         lblManufac.setText("Manufacturer");
@@ -686,7 +693,6 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         manuOrderTable.setRowCount(0);
         try
         {
-            //p.order_id, p.order_status, p.distributor_id, c1.company_name AS distributor_name, p.transporter_id, c2.company_name AS transporter_name, p.order_date
             ResultSet rs = Distributor_Manager.getShipments(distributorId);
 
             while(rs.next())
@@ -960,6 +966,13 @@ public class DistributorManagerJPanel extends javax.swing.JPanel {
         DefaultTableModel manuDrugTable= (DefaultTableModel)tblViewStock.getModel();
         manuDrugTable.setRowCount(0);
     }//GEN-LAST:event_btnViewStockActionPerformed
+
+    private void tblOrderOverviewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrderOverviewMouseClicked
+        // TODO add your handling code here:
+        int selectedIndex = tblOrderOverview.getSelectedRow();
+        DefaultTableModel tbl = (DefaultTableModel) tblOrderOverview.getModel();
+        jLabel1.setText(tbl.getValueAt(selectedIndex,0).toString());
+    }//GEN-LAST:event_tblOrderOverviewMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
