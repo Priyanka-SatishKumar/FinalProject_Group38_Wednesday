@@ -26,51 +26,29 @@ import ui.manager.UI_Manager;
  */
 public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
-    public void setDefaultVlaues() {
+    public void setFakeValues() {
         Faker f = new Faker();
-        jTextField1.setText("PHARMEASY MANUFACT");
-        jTextFieldComContact.setText(f.phoneNumber().phoneNumber());
-        jTextFieldComEmail.setText(f.name().lastName()+"@gmail.com");
-        jTextField4.setText(f.address().fullAddress());
-        jTextField5.setText(f.address().zipCode());
-        jTextField6.setText(f.address().cityName());
-        jTextFieldName.setText("kudli");
-        jTextFieldContact.setText("0123456789");
+        txtComContact.setText(f.phoneNumber().phoneNumber());
+        txtComEmail.setText(f.name().lastName()+"@gmail.com");
+        txtcompAdd.setText(f.address().fullAddress());
+        txtCompZip.setText(f.address().zipCode());
+        txtcompCity.setText(f.address().cityName());
+        jTextFieldName.setText(f.name().name());
+        jTextFieldContact.setText(f.number().digits(10));
         jTextFieldEmail.setText("s@gmail.com");
         jTextFieldAddress.setText("s@gmail.com");
-        jTextFieldZip.setText("0215");
-        jTextFieldCity.setText("s@gmail.com");
-        jTextFieldUsername.setText("user");
-        jTextFieldPassword.setText("password");
-        
-        
-                
+        jTextFieldZip.setText(f.address().zipCode());
+        jTextFieldCity.setText(f.address().city());
     }
-    /**
-     * Creates new form CompanyRegisterationPanel
-     */
     
-    String userType="";
-    //String adminRole="";
+    String userType;
+
     public CompanyRegisterationPanel(String userType) {
         initComponents();
         jButton3.setVisible(false);
-        setDefaultVlaues();
-        this.userType = userType;
-//        if(this.userType.equalsIgnoreCase("manufacturer"))
-////        {
-//           adminRole = "MANUFACTURE_ADMIN" ;
-//        }
-//        else if(this.userType.equalsIgnoreCase("pharmacy"))
-//        {
-//           adminRole = "PHARMACY_ADMIN" ;
-//        }
-//        else if(this.userType.equalsIgnoreCase("DISTRIBUTOR"))
-//        {
-//           adminRole = "DISTRIBUTOR_ADMIN" ;
-//        }
         
-            }
+        this.userType = userType;
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -88,6 +66,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        btnFake = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -97,14 +76,14 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        txtcompAdd = new javax.swing.JTextField();
+        txtCompZip = new javax.swing.JTextField();
+        txtcompCity = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextFieldComContact = new javax.swing.JTextField();
-        jTextFieldComEmail = new javax.swing.JTextField();
+        txtComContact = new javax.swing.JTextField();
+        txtComEmail = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -180,6 +159,14 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         });
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
 
+        btnFake.setText("Click Here to use Fake Details");
+        btnFake.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFakeActionPerformed(evt);
+            }
+        });
+        jPanel5.add(btnFake, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
+
         jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 90));
 
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -208,9 +195,9 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCompZip, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcompAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcompCity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(57, 57, 57))
         );
         jPanel3Layout.setVerticalGroup(
@@ -219,14 +206,14 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtcompAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCompZip, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtcompCity, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -237,15 +224,15 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
         jLabel11.setText("EMAIL");
 
-        jTextFieldComContact.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtComContact.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextFieldComContactKeyReleased(evt);
+                txtComContactKeyReleased(evt);
             }
         });
 
-        jTextFieldComEmail.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtComEmail.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextFieldComEmailKeyReleased(evt);
+                txtComEmailKeyReleased(evt);
             }
         });
 
@@ -260,8 +247,8 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldComContact, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldComEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtComContact, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtComEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(62, 62, 62))
         );
         jPanel4Layout.setVerticalGroup(
@@ -270,10 +257,10 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addGap(6, 6, 6)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextFieldComContact, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtComContact, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldComEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtComEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -583,19 +570,18 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-    //Company Details
-
+    //Company Details ----------------------------------
     String companyName =  jTextField1.getText();
     if(Validation.isValidString(userType)==false)
     {
-        System.out.println("Enter Valid Comp Name");
+        JOptionPane.showMessageDialog(this,"Enter Valid Company Name");
     }
     String companyType = jComboBox1.getSelectedItem().toString();
-    String number = jTextFieldComContact.getText();
-    String comEmail =  jTextFieldComEmail.getText();
-    String comaddress = jTextFieldComEmail.getText();
-    String comZip = jTextField5.getText();
-    String comCity = jTextField6.getText();
+    String number = txtComContact.getText();
+    String comEmail =  txtComEmail.getText();
+    String comaddress = txtComEmail.getText();
+    String comZip = txtCompZip.getText();
+    String comCity = txtcompCity.getText();
 
     Location location = new Location(comaddress,comZip,comCity);
     Date d = DateLocate.DateLocate(LocalDate.now());
@@ -604,7 +590,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
     company.setLocation(location);
     company.setRegisteredDate(d);
 
-    //Company Admin Details
+    // Admin Details ---------------------------------
     String name = jTextFieldName.getText();
     int year = Integer.parseInt(jComboBoxYear.getSelectedItem().toString());
     int month = Integer.parseInt(jComboBoxMonth.getSelectedItem().toString());
@@ -682,10 +668,10 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         char c =evt.getKeyChar();
         if(Character.isLetter(c)|| Character.isWhitespace(c) || Character.isISOControl(c)){
-            jTextField6.setEditable(true);
+            txtcompCity.setEditable(true);
         }else
         {
-            jTextField6.setEditable(false);
+            txtcompCity.setEditable(false);
             JOptionPane.showMessageDialog(null, "Please enter only alphabetic characters.", "Invalid Input", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_jTextFieldCityKeyPressed
@@ -694,20 +680,20 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
 
         // TODO add your handling code here:
-String mobileNo=jTextFieldComContact.getText () ;
+String mobileNo=txtComContact.getText () ;
 
-Validation.isValidContact(mobileNo,jTextFieldComContact);
+Validation.isValidContact(mobileNo,txtComContact);
     }//GEN-LAST:event_jTextFieldContactKeyReleased
 
     private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNameActionPerformed
 
-    private void jTextFieldComContactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldComContactKeyReleased
-String mobileNo=jTextFieldComContact.getText () ;
-Validation.isValidContact(mobileNo,jTextFieldComContact);
+    private void txtComContactKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComContactKeyReleased
+String mobileNo=txtComContact.getText () ;
+Validation.isValidContact(mobileNo,txtComContact);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldComContactKeyReleased
+    }//GEN-LAST:event_txtComContactKeyReleased
 
     private void jTextFieldEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldEmailKeyReleased
 String email = jTextFieldEmail.getText();
@@ -715,11 +701,11 @@ Validation.checkValidEmail(email,jTextFieldEmail);
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEmailKeyReleased
 
-    private void jTextFieldComEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldComEmailKeyReleased
-String email = jTextFieldComEmail.getText();
-Validation.checkValidEmail(email,jTextFieldComEmail);
+    private void txtComEmailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtComEmailKeyReleased
+String email = txtComEmail.getText();
+Validation.checkValidEmail(email,txtComEmail);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldComEmailKeyReleased
+    }//GEN-LAST:event_txtComEmailKeyReleased
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
 //UI_Manager.AddCompanyLoginPanel(userType);
@@ -737,8 +723,14 @@ Validation.checkValidEmail(email,jTextFieldComEmail);
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldZipActionPerformed
 
+    private void btnFakeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFakeActionPerformed
+        // TODO add your handling code here:
+        setFakeValues();
+    }//GEN-LAST:event_btnFakeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFake;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -781,18 +773,18 @@ Validation.checkValidEmail(email,jTextFieldComEmail);
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextFieldAddress;
     private javax.swing.JTextField jTextFieldCity;
-    private javax.swing.JTextField jTextFieldComContact;
-    private javax.swing.JTextField jTextFieldComEmail;
     private javax.swing.JTextField jTextFieldContact;
     private javax.swing.JTextField jTextFieldEmail;
     private javax.swing.JTextField jTextFieldName;
     private javax.swing.JTextField jTextFieldPassword;
     private javax.swing.JTextField jTextFieldUsername;
     private javax.swing.JTextField jTextFieldZip;
+    private javax.swing.JTextField txtComContact;
+    private javax.swing.JTextField txtComEmail;
+    private javax.swing.JTextField txtCompZip;
+    private javax.swing.JTextField txtcompAdd;
+    private javax.swing.JTextField txtcompCity;
     // End of variables declaration//GEN-END:variables
 }
