@@ -122,14 +122,14 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         jPanel1.add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 440, 80, -1));
 
         btnForgotPswd.setBackground(new java.awt.Color(179, 179, 179));
-        btnForgotPswd.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        btnForgotPswd.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         btnForgotPswd.setForeground(new java.awt.Color(243, 233, 220));
         btnForgotPswd.setText("Forgot Password?");
         btnForgotPswd.setBorder(null);
         btnForgotPswd.setBorderPainted(false);
         btnForgotPswd.setContentAreaFilled(false);
         btnForgotPswd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btnForgotPswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 540, 70, 20));
+        jPanel1.add(btnForgotPswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 540, 100, 20));
 
         jButton1.setBackground(new java.awt.Color(243, 230, 230));
         jButton1.setText("Select Enterprise");
@@ -188,6 +188,15 @@ public class LoginPageJPanel extends javax.swing.JPanel {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        if(txtUsername.getText() == null) 
+        {
+            JOptionPane.showMessageDialog(this,"UserName and Password cannot be NULL");
+        }
+        if(txtPswd.getPassword() == null) 
+        {
+            JOptionPane.showMessageDialog(this,"UserName and Password cannot be NULL");
+        }
+        
         String username = txtUsername.getText();
         char[] password = txtPswd.getPassword();
         String userType = (String) cmbEnterprises.getSelectedItem();
@@ -287,7 +296,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         cmbEnterprises.addItem("PHARMACY_STORE_MANAGER");
         cmbEnterprises.addItem("TRANSPORT_ADMIN");
         cmbEnterprises.addItem("ACCOUNTING_MANAGER");
-        cmbEnterprises.addItem("SALES MANAGER");
+        cmbEnterprises.addItem("SALES_MANAGER");
      
     }
     

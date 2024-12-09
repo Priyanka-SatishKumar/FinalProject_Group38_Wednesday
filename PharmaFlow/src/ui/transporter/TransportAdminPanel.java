@@ -60,7 +60,6 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         jLabelStatus = new javax.swing.JLabel();
         lblOrderID = new javax.swing.JLabel();
         jLabelOrderId = new javax.swing.JLabel();
-        btnDistributer = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(137, 87, 55));
 
@@ -224,13 +223,6 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         jLabelOrderId.setForeground(new java.awt.Color(242, 242, 242));
         jLabelOrderId.setText("XXX");
 
-        btnDistributer.setText("PROCEED TO ASSIGN DISTRIBUTOR");
-        btnDistributer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDistributerActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout manageshipmetsLayout = new javax.swing.GroupLayout(manageshipmets);
         manageshipmets.setLayout(manageshipmetsLayout);
         manageshipmetsLayout.setHorizontalGroup(
@@ -255,9 +247,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
                                 .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(manageshipmetsLayout.createSequentialGroup()
                         .addGap(512, 512, 512)
-                        .addComponent(btnApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(132, 132, 132)
-                        .addComponent(btnDistributer, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(manageshipmetsLayout.createSequentialGroup()
                         .addGap(149, 149, 149)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 969, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -276,18 +266,15 @@ public class TransportAdminPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
-                .addGroup(manageshipmetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(manageshipmetsLayout.createSequentialGroup()
-                        .addGroup(manageshipmetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblOrderID, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelOrderId, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(manageshipmetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnDistributer, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(manageshipmetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblOrderID, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelOrderId, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(manageshipmetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(btnApproveShipment, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(313, Short.MAX_VALUE))
         );
 
@@ -449,17 +436,12 @@ public class TransportAdminPanel extends javax.swing.JPanel {
     }
     }//GEN-LAST:event_btnApproveShipmentActionPerformed
 
-    private void btnDistributerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDistributerActionPerformed
-        jTabbedPane1.setSelectedIndex(2);
-    }//GEN-LAST:event_btnDistributerActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel CompanyName;
     private javax.swing.JLabel PharmacyAdminId;
     private javax.swing.JTable ShipmentStatusTable;
     private javax.swing.JButton btnApproveShipment;
-    private javax.swing.JButton btnDistributer;
     private javax.swing.JButton btnViewShipments;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
