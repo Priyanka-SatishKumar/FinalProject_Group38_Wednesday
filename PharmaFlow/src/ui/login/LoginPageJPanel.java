@@ -188,6 +188,15 @@ public class LoginPageJPanel extends javax.swing.JPanel {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
+        if(txtUsername.getText() == null) 
+        {
+            JOptionPane.showMessageDialog(this,"UserName and Password cannot be NULL");
+        }
+        if(txtPswd.getPassword() == null) 
+        {
+            JOptionPane.showMessageDialog(this,"UserName and Password cannot be NULL");
+        }
+        
         String username = txtUsername.getText();
         char[] password = txtPswd.getPassword();
         String userType = (String) cmbEnterprises.getSelectedItem();
@@ -287,7 +296,7 @@ public class LoginPageJPanel extends javax.swing.JPanel {
         cmbEnterprises.addItem("PHARMACY_STORE_MANAGER");
         cmbEnterprises.addItem("TRANSPORT_ADMIN");
         cmbEnterprises.addItem("ACCOUNTING_MANAGER");
-        cmbEnterprises.addItem("SALES MANAGER");
+        cmbEnterprises.addItem("SALES_MANAGER");
      
     }
     

@@ -763,7 +763,6 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
                 rowData[3] = OrderStatus;
                 rowData[4] = transporterName;
                 manuOrderTable.addRow(rowData);
-
             }
         }
 
