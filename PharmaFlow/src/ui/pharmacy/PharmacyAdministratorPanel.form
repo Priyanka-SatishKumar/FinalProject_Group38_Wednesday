@@ -27,6 +27,11 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="37" green="57" red="89" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -44,7 +49,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="TopPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jTabbedPane1" max="32767" attributes="0"/>
+                  <Component id="jTabbedPane1" min="-2" pref="719" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -52,50 +57,53 @@
       </Layout>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="TopPanel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="37" green="57" red="89" type="rgb"/>
+            </Property>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jLabel3" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="287" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="554" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" pref="127" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="171" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="311" max="-2" attributes="0"/>
-                              <Component id="btnLogin" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel3" min="-2" pref="127" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" pref="127" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" pref="171" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel6" min="-2" pref="64" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btnLogin" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
-                      <Component id="btnLogin" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="btnLogin" min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel5" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel3" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                          <Component id="jLabel2" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -103,21 +111,45 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Helvetica Neue" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CVS ADMIN"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Helvetica Neue" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="ID"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Helvetica Neue" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="WELCOME"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Helvetica Neue" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="1001"/>
               </Properties>
             </Component>
@@ -132,6 +164,14 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="37" green="57" red="89" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+            </Property>
+          </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
           <SubComponents>
@@ -158,10 +198,23 @@
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JTabbedPane" name="jTabbedPaneManageStores">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="37" green="57" red="89" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                    </Property>
+                  </Properties>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="ViewStore">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="VIEW STORES">
@@ -194,7 +247,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="searchbypanel" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="searchbypanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="btnViewStores" min="-2" pref="31" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -216,6 +269,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="jTablePharmacyStore">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="5" rowCount="4">
                                     <Column editable="true" title="STORE ID" type="java.lang.Object"/>
@@ -271,10 +327,8 @@
                         </Component>
                         <Container class="javax.swing.JPanel" name="searchbypanel">
                           <Properties>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                <TitledBorder title="SEARCH BY"/>
-                              </Border>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -282,8 +336,10 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="316" max="-2" attributes="0"/>
-                                      <Component id="jTextFieldKeywordPharm1" pref="884" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" pref="159" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldKeywordPharm1" pref="865" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -291,8 +347,11 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jTextFieldKeywordPharm1" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldKeywordPharm1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                          <Component id="jLabel1" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -300,9 +359,22 @@
                           </Layout>
                           <SubComponents>
                             <Component class="javax.swing.JTextField" name="jTextFieldKeywordPharm1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
+                              </Properties>
                               <Events>
                                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldKeywordPharm1KeyReleased"/>
                               </Events>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel1">
+                              <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Search Here"/>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -317,6 +389,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="EditStore">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="MANAGE STORES">
@@ -353,6 +430,11 @@
                       </Layout>
                       <SubComponents>
                         <Container class="javax.swing.JPanel" name="ManageStoreJPanel">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
+                          </Properties>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -396,7 +478,7 @@
                                               <Component id="btnDeleteStore" min="-2" pref="54" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
                                               <Component id="jPanel14" min="-2" pref="264" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -408,6 +490,9 @@
                           <SubComponents>
                             <Container class="javax.swing.JPanel" name="jPanel14">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder title="STORE DETAILS"/>
@@ -489,21 +574,33 @@
                               <SubComponents>
                                 <Component class="javax.swing.JLabel" name="jLabel11">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="STORE ID"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel12">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="STORE ZIPCODE"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel13">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="STORE ADDRESS"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel14">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="STORE CITY"/>
                                   </Properties>
                                 </Component>
@@ -511,6 +608,9 @@
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel15">
                                   <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="37" green="57" red="89" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="1"/>
                                   </Properties>
                                 </Component>
@@ -547,6 +647,9 @@
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel16">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="STORE NAME"/>
                                   </Properties>
                                 </Component>
@@ -623,6 +726,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="storeManagers">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="37" green="57" red="89" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="MANAGE STORE MANAGERS">
@@ -642,7 +750,7 @@
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTabbedPane4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jTabbedPane4" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -650,7 +758,10 @@
                 <Container class="javax.swing.JTabbedPane" name="jTabbedPane4">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Helvetica Neue" size="13" style="1"/>
@@ -660,6 +771,11 @@
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="jPanel3">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="VIEW STORE MANAGERS">
@@ -671,16 +787,24 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
-                                  <Component id="btnViewStoreManager" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="1070" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                                          <Component id="btnViewStoreManager" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="203" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" min="-2" pref="119" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="1023" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="99" max="32767" attributes="0"/>
                                       <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="99" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -690,7 +814,9 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnViewStoreManager" min="-2" pref="34" max="-2" attributes="0"/>
-                                  <EmptySpace pref="617" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="561" max="32767" attributes="0"/>
                               </Group>
                               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
@@ -704,6 +830,11 @@
                       </Layout>
                       <SubComponents>
                         <Container class="javax.swing.JPanel" name="jPanel6">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
+                          </Properties>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -712,11 +843,11 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Component id="jPanel29" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jScrollPane6" alignment="1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jButton14" min="-2" pref="95" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
+                                          <Component id="jScrollPane6" alignment="1" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
@@ -726,7 +857,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Component id="jPanel29" min="-2" pref="78" max="-2" attributes="0"/>
+                                      <Component id="jPanel29" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jScrollPane6" min="-2" pref="328" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
@@ -760,10 +891,8 @@
                             </Container>
                             <Container class="javax.swing.JPanel" name="jPanel29">
                               <Properties>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                    <TitledBorder title="SEARCH BY"/>
-                                  </Border>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -780,7 +909,7 @@
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="21" max="32767" attributes="0"/>
                                           <Component id="jTextField24" min="-2" pref="39" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       </Group>
@@ -804,15 +933,34 @@
                         </Container>
                         <Component class="javax.swing.JButton" name="btnViewStoreManager">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="VIEW STORE MANAGER"/>
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewStoreManagerActionPerformed"/>
                           </Events>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel7">
+                          <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Search Here"/>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel4">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="ADD STORE MANAGERS">
@@ -833,11 +981,11 @@
                                           <Component id="btnAddStoreManager" min="-2" pref="185" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="343" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
                                           <Component id="jPanel8" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="425" max="32767" attributes="0"/>
+                                  <EmptySpace pref="413" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -866,6 +1014,9 @@
                         </Component>
                         <Container class="javax.swing.JPanel" name="jPanel8">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder title="STORE MANAGER DETAILS">
@@ -874,6 +1025,9 @@
                                   </Border>
                                 </TitledBorder>
                               </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -896,7 +1050,7 @@
                                                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
-                                                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -925,7 +1079,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                                      <EmptySpace pref="60" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -968,6 +1122,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JLabel" name="lblName">
                               <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="STORE MANAGER NAME"/>
                               </Properties>
                             </Component>
@@ -979,15 +1136,24 @@
                             </Component>
                             <Component class="javax.swing.JLabel" name="lbldob">
                               <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="DOB"/>
                               </Properties>
                             </Component>
                             <Container class="javax.swing.JPanel" name="jPanel9">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder title="ADDRESS"/>
                                   </Border>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -1037,16 +1203,25 @@
                               <SubComponents>
                                 <Component class="javax.swing.JLabel" name="lblAddress">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="ADDRESS"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="lblZip">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="ZIPCODE"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="lblCity">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="CITY"/>
                                   </Properties>
                                 </Component>
@@ -1067,10 +1242,16 @@
                             </Container>
                             <Container class="javax.swing.JPanel" name="jPanel11">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder title="CONTACT"/>
                                   </Border>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -1113,11 +1294,17 @@
                               <SubComponents>
                                 <Component class="javax.swing.JLabel" name="lblPhone">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="PHONE NUMBER"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="lblEmail">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="EMAIL"/>
                                   </Properties>
                                 </Component>
@@ -1135,6 +1322,9 @@
                             </Container>
                             <Container class="javax.swing.JPanel" name="jPanel12">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder title="CREDENTIALS"/>
@@ -1181,11 +1371,17 @@
                               <SubComponents>
                                 <Component class="javax.swing.JLabel" name="jLabel26">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="USERNAME"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="jLabel27">
                                   <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="PASSWORD"/>
                                   </Properties>
                                 </Component>
@@ -1197,6 +1393,9 @@
                             </Container>
                             <Component class="javax.swing.JLabel" name="lblGender">
                               <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="GENDER"/>
                               </Properties>
                             </Component>
@@ -1217,6 +1416,9 @@
                               <Properties>
                                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                                   <Font name="Helvetica Neue" size="10" style="0"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
                                 </Property>
                                 <Property name="text" type="java.lang.String" value="YYYY-MM-DD"/>
                               </Properties>
@@ -1318,6 +1520,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="jPanel5">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="EDIT STORE MANAGER">
@@ -1343,7 +1550,7 @@
                                           <Component id="jButton10" min="-2" pref="95" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="387" max="32767" attributes="0"/>
+                                  <EmptySpace pref="386" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -1390,10 +1597,16 @@
                         </Component>
                         <Container class="javax.swing.JPanel" name="jPanel10">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                 <TitledBorder title="EDIT STORE MANAGER DETAILS"/>
                               </Border>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -1455,16 +1668,25 @@
                           <SubComponents>
                             <Component class="javax.swing.JLabel" name="jLabel21">
                               <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="NAME"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel47">
                               <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="PHONE NUMBER"/>
                               </Properties>
                             </Component>
                             <Component class="javax.swing.JLabel" name="jLabel48">
                               <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
                                 <Property name="text" type="java.lang.String" value="EMAIL"/>
                               </Properties>
                             </Component>
@@ -1504,6 +1726,11 @@
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="manageInventory">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="37" green="57" red="89" type="rgb"/>
+                </Property>
+              </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                   <JTabbedPaneConstraints tabName="MANAGE INVENTORY">
@@ -1532,13 +1759,21 @@
                 <Container class="javax.swing.JTabbedPane" name="jTabbedPane5">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                      <Color blue="37" green="57" red="89" type="rgb"/>
+                    </Property>
+                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
                     </Property>
                   </Properties>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
                   <SubComponents>
                     <Container class="javax.swing.JPanel" name="ViewStock">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="VIEW STOCK">
@@ -1551,7 +1786,7 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace pref="123" max="32767" attributes="0"/>
+                                  <EmptySpace pref="133" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="btnBack3" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="btnViewStock" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
@@ -1566,7 +1801,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="SearchJPanel" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="SearchJPanel" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                                   <Component id="btnViewStock" min="-2" pref="29" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1628,10 +1863,8 @@
                         </Container>
                         <Container class="javax.swing.JPanel" name="SearchJPanel">
                           <Properties>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                <TitledBorder title="SEARCH BY"/>
-                              </Border>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -1639,7 +1872,9 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" min="-2" pref="113" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
                                       <Component id="jTextFieldKey" pref="551" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="320" max="-2" attributes="0"/>
                                   </Group>
@@ -1648,8 +1883,11 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jTextFieldKey" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextFieldKey" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                          <Component id="jLabel8" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1664,6 +1902,14 @@
                                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldKeyActionPerformed"/>
                                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextFieldKeyKeyReleased"/>
                               </Events>
+                            </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel8">
+                              <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Search Here"/>
+                              </Properties>
                             </Component>
                           </SubComponents>
                         </Container>
@@ -1683,6 +1929,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="EditStock">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="EDIT STOCK">
@@ -1709,6 +1960,11 @@
                       </Layout>
                       <SubComponents>
                         <Container class="javax.swing.JPanel" name="jPanel26">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
+                          </Properties>
 
                           <Layout>
                             <DimensionLayout dim="0">
@@ -1736,7 +1992,7 @@
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="SearchJPanel2" min="-2" pref="78" max="-2" attributes="0"/>
+                                      <Component id="SearchJPanel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jScrollPane15" min="-2" pref="239" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1783,6 +2039,9 @@
                             </Container>
                             <Container class="javax.swing.JPanel" name="DrugsJPanel">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
+                                </Property>
                                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                                     <TitledBorder title="DRUG DETAILS"/>
@@ -1980,10 +2239,8 @@
                             </Container>
                             <Container class="javax.swing.JPanel" name="SearchJPanel2">
                               <Properties>
-                                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                    <TitledBorder title="SEARCH BY"/>
-                                  </Border>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="37" green="57" red="89" type="rgb"/>
                                 </Property>
                               </Properties>
 
@@ -1991,7 +2248,9 @@
                                 <DimensionLayout dim="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                           <Component id="jTextField49" max="32767" attributes="0"/>
                                           <EmptySpace min="-2" pref="395" max="-2" attributes="0"/>
                                       </Group>
@@ -2000,8 +2259,11 @@
                                 <DimensionLayout dim="1">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jTextField49" min="-2" pref="39" max="-2" attributes="0"/>
+                                          <EmptySpace pref="21" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jTextField49" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -2009,6 +2271,14 @@
                               </Layout>
                               <SubComponents>
                                 <Component class="javax.swing.JTextField" name="jTextField49">
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="jLabel9">
+                                  <Properties>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Search Here"/>
+                                  </Properties>
                                 </Component>
                               </SubComponents>
                             </Container>
@@ -2025,6 +2295,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="PurchaseStock">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="PURCHASE STOCK">
@@ -2047,7 +2322,7 @@
                                       <Component id="jPanel35" alignment="0" max="32767" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="btnViewStock2" min="-2" pref="148" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="955" max="32767" attributes="0"/>
                                           <Component id="jLabelOrderstatus" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabelOrderStatusValue" min="-2" pref="104" max="-2" attributes="0"/>
@@ -2095,7 +2370,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jPanel35" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="jPanel35" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="btnViewStock2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
@@ -2207,11 +2482,17 @@
                         </Container>
                         <Component class="javax.swing.JLabel" name="jLabel42">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="PURCHASE ORDER TABLE"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel44">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="TOTAL PURCHASE ORDER"/>
                           </Properties>
                         </Component>
@@ -2222,10 +2503,11 @@
                         </Component>
                         <Container class="javax.swing.JPanel" name="jPanel35">
                           <Properties>
-                            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                                <TitledBorder title="SEARCH BY"/>
-                              </Border>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="37" green="57" red="89" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
                             </Property>
                           </Properties>
 
@@ -2233,17 +2515,22 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="366" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" min="-2" pref="159" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                                       <Component id="jTextField33" min="-2" pref="570" max="-2" attributes="0"/>
-                                      <EmptySpace pref="492" max="32767" attributes="0"/>
+                                      <EmptySpace pref="480" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="jTextField33" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <EmptySpace pref="21" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jTextField33" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2256,10 +2543,21 @@
                                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField33KeyReleased"/>
                               </Events>
                             </Component>
+                            <Component class="javax.swing.JLabel" name="jLabel10">
+                              <Properties>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                                </Property>
+                                <Property name="text" type="java.lang.String" value="Search Here"/>
+                              </Properties>
+                            </Component>
                           </SubComponents>
                         </Container>
                         <Component class="javax.swing.JLabel" name="jLabel51">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="DRUG NAME"/>
                           </Properties>
                         </Component>
@@ -2267,16 +2565,25 @@
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabelDrugName">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="XXX"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel62">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="DRUG QUANTITY"/>
                           </Properties>
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabelTotalOrder">
                           <Properties>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="text" type="java.lang.String" value="XXX"/>
                           </Properties>
                         </Component>
@@ -2313,6 +2620,9 @@
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Helvetica Neue" size="13" style="1"/>
                             </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="f2" green="f2" red="f2" type="rgb"/>
+                            </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
                             <Property name="text" type="java.lang.String" value="ORDER STATUS"/>
                           </Properties>
@@ -2323,7 +2633,7 @@
                               <Font name="Helvetica Neue" size="14" style="1"/>
                             </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="0" red="cc" type="rgb"/>
+                              <Color blue="33" green="33" red="ff" type="rgb"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="4"/>
                             <Property name="text" type="java.lang.String" value="PROCESSING"/>
@@ -2340,6 +2650,11 @@
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="PurchaseStockHistory">
+                      <Properties>
+                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="37" green="57" red="89" type="rgb"/>
+                        </Property>
+                      </Properties>
                       <Constraints>
                         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                           <JTabbedPaneConstraints tabName="VIEW STOCK PURCHASE HISTORY">
@@ -2351,19 +2666,23 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="102" max="32767" attributes="0"/>
+                                  <Component id="jScrollPane17" min="-2" pref="1256" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane17" alignment="0" min="-2" pref="1256" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="397" max="-2" attributes="0"/>
-                                          <Component id="btnViewOrderPurchaseHistory" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="333" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="432" max="-2" attributes="0"/>
                                           <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="517" max="-2" attributes="0"/>
+                                          <Component id="btnViewOrderPurchaseHistory" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="188" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2374,9 +2693,9 @@
                                   <Component id="btnViewOrderPurchaseHistory" min="-2" pref="32" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jScrollPane17" min="-2" pref="174" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="jScrollPane3" min="-2" pref="291" max="-2" attributes="0"/>
-                                  <EmptySpace pref="114" max="32767" attributes="0"/>
+                                  <EmptySpace pref="100" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

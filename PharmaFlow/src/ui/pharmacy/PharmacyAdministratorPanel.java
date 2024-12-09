@@ -74,6 +74,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         searchbypanel = new javax.swing.JPanel();
         jTextFieldKeywordPharm1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         btnViewStores = new javax.swing.JButton();
         EditStore = new javax.swing.JPanel();
         ManageStoreJPanel = new javax.swing.JPanel();
@@ -104,6 +105,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jTextField24 = new javax.swing.JTextField();
         jButton14 = new javax.swing.JButton();
         btnViewStoreManager = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         btnBack2 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
@@ -154,6 +156,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jTableViewPharmStock = new javax.swing.JTable();
         SearchJPanel = new javax.swing.JPanel();
         jTextFieldKey = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
         btnViewStock = new javax.swing.JButton();
         btnBack3 = new javax.swing.JButton();
         EditStock = new javax.swing.JPanel();
@@ -179,6 +182,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jButton23 = new javax.swing.JButton();
         SearchJPanel2 = new javax.swing.JPanel();
         jTextField49 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
         btnBack4 = new javax.swing.JButton();
         PurchaseStock = new javax.swing.JPanel();
         jScrollPane13 = new javax.swing.JScrollPane();
@@ -192,6 +196,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         btnGenerateInvoice = new javax.swing.JButton();
         jPanel35 = new javax.swing.JPanel();
         jTextField33 = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabelDrugName = new javax.swing.JLabel();
@@ -210,12 +215,24 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         pharmacyOrderItemsTable = new javax.swing.JTable();
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
+
+        TopPanel.setBackground(new java.awt.Color(137, 87, 55));
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("CVS ADMIN");
 
+        jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(242, 242, 242));
         jLabel3.setText("ID");
 
+        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(242, 242, 242));
         jLabel5.setText("WELCOME");
 
+        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(242, 242, 242));
         jLabel6.setText("1001");
 
         btnLogin.setText("LOGIN");
@@ -230,39 +247,47 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         TopPanelLayout.setHorizontalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(TopPanelLayout.createSequentialGroup()
-                        .addGap(287, 287, 287)
+                        .addGap(554, 554, 554)
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(311, 311, 311)
-                        .addComponent(btnLogin))
-                    .addGroup(TopPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
         );
         TopPanelLayout.setVerticalGroup(
             TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TopPanelLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(btnLogin)
-                .addGap(9, 9, 9)
+                .addGap(26, 26, 26)
+                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TopPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(TopPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62))
         );
 
+        jTabbedPane1.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPane1.setForeground(new java.awt.Color(242, 242, 242));
+
+        jTabbedPaneManageStores.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPaneManageStores.setForeground(new java.awt.Color(242, 242, 242));
+
+        ViewStore.setBackground(new java.awt.Color(137, 87, 55));
+
+        jTablePharmacyStore.setBackground(new java.awt.Color(137, 87, 55));
         jTablePharmacyStore.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -283,28 +308,36 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         btnBack.setText("BACK");
 
-        searchbypanel.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+        searchbypanel.setBackground(new java.awt.Color(137, 87, 55));
 
+        jTextFieldKeywordPharm1.setBackground(new java.awt.Color(137, 87, 55));
         jTextFieldKeywordPharm1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextFieldKeywordPharm1KeyReleased(evt);
             }
         });
 
+        jLabel1.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel1.setText("Search Here");
+
         javax.swing.GroupLayout searchbypanelLayout = new javax.swing.GroupLayout(searchbypanel);
         searchbypanel.setLayout(searchbypanelLayout);
         searchbypanelLayout.setHorizontalGroup(
             searchbypanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchbypanelLayout.createSequentialGroup()
-                .addGap(316, 316, 316)
-                .addComponent(jTextFieldKeywordPharm1, javax.swing.GroupLayout.DEFAULT_SIZE, 884, Short.MAX_VALUE)
+                .addGap(148, 148, 148)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jTextFieldKeywordPharm1, javax.swing.GroupLayout.DEFAULT_SIZE, 865, Short.MAX_VALUE)
                 .addGap(234, 234, 234))
         );
         searchbypanelLayout.setVerticalGroup(
             searchbypanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchbypanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextFieldKeywordPharm1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(searchbypanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldKeywordPharm1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -335,7 +368,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             ViewStoreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ViewStoreLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(searchbypanel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(searchbypanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnViewStores, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -347,16 +380,26 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         jTabbedPaneManageStores.addTab("VIEW STORES", ViewStore);
 
+        EditStore.setBackground(new java.awt.Color(137, 87, 55));
+
+        ManageStoreJPanel.setBackground(new java.awt.Color(137, 87, 55));
+
+        jPanel14.setBackground(new java.awt.Color(137, 87, 55));
         jPanel14.setBorder(javax.swing.BorderFactory.createTitledBorder("STORE DETAILS"));
 
+        jLabel11.setForeground(new java.awt.Color(242, 242, 242));
         jLabel11.setText("STORE ID");
 
+        jLabel12.setForeground(new java.awt.Color(242, 242, 242));
         jLabel12.setText("STORE ZIPCODE");
 
+        jLabel13.setForeground(new java.awt.Color(242, 242, 242));
         jLabel13.setText("STORE ADDRESS");
 
+        jLabel14.setForeground(new java.awt.Color(242, 242, 242));
         jLabel14.setText("STORE CITY");
 
+        jLabel15.setBackground(new java.awt.Color(137, 87, 55));
         jLabel15.setText("1");
 
         jComboBoxZip.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "02215", " " }));
@@ -368,6 +411,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel16.setForeground(new java.awt.Color(242, 242, 242));
         jLabel16.setText("STORE NAME");
 
         jTextField6.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -514,7 +558,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDeleteStore, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(ManageStoreJPanelLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -555,8 +599,15 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("MANAGE STORES", manageStores);
 
-        jTabbedPane4.setBackground(new java.awt.Color(204, 204, 204));
+        storeManagers.setBackground(new java.awt.Color(137, 87, 55));
+
+        jTabbedPane4.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPane4.setForeground(new java.awt.Color(242, 242, 242));
         jTabbedPane4.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+
+        jPanel3.setBackground(new java.awt.Color(137, 87, 55));
+
+        jPanel6.setBackground(new java.awt.Color(137, 87, 55));
 
         jTableStoreTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -571,7 +622,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         ));
         jScrollPane6.setViewportView(jTableStoreTable);
 
-        jPanel29.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+        jPanel29.setBackground(new java.awt.Color(137, 87, 55));
 
         jTextField24.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -591,7 +642,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -606,17 +657,17 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
@@ -624,6 +675,8 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 .addContainerGap(80, Short.MAX_VALUE))
         );
 
+        btnViewStoreManager.setBackground(new java.awt.Color(137, 87, 55));
+        btnViewStoreManager.setForeground(new java.awt.Color(242, 242, 242));
         btnViewStoreManager.setText("VIEW STORE MANAGER");
         btnViewStoreManager.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -631,26 +684,36 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel7.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel7.setText("Search Here");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(btnViewStoreManager)
-                .addContainerGap(1070, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(btnViewStoreManager))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(203, 203, 203)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1023, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 99, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 99, Short.MAX_VALUE)))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnViewStoreManager, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(617, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jLabel7)
+                .addContainerGap(561, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel3Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -660,10 +723,15 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         jTabbedPane4.addTab("VIEW STORE MANAGERS", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(137, 87, 55));
+
         btnBack2.setText("BACK");
 
+        jPanel8.setBackground(new java.awt.Color(137, 87, 55));
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "STORE MANAGER DETAILS"));
+        jPanel8.setForeground(new java.awt.Color(242, 242, 242));
 
+        lblName.setForeground(new java.awt.Color(242, 242, 242));
         lblName.setText("STORE MANAGER NAME");
 
         txtName.addActionListener(new java.awt.event.ActionListener() {
@@ -677,14 +745,20 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             }
         });
 
+        lbldob.setForeground(new java.awt.Color(242, 242, 242));
         lbldob.setText("DOB");
 
+        jPanel9.setBackground(new java.awt.Color(137, 87, 55));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("ADDRESS"));
+        jPanel9.setForeground(new java.awt.Color(242, 242, 242));
 
+        lblAddress.setForeground(new java.awt.Color(242, 242, 242));
         lblAddress.setText("ADDRESS");
 
+        lblZip.setForeground(new java.awt.Color(242, 242, 242));
         lblZip.setText("ZIPCODE");
 
+        lblCity.setForeground(new java.awt.Color(242, 242, 242));
         lblCity.setText("CITY");
 
         txtZip.addActionListener(new java.awt.event.ActionListener() {
@@ -739,10 +813,14 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel11.setBackground(new java.awt.Color(137, 87, 55));
         jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("CONTACT"));
+        jPanel11.setForeground(new java.awt.Color(242, 242, 242));
 
+        lblPhone.setForeground(new java.awt.Color(242, 242, 242));
         lblPhone.setText("PHONE NUMBER");
 
+        lblEmail.setForeground(new java.awt.Color(242, 242, 242));
         lblEmail.setText("EMAIL");
 
         txtPhone.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -786,10 +864,13 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel12.setBackground(new java.awt.Color(137, 87, 55));
         jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("CREDENTIALS"));
 
+        jLabel26.setForeground(new java.awt.Color(242, 242, 242));
         jLabel26.setText("USERNAME");
 
+        jLabel27.setForeground(new java.awt.Color(242, 242, 242));
         jLabel27.setText("PASSWORD");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -821,11 +902,13 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        lblGender.setForeground(new java.awt.Color(242, 242, 242));
         lblGender.setText("GENDER");
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Female", "Male" }));
 
         jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(242, 242, 242));
         jLabel4.setText("YYYY-MM-DD");
 
         jComboBoxYear.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022" }));
@@ -852,7 +935,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                                     .addGroup(jPanel8Layout.createSequentialGroup()
                                         .addGap(20, 20, 20)
                                         .addComponent(jLabel4)))
-                                .addGap(69, 69, 69))
+                                .addGap(79, 79, 79))
                             .addGroup(jPanel8Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -871,7 +954,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jComboBoxDay, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -922,9 +1005,9 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                         .addGap(478, 478, 478)
                         .addComponent(btnAddStoreManager, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(343, 343, 343)
+                        .addGap(355, 355, 355)
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(413, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -942,6 +1025,8 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         jTabbedPane4.addTab("ADD STORE MANAGERS", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(137, 87, 55));
+
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -957,12 +1042,17 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
 
         jButton10.setText("BACK");
 
+        jPanel10.setBackground(new java.awt.Color(137, 87, 55));
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder("EDIT STORE MANAGER DETAILS"));
+        jPanel10.setForeground(new java.awt.Color(242, 242, 242));
 
+        jLabel21.setForeground(new java.awt.Color(242, 242, 242));
         jLabel21.setText("NAME");
 
+        jLabel47.setForeground(new java.awt.Color(242, 242, 242));
         jLabel47.setText("PHONE NUMBER");
 
+        jLabel48.setForeground(new java.awt.Color(242, 242, 242));
         jLabel48.setText("EMAIL");
 
         jTextField17.addActionListener(new java.awt.event.ActionListener() {
@@ -1056,7 +1146,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(387, Short.MAX_VALUE))
+                .addContainerGap(386, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1082,12 +1172,17 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         );
         storeManagersLayout.setVerticalGroup(
             storeManagersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane4)
+            .addComponent(jTabbedPane4, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane1.addTab("MANAGE STORE MANAGERS", storeManagers);
 
-        jTabbedPane5.setBackground(new java.awt.Color(204, 204, 204));
+        manageInventory.setBackground(new java.awt.Color(137, 87, 55));
+
+        jTabbedPane5.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPane5.setForeground(new java.awt.Color(242, 242, 242));
+
+        ViewStock.setBackground(new java.awt.Color(137, 87, 55));
 
         jTableViewPharmStock.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         jTableViewPharmStock.setModel(new javax.swing.table.DefaultTableModel(
@@ -1108,7 +1203,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         });
         jScrollPane12.setViewportView(jTableViewPharmStock);
 
-        SearchJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+        SearchJPanel.setBackground(new java.awt.Color(137, 87, 55));
 
         jTextFieldKey.setText("SEARCH ");
         jTextFieldKey.addActionListener(new java.awt.event.ActionListener() {
@@ -1122,20 +1217,27 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel8.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel8.setText("Search Here");
+
         javax.swing.GroupLayout SearchJPanelLayout = new javax.swing.GroupLayout(SearchJPanel);
         SearchJPanel.setLayout(SearchJPanelLayout);
         SearchJPanelLayout.setHorizontalGroup(
             SearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SearchJPanelLayout.createSequentialGroup()
-                .addGap(290, 290, 290)
+                .addGap(75, 75, 75)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102)
                 .addComponent(jTextFieldKey, javax.swing.GroupLayout.DEFAULT_SIZE, 551, Short.MAX_VALUE)
                 .addGap(320, 320, 320))
         );
         SearchJPanelLayout.setVerticalGroup(
             SearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SearchJPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(SearchJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldKey, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
         );
 
@@ -1153,7 +1255,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         ViewStockLayout.setHorizontalGroup(
             ViewStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ViewStockLayout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
+                .addContainerGap(133, Short.MAX_VALUE)
                 .addGroup(ViewStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnBack3)
                     .addComponent(btnViewStock, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1165,7 +1267,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             ViewStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ViewStockLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(SearchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SearchJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(btnViewStock, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1176,6 +1278,10 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         );
 
         jTabbedPane5.addTab("VIEW STOCK", ViewStock);
+
+        EditStock.setBackground(new java.awt.Color(137, 87, 55));
+
+        jPanel26.setBackground(new java.awt.Color(137, 87, 55));
 
         jTable12.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         jTable12.setModel(new javax.swing.table.DefaultTableModel(
@@ -1196,6 +1302,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         });
         jScrollPane15.setViewportView(jTable12);
 
+        DrugsJPanel.setBackground(new java.awt.Color(137, 87, 55));
         DrugsJPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("DRUG DETAILS"));
 
         jLabel43.setText("DRUG NAME");
@@ -1342,22 +1449,29 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                         .addContainerGap())))
         );
 
-        SearchJPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+        SearchJPanel2.setBackground(new java.awt.Color(137, 87, 55));
+
+        jLabel9.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel9.setText("Search Here");
 
         javax.swing.GroupLayout SearchJPanel2Layout = new javax.swing.GroupLayout(SearchJPanel2);
         SearchJPanel2.setLayout(SearchJPanel2Layout);
         SearchJPanel2Layout.setHorizontalGroup(
             SearchJPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SearchJPanel2Layout.createSequentialGroup()
-                .addGap(183, 183, 183)
+                .addGap(54, 54, 54)
+                .addComponent(jLabel9)
+                .addGap(87, 87, 87)
                 .addComponent(jTextField49)
                 .addGap(395, 395, 395))
         );
         SearchJPanel2Layout.setVerticalGroup(
             SearchJPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SearchJPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField49, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(SearchJPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField49, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addGap(18, 18, 18))
         );
 
@@ -1389,7 +1503,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         jPanel26Layout.setVerticalGroup(
             jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel26Layout.createSequentialGroup()
-                .addComponent(SearchJPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(SearchJPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1414,6 +1528,8 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         );
 
         jTabbedPane5.addTab("EDIT STOCK", EditStock);
+
+        PurchaseStock.setBackground(new java.awt.Color(137, 87, 55));
 
         manufacturerDrugTable.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         manufacturerDrugTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1472,13 +1588,16 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         });
         jScrollPane14.setViewportView(purchaseOrderTable);
 
+        jLabel42.setForeground(new java.awt.Color(242, 242, 242));
         jLabel42.setText("PURCHASE ORDER TABLE");
 
+        jLabel44.setForeground(new java.awt.Color(242, 242, 242));
         jLabel44.setText("TOTAL PURCHASE ORDER");
 
         btnGenerateInvoice.setText("GENERATE INVOICE");
 
-        jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+        jPanel35.setBackground(new java.awt.Color(137, 87, 55));
+        jPanel35.setForeground(new java.awt.Color(242, 242, 242));
 
         jTextField33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1491,29 +1610,40 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel10.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel10.setText("Search Here");
+
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
         jPanel35Layout.setHorizontalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
-                .addGap(366, 366, 366)
+                .addGap(161, 161, 161)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68)
                 .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addContainerGap(480, Short.MAX_VALUE))
         );
         jPanel35Layout.setVerticalGroup(
             jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel35Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
                 .addGap(18, 18, 18))
         );
 
+        jLabel51.setForeground(new java.awt.Color(242, 242, 242));
         jLabel51.setText("DRUG NAME");
 
+        jLabelDrugName.setForeground(new java.awt.Color(242, 242, 242));
         jLabelDrugName.setText("XXX");
 
+        jLabel62.setForeground(new java.awt.Color(242, 242, 242));
         jLabel62.setText("DRUG QUANTITY");
 
+        jLabelTotalOrder.setForeground(new java.awt.Color(242, 242, 242));
         jLabelTotalOrder.setText("XXX");
 
         jCombQuantity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
@@ -1533,11 +1663,12 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         });
 
         jLabelOrderstatus.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabelOrderstatus.setForeground(new java.awt.Color(242, 242, 242));
         jLabelOrderstatus.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelOrderstatus.setText("ORDER STATUS");
 
         jLabelOrderStatusValue.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabelOrderStatusValue.setForeground(new java.awt.Color(204, 0, 0));
+        jLabelOrderStatusValue.setForeground(new java.awt.Color(255, 51, 51));
         jLabelOrderStatusValue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelOrderStatusValue.setText("PROCESSING");
 
@@ -1562,7 +1693,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                     .addComponent(jPanel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PurchaseStockLayout.createSequentialGroup()
                         .addComponent(btnViewStock2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 955, Short.MAX_VALUE)
                         .addComponent(jLabelOrderstatus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelOrderStatusValue, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1601,7 +1732,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             PurchaseStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PurchaseStockLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PurchaseStockLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnViewStock2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1634,6 +1765,8 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         );
 
         jTabbedPane5.addTab("PURCHASE STOCK", PurchaseStock);
+
+        PurchaseStockHistory.setBackground(new java.awt.Color(137, 87, 55));
 
         pharmacyOrderTable.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         pharmacyOrderTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1688,16 +1821,19 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
         PurchaseStockHistory.setLayout(PurchaseStockHistoryLayout);
         PurchaseStockHistoryLayout.setHorizontalGroup(
             PurchaseStockHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PurchaseStockHistoryLayout.createSequentialGroup()
+                .addGap(0, 102, Short.MAX_VALUE)
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 1256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
             .addGroup(PurchaseStockHistoryLayout.createSequentialGroup()
                 .addGroup(PurchaseStockHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 1256, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(PurchaseStockHistoryLayout.createSequentialGroup()
-                        .addGap(397, 397, 397)
-                        .addComponent(btnViewOrderPurchaseHistory))
+                        .addGap(432, 432, 432)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PurchaseStockHistoryLayout.createSequentialGroup()
-                        .addGap(333, 333, 333)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(188, Short.MAX_VALUE))
+                        .addGap(517, 517, 517)
+                        .addComponent(btnViewOrderPurchaseHistory)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PurchaseStockHistoryLayout.setVerticalGroup(
             PurchaseStockHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1706,9 +1842,9 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
                 .addComponent(btnViewOrderPurchaseHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(26, 26, 26)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         jTabbedPane5.addTab("VIEW STOCK PURCHASE HISTORY", PurchaseStockHistory);
@@ -1744,7 +1880,7 @@ public class PharmacyAdministratorPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(TopPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -2633,6 +2769,8 @@ UI_DesignFunctions.searchEmployeeDetails(keyword, jTableViewPharmStock);
     private javax.swing.JComboBox<String> jComboBoxMonth;
     private javax.swing.JComboBox<String> jComboBoxYear;
     private javax.swing.JComboBox<String> jComboBoxZip;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -2660,7 +2798,10 @@ UI_DesignFunctions.searchEmployeeDetails(keyword, jTableViewPharmStock);
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelDrugName;
     private javax.swing.JLabel jLabelOrderStatusValue;
     private javax.swing.JLabel jLabelOrderstatus;
