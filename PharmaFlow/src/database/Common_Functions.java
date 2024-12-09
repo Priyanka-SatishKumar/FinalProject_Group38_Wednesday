@@ -28,6 +28,7 @@ public class Common_Functions {
                 JOIN pharmacy_order_item poi ON poi.order_id = po.order_id
                 JOIN master_drug_table md ON md.drug_id=poi.item_id
                 WHERE po.order_id=%s""";
+            
             queryToFetchOrder = String.format(queryToFetchOrder, orderId);
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(queryToFetchOrder);
