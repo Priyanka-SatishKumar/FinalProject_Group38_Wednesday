@@ -45,7 +45,6 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
     public CompanyRegisterationPanel(String userType) {
         initComponents();
-        btnLogin.setVisible(false);
         
         this.userType = userType;
         }
@@ -160,7 +159,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 btnLoginActionPerformed(evt);
             }
         });
-        jPanel5.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 30, 40, 50));
+        jPanel5.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(1300, 40, 40, 50));
 
         btnBack.setText("BACK");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +188,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
         jLabel21.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel21.setForeground(new java.awt.Color(243, 233, 220));
         jLabel21.setText("Back to Login Page:");
-        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 50, -1, -1));
+        jPanel5.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 50, -1, -1));
 
         jLabel22.setForeground(new java.awt.Color(243, 233, 220));
         jLabel22.setText("Click Here to Populate Fake Data:");
@@ -333,7 +332,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addGap(90, 90, 90))
         );
 
-        jPanel6.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+        jPanel6.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
         jPanel7.setBackground(new java.awt.Color(137, 87, 55));
         jPanel6.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(712, 297, -1, -1));
@@ -577,7 +576,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
 
-        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, -1, -1));
+        jPanel6.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(243, 233, 220));
         jLabel3.setText("COMPANY DETAILS");
@@ -585,7 +584,7 @@ public class CompanyRegisterationPanel extends javax.swing.JPanel {
 
         jLabel15.setForeground(new java.awt.Color(243, 233, 220));
         jLabel15.setText("COMPANY ADMINISTOR DETAILS");
-        jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 20, -1, -1));
+        jPanel6.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 10, -1, -1));
 
         jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1430, 770));
 
