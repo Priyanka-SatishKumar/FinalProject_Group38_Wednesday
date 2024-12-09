@@ -51,6 +51,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         manageshipmets = new javax.swing.JPanel();
         jPanel34 = new javax.swing.JPanel();
         jTextFieldKeyword = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         btnViewShipments = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         ShipmentStatusTable = new javax.swing.JTable();
@@ -61,19 +62,30 @@ public class TransportAdminPanel extends javax.swing.JPanel {
         jLabelOrderId = new javax.swing.JLabel();
         btnDistributer = new javax.swing.JButton();
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
+
+        jPanel2.setBackground(new java.awt.Color(137, 87, 55));
+        jPanel2.setForeground(new java.awt.Color(242, 242, 242));
+
+        pharmacyAdminName.setBackground(new java.awt.Color(137, 87, 55));
         pharmacyAdminName.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        pharmacyAdminName.setForeground(new java.awt.Color(242, 242, 242));
         pharmacyAdminName.setText("Transporter Admin");
 
         jLabel2.setFont(new java.awt.Font("Al Bayan", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Welcome");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(242, 242, 242));
         jLabel3.setText("ID");
 
         PharmacyAdminId.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        PharmacyAdminId.setForeground(new java.awt.Color(242, 242, 242));
         PharmacyAdminId.setText("1001");
 
         CompanyName.setFont(new java.awt.Font("Hiragino Maru Gothic ProN", 2, 13)); // NOI18N
+        CompanyName.setForeground(new java.awt.Color(242, 242, 242));
         CompanyName.setText("Transport");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -82,23 +94,20 @@ public class TransportAdminPanel extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(PharmacyAdminId, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(pharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PharmacyAdminId, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(pharmacyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(CompanyName)
-                        .addGap(21, 21, 21))))
+                .addComponent(CompanyName)
+                .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(179, 179, 179)
+                .addComponent(pharmacyLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +129,11 @@ public class TransportAdminPanel extends javax.swing.JPanel {
                         .addContainerGap())))
         );
 
-        jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
+        jTabbedPane1.setBackground(new java.awt.Color(137, 87, 55));
+
+        manageshipmets.setBackground(new java.awt.Color(137, 87, 55));
+
+        jPanel34.setBackground(new java.awt.Color(137, 87, 55));
 
         jTextFieldKeyword.setText("SEARCH ");
         jTextFieldKeyword.addActionListener(new java.awt.event.ActionListener() {
@@ -134,19 +147,27 @@ public class TransportAdminPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(242, 242, 242));
+        jLabel1.setText("Search Here");
+
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
         jPanel34Layout.setHorizontalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
-                .addGap(275, 275, 275)
+                .addGap(178, 178, 178)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 727, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(132, Short.MAX_VALUE))
         );
         jPanel34Layout.setVerticalGroup(
             jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel34Layout.createSequentialGroup()
-                .addComponent(jTextFieldKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldKeyword, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(0, 9, Short.MAX_VALUE))
         );
 
@@ -198,14 +219,17 @@ public class TransportAdminPanel extends javax.swing.JPanel {
             }
         });
 
+        lblStatus.setForeground(new java.awt.Color(242, 242, 242));
         lblStatus.setText("STATUS");
 
         jLabelStatus.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         jLabelStatus.setForeground(new java.awt.Color(255, 51, 0));
         jLabelStatus.setText("XXX");
 
+        lblOrderID.setForeground(new java.awt.Color(242, 242, 242));
         lblOrderID.setText("ORDER ID");
 
+        jLabelOrderId.setForeground(new java.awt.Color(242, 242, 242));
         jLabelOrderId.setText("XXX");
 
         btnDistributer.setText("PROCEED TO ASSIGN DISTRIBUTOR");
@@ -448,6 +472,7 @@ public class TransportAdminPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnApproveShipment;
     private javax.swing.JButton btnDistributer;
     private javax.swing.JButton btnViewShipments;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelOrderId;
