@@ -139,15 +139,21 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         setPreferredSize(new java.awt.Dimension(1005, 630));
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        topPanel.setBackground(new java.awt.Color(137, 87, 55));
+
+        lblpharmacyAdminName.setBackground(new java.awt.Color(137, 87, 55));
         lblpharmacyAdminName.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+        lblpharmacyAdminName.setForeground(new java.awt.Color(243, 233, 220));
 
         lblWelcome.setFont(new java.awt.Font("Cascadia Mono", 1, 24)); // NOI18N
+        lblWelcome.setForeground(new java.awt.Color(243, 233, 220));
         lblWelcome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblWelcome.setText("WELCOME");
 
-        jButton18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton18.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jButton18.setText("LOGIN PAGE");
         jButton18.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +161,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButton15.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        jButton15.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jButton15.setText("Close");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,11 +178,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 .addComponent(lblWelcome, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(87, 87, 87)
                 .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
-                .addGap(16, 16, 16))
+                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14))
         );
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -188,16 +194,20 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                         .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblpharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblWelcome))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1000, 50));
+        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 1000, 70));
 
+        bottomTabbedPane.setBackground(new java.awt.Color(137, 87, 55));
         bottomTabbedPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        bottomTabbedPane.setForeground(new java.awt.Color(243, 233, 220));
         bottomTabbedPane.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        manageOrdersJPanel.setBackground(new java.awt.Color(137, 87, 55));
         manageOrdersJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel34.setBackground(new java.awt.Color(137, 87, 55));
         jPanel34.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Search By Employee Details", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cascadia Mono", 1, 12))); // NOI18N
         jPanel34.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -282,18 +292,23 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         manageOrdersJPanel.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 900, 120));
 
+        jLabel1.setForeground(new java.awt.Color(243, 233, 220));
         jLabel1.setText("CUSTOMER");
         manageOrdersJPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, -1, -1));
 
+        lblCustomer.setForeground(new java.awt.Color(243, 233, 220));
         lblCustomer.setText("XXX");
         manageOrdersJPanel.add(lblCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(243, 233, 220));
         jLabel7.setText("ORDER ID");
         manageOrdersJPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, -1, -1));
 
+        lblOrderId.setForeground(new java.awt.Color(243, 233, 220));
         lblOrderId.setText("XXX");
         manageOrdersJPanel.add(lblOrderId, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, -1, -1));
 
+        jLabel5.setForeground(new java.awt.Color(243, 233, 220));
         jLabel5.setText("STATUS");
         manageOrdersJPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, -1, -1));
 
@@ -328,6 +343,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         bottomTabbedPane.addTab("Check Orders", manageOrdersJPanel);
 
+        manageOrderDistributionJPanel.setBackground(new java.awt.Color(137, 87, 55));
         manageOrderDistributionJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnViewProcessedOrders.setText("View Processed Orders");
@@ -409,8 +425,9 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         manageOrderDistributionJPanel.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 340, 140));
 
+        jLabel2.setForeground(new java.awt.Color(243, 233, 220));
         jLabel2.setText("Click Here to assign Order to Distributor");
-        manageOrderDistributionJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, 240, -1));
+        manageOrderDistributionJPanel.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, 240, -1));
 
         jButton2.setText("Assign");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -418,7 +435,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 jButton2ActionPerformed(evt);
             }
         });
-        manageOrderDistributionJPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 430, 100, 30));
+        manageOrderDistributionJPanel.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 100, 30));
 
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -525,8 +542,13 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         bottomTabbedPane.addTab("Manage Order Distribution", manageOrderDistributionJPanel);
 
+        jTabbedPane1.setBackground(new java.awt.Color(137, 87, 55));
+        jTabbedPane1.setForeground(new java.awt.Color(243, 233, 220));
+
+        jPanel3.setBackground(new java.awt.Color(137, 87, 55));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel33.setBackground(new java.awt.Color(137, 87, 55));
         jPanel33.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH BY"));
 
         jTextField32.setText("SEARCH BY KEYWORD");
@@ -591,8 +613,10 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         jTabbedPane1.addTab("View Available Stock", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(137, 87, 55));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel35.setBackground(new java.awt.Color(137, 87, 55));
         jPanel35.setBorder(javax.swing.BorderFactory.createTitledBorder("SEARCH DRUGS"));
 
         jTextFieldKeyMan.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -625,10 +649,11 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 btnViewDrugListActionPerformed(evt);
             }
         });
-        jPanel4.add(btnViewDrugList, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, -1));
+        jPanel4.add(btnViewDrugList, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(243, 233, 220));
         jLabel4.setText("Click here to View Drug List");
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 160, 20));
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 170, 20));
 
         tblmanufacturerDrug.setFont(new java.awt.Font("Helvetica Neue", 0, 10)); // NOI18N
         tblmanufacturerDrug.setModel(new javax.swing.table.DefaultTableModel(
@@ -687,8 +712,9 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         jPanel4.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, 140));
 
+        jLabel12.setForeground(new java.awt.Color(243, 233, 220));
         jLabel12.setText("Click here to View Stock List");
-        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 160, 20));
+        jPanel4.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 210, 20));
 
         btnViewStockList.setText("View List");
         btnViewStockList.addActionListener(new java.awt.event.ActionListener() {
@@ -696,19 +722,25 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 btnViewStockListActionPerformed(evt);
             }
         });
-        jPanel4.add(btnViewStockList, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, -1, -1));
+        jPanel4.add(btnViewStockList, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, -1, -1));
 
+        jPanel5.setBackground(new java.awt.Color(137, 87, 55));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("ADD STOCK"));
         jPanel5.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jLabel13.setForeground(new java.awt.Color(243, 233, 220));
         jLabel13.setText("DRUG ID");
 
+        jLabel14.setForeground(new java.awt.Color(243, 233, 220));
         jLabel14.setText("DRUG NAME");
 
+        jLabel15.setForeground(new java.awt.Color(243, 233, 220));
         jLabel15.setText("QUANTITY");
 
+        jLabel16.setForeground(new java.awt.Color(243, 233, 220));
         jLabel16.setText("COST PRICE");
 
+        jLabel17.setForeground(new java.awt.Color(243, 233, 220));
         jLabel17.setText("SELLING PRICE");
 
         jTextFieldQuantity.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -729,8 +761,10 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabelManDrugId.setForeground(new java.awt.Color(243, 233, 220));
         jLabelManDrugId.setText("XXX");
 
+        jLabelManDrugName.setForeground(new java.awt.Color(243, 233, 220));
         jLabelManDrugName.setText("XXX");
 
         btnAddStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-stock-48.png"))); // NOI18N
@@ -763,10 +797,13 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel19.setForeground(new java.awt.Color(243, 233, 220));
         jLabel19.setText("Add Stock");
 
+        jLabel20.setForeground(new java.awt.Color(243, 233, 220));
         jLabel20.setText("Update Stock");
 
+        jLabel21.setForeground(new java.awt.Color(243, 233, 220));
         jLabel21.setText("Delete Stock");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -800,9 +837,9 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(64, 64, 64)
-                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(76, 76, 76)
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(72, 72, 72)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnDeleteStock, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -861,7 +898,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         bottomTabbedPane.addTab("Manage Inventory", manageInventoryJPanel);
 
-        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 980, 540));
+        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 980, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -871,7 +908,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 749, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
