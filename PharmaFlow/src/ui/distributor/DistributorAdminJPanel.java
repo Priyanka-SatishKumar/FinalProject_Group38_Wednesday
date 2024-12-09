@@ -125,7 +125,7 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
 
         lblDistributorAdmin1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblDistributorAdmin1.setForeground(new java.awt.Color(243, 233, 220));
-        lblDistributorAdmin1.setText("DISTRIBUTOR MANAGER");
+        lblDistributorAdmin1.setText("DISTRIBUTOR ADMIN");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
@@ -174,10 +174,7 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
 
         tblOrderOverview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Order ID", "Order Date", "Supplier", "Order Status", "Shipping Partner"
@@ -251,8 +248,8 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOrder)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblManufac)
                     .addComponent(jLabel1))
@@ -266,7 +263,7 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
                     .addComponent(lblSts))
                 .addGap(18, 18, 18)
                 .addComponent(btnAssignTransportNow)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Order Overview", ViewOrdersPanel);
@@ -766,7 +763,6 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
                 rowData[3] = OrderStatus;
                 rowData[4] = transporterName;
                 manuOrderTable.addRow(rowData);
-
             }
         }
 

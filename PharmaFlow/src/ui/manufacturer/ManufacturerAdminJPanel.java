@@ -197,7 +197,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
                 .addContainerGap(29, Short.MAX_VALUE))
         );
 
-        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 1000, 70));
+        jPanel1.add(topPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 1000, 70));
 
         bottomTabbedPane.setBackground(new java.awt.Color(137, 87, 55));
         bottomTabbedPane.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -781,6 +781,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         btnUpdateStock.setBorder(null);
         btnUpdateStock.setBorderPainted(false);
         btnUpdateStock.setContentAreaFilled(false);
+        btnUpdateStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUpdateStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateStockActionPerformed(evt);
@@ -791,6 +792,7 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
         btnDeleteStock.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDeleteStock.setBorderPainted(false);
         btnDeleteStock.setContentAreaFilled(false);
+        btnDeleteStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDeleteStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteStockActionPerformed(evt);
@@ -898,17 +900,13 @@ public class ManufacturerAdminJPanel extends javax.swing.JPanel {
 
         bottomTabbedPane.addTab("Manage Inventory", manageInventoryJPanel);
 
-        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 980, 540));
+        jPanel1.add(bottomTabbedPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 980, 540));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 691, Short.MAX_VALUE)
+
         );
     }// </editor-fold>//GEN-END:initComponents
 

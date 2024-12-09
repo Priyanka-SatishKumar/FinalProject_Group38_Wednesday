@@ -1,5 +1,5 @@
 use pharmacy_mgmt;
-
+C:\Users\KAILASH\Desktop\DMDD_Final PRoj\create_tables.sql
 DROP TABLE IF EXISTS pharmacy_store;
 DROP TABLE IF EXISTS pharmacy_order_item;
 DROP TABLE IF EXISTS pharmacy_inventory;

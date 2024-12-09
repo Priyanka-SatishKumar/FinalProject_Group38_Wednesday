@@ -7,6 +7,7 @@ package database;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 import model.pharmacy.PharmacyPurchaseOrder;
 
 /**
@@ -30,18 +31,16 @@ public class TransportManager {
             PharmacyManager.updateStockAndQuantity(order);
             return !isShipped;
         } catch (SQLException e) {
-            throw e;
-        }
+                    JOptionPane.showMessageDialog(null, "Invalid Order ID. Please check the value and try again.", "Error", JOptionPane.ERROR_MESSAGE);
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "An unexpected error occurred: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
+        return false;
     }
     public static ResultSet fetchAllShipments(int transporterId) throws Exception {
         try {
             String queryToFetchShipments = """
-                SELECT s.shipment_id, p.order_date, p.pharmacy_id, c1.company_name AS pharmacy_name, c2.company_name AS distributor_name, s.shipment_status
-                FROM shipment s
-                JOIN pharmacy_order p ON p.order_id=s.order_id
-                JOIN company c1 ON p.pharmacy_id=c1.company_id
-                JOIN company c2 ON s.distributor_id=c1.company_id
-                WHERE c1.transporter_id=%s""";
+                SELECT s.shipment_id, po.order_date, po.pharmacy_id,c1.company_name,c2.company_name,s.shipment_status FROM shipment s JOIN pharmacy_order po ON s.order_id = po.order_id Join company c1 ON po.pharmacy_id = c1.company_id JOIN company c2 ON po.distributor_id = c2.company_id;""";
             queryToFetchShipments = String.format(queryToFetchShipments, transporterId);
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(queryToFetchShipments);
