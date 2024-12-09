@@ -44,6 +44,13 @@ public class PharmacyStoreManagerPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         pharmacyLogo = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(137, 87, 55));
+
+        ManageStock.setBackground(new java.awt.Color(137, 87, 55));
+        ManageStock.setForeground(new java.awt.Color(51, 0, 51));
+
+        jPanel3.setBackground(new java.awt.Color(137, 87, 55));
+
         tblStock.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -85,7 +92,7 @@ public class PharmacyStoreManagerPanel extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnViewStock)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 822, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addContainerGap(389, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,12 +101,15 @@ public class PharmacyStoreManagerPanel extends javax.swing.JPanel {
                 .addComponent(btnViewStock)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(299, Short.MAX_VALUE))
+                .addContainerGap(297, Short.MAX_VALUE))
         );
 
         ManageStock.addTab("VIEW MEDINICINES STOCK", jPanel3);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(137, 87, 55));
+
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(242, 242, 242));
         jLabel2.setText("Welcome to Pharmacy Store Manager");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -107,8 +117,8 @@ public class PharmacyStoreManagerPanel extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(204, 204, 204)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 758, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pharmacyAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
