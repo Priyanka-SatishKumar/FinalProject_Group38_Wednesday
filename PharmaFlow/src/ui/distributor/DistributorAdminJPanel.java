@@ -174,10 +174,7 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
 
         tblOrderOverview.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "Order ID", "Order Date", "Supplier", "Order Status", "Shipping Partner"
@@ -251,8 +248,8 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOrder)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(ViewOrdersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblManufac)
                     .addComponent(jLabel1))
@@ -266,7 +263,7 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
                     .addComponent(lblSts))
                 .addGap(18, 18, 18)
                 .addComponent(btnAssignTransportNow)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Order Overview", ViewOrdersPanel);
