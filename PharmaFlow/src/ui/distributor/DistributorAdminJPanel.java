@@ -125,7 +125,7 @@ public class DistributorAdminJPanel extends javax.swing.JPanel {
 
         lblDistributorAdmin1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblDistributorAdmin1.setForeground(new java.awt.Color(243, 233, 220));
-        lblDistributorAdmin1.setText("DISTRIBUTOR MANAGER");
+        lblDistributorAdmin1.setText("DISTRIBUTOR ADMIN");
 
         javax.swing.GroupLayout TopPanelLayout = new javax.swing.GroupLayout(TopPanel);
         TopPanel.setLayout(TopPanelLayout);
